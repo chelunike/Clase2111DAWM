@@ -1,0 +1,26 @@
+package calendario;
+
+public class Calendario {
+
+    public static void main(String[] args) {
+        Fecha f1 = new Fecha(24, 12, 1997);
+        Fecha f2 = new Fecha(1, 1, 2017);
+        if (f1.correcta()&& f2.correcta()) {
+            if (f1.mayorQue(f2))
+                Fecha.intercambio(f1, f2);
+            
+            System.out.println("Fecha mayor: "+f1.cadenaSimple());
+            System.out.println("Fecha menor: "+f2.cadenaSimple());
+            
+//            System.out.println("Diferencia en días: "+f1.difDias(f2));
+//            System.out.println("Diferencia en mes: "+f1.difMes(f2));
+            System.out.println("Diferencia en años: "+f1.difAño(f2));
+            
+            System.out.println("Todo ok");
+        } else {
+            System.out.println("Nada ok");
+        }
+
+    }
+
+}
