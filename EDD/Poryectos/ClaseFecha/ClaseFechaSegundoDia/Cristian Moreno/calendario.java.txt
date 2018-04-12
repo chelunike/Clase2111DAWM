@@ -1,0 +1,45 @@
+package calendario;
+
+   import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class Calendario {
+
+    public static void main(String[] args) throws ParseException  {
+
+        
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+ 
+		Date fechaInicial=dateFormat.parse("2018-01-25");
+		Date fechaFinal=dateFormat.parse("2020-12-22");
+ 
+		int dias=(int) ((fechaFinal.getTime()-fechaInicial.getTime())/86400000);
+ 
+		System.out.println("Hay "+dias+" dias de diferencia");
+                
+        
+      Fecha f1 = new Fecha(22,12,2020);
+      Fecha f2 = new Fecha(25,1,2018);
+      if (f1.correcta() && f2.correcta()){
+          if (f1.mayorQue(f2)){
+             //Fecha.intercambio(f1,f2);
+              
+              System.out.println("y de la fecha "+f1.cadenaSimple());
+              System.out.println("y de la fecha "+f2.cadenaSimple());
+      
+            System.out.println("NICEEEEE");
+          }
+          else 
+            System.out.println("HOLY SHITT MANNN");
+          
+}
+
+}
+
+  
+
+ 
+	
+	
+}

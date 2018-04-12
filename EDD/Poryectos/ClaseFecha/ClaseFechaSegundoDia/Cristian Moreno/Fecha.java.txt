@@ -1,0 +1,163 @@
+package calendario;
+
+public class Fecha {
+
+    private int d, m, a;
+
+    public Fecha(int d, int m, int a) {
+        this.d = d;
+        this.m = m;
+        this.a = a;
+    }
+
+    
+    
+    public Fecha(String a){
+        int longi = a.length();
+        if (longi != 10)
+            return;
+        for (int i=0; i<longi;i++){
+            char c = a.charAt(i);
+            if (i == 2 || i== 6)
+                if (c != '-' && c !='/')
+                    return;
+        }
+    }
+    
+    public int getD() {
+        return d;
+    }
+
+    public int getM() {
+        return m;
+    }
+
+    public int getA() {
+        return a;
+    }
+
+    public void setD(int d) {
+        this.d = d;
+    }
+
+    public void setM(int m) {
+        this.m = m;
+    }
+
+    public void setA(int a) {
+        this.a = a;
+    }
+    
+
+    public boolean correcta() {
+        if (a <= 1582) {
+            return false;
+        }
+        if (m < 1 || m > 12) {
+            return false;
+        }
+        if (d < 1 || d > 31) {
+            return false;
+        }
+        return d <= diasMes();
+        
+    }
+
+    int diasMes() {
+        int [] tdias = { 0, 31,28,31,30,31,30,31,31,30,31,30,31};
+        
+         if (this.m<1 || this.m>12)
+            return -1;
+         if (this.m ==2 && this.bisiesto())
+             tdias[2]=29;
+         
+        return tdias [this.m];
+
+       
+
+//
+//        if (m == 1 || m == 3 || m == 5 || m == 7 || m == 8 || m == 10 || m == 12) {
+//            return 31;
+//        }
+//        if (m == 4 || m == 6 || m == 9 || m == 11) {
+//            return 30;
+//        }
+//        if (bisiesto()) {
+//            return 29;
+//        }return 28;
+   
+    }
+   
+    
+    public boolean mayorQue(Fecha f){
+        if (this.a > f.getA())
+            return true;
+        if (this.a < f.getA())
+            return false;
+        
+        if (this.m > f.getM())
+            return true;
+        
+        if (this.m < f.getM())
+            return false;
+        
+       return this.d > f.getD();
+        
+    }
+    
+    
+
+    boolean bisiesto() {
+
+        if (a % 400 == 0 || a % 4 == 0 && a % 100 != 0) {
+            return true;
+        }
+        return false;
+    }
+    public static void intercambio(Fecha fa, Fecha fb){
+        int dx=fa.getD() ,mx=fa.getM() ,ax=fa.getA();
+        
+       
+        fa.setD(fb.getD());
+        fa.setM(fb.getM());
+        fa.setA(fb.getA());
+        
+        fb.setD(dx);
+        fb.setM(mx);
+        fb.setA(ax);
+        
+        
+        
+    }
+    
+    public String cadenaSimple(){
+        return String.format("%2d/%2d/%4d", d,m,a).replace(" ", "0");
+    }
+}
+
+//
+//int diasMes(){
+//    switch (m){
+//        case 1:
+//        case 3:
+//        case 5:
+//        
+//        case 7:
+//        case 8:
+//        case 10:
+//        case 12:return 31;
+//                
+//        case 4:
+//        case 6:
+//        case 9:
+//        case 11:return 30;
+//   
+//        
+//    
+//    }
+//        if (bisiesto())
+//            return 29;
+//        return 28;
+//}
+//    }
+
