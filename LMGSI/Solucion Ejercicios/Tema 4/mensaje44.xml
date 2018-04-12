@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<cc:mensaje xmlns:cc="correo">
+  <cc:remitente>
+    <cc:nombre>pepe</cc:nombre>
+    <cc:email>pepe@gmail.com</cc:email>
+  </cc:remitente>
+  <cc:destinatario>
+    <cc:nombre>paco</cc:nombre>
+    <cc:email>paco@gmail.com</cc:email>
+  </cc:destinatario>
+  <cc:asunto>saludos</cc:asunto>
+  <cc:texto>
+    <cc:parrafo>Hola Paco</cc:parrafo>
+    <cc:parrafo>Mañana nos vemos</cc:parrafo>
+    <cc:parrafo>Hasta mañana</cc:parrafo>
+  </cc:texto>
+</cc:mensaje>

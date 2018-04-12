@@ -1,0 +1,37 @@
+
+/*-- Contenedor --------------------------------------------------------*/
+#contenedor {
+		background-color: white;
+		opacity: 0.80;
+		border: 3px solid #534F7F;		
+  		width: 95%;
+		min-width:900px;
+ 	 	margin:0% auto;
+}
+/*-- Cabecera --------------------------------------------------------*/
+
+#cabecera h1 {padding-left: 0.5em; 
+	text-transform: uppercase; font-family: arial ;
+}
+
+#subcabecera {background-color: #534F7F;}
+#subcabecera ul {margin-left:-1em;}
+#subcabecera ul li { display: inline; margin-left:0.5em;}
+#subcabecera ul li a { border: 2px solid black; padding: 0.5em; border-radius: 25px;
+ background: #CED8F6; text-decoration: none; color:black; font-family: arial ;
+}
+#subcabecera ul li a:hover {text-decoration:underline;}
+#subcabecera ul li a.activo {color:red;}
+
+#subcabecera {border-top: 1px solid #534F7F;
+  		border-bottom: 1px solid #534F7F;}
+
+#central {max-height: 300px; overflow-y: scroll;}
+#central {padding-left: 1em; padding-bottom: 3em;}
+#central h2 {text-align: center; font-family: arial; margin-bottom: 1em;}
+
+
+#pie {border-top: 3px solid #534F7F;height: 60px;}
+#pie {padding: 0em 1em;}
+#autor { float: left;}
+#contacto {float: right;}

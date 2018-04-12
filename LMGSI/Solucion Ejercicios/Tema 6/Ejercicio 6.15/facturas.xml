@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<factura xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="facturas.xsd" n_fac="1">
+  <datos_empresa>
+    <nombre>Potato SL</nombre>
+    <dir>C\ Almuñecar Nº9</dir>
+    <poblacion cod_postal="18010">Granada</poblacion>
+    <provincia>Granada</provincia>
+    <cif>1232155125N</cif>
+    <telefono num_tel="917776688"/>
+  </datos_empresa>
+
+  <datos_cliente n_cli="0001">
+    <nombre>Paco</nombre>
+    <dir_env>C\ Base de Datos nº:5</dir_env>
+    <poblacion cod_postal="18002">Granada</poblacion>
+    <provincia>Granada</provincia>
+  </datos_cliente>
+
+  <datos_factura n_ped="0001" iva="21" f_pago="efectivo" moneda="euro">
+    <fecha>2018-03-08</fecha>
+    <linea>
+      <ref>00012</ref>
+      <desc>Adaptador de Red Ethernet-USB Tipo-C</desc>
+      <cant>2</cant>
+      <precio>23.05</precio>
+      <importe>46.10</importe>
+    </linea>
+    <base>46.10</base>
+    <cuota_iva>5.65</cuota_iva>
+    <total>51.75</total>
+  </datos_factura>
+
+</factura>

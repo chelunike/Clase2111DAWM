@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+  <xs:element name="libro">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="titulo" type="xs:string" />
+        <xs:element name="contenido" type="T_Contenido" />
+        <xs:element name="copyright" type="xs:gYear" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:complexType name="T_Contenido">
+    <xs:sequence maxOccurs="unbounded">
+      <xs:element ref="capitulo" />
+      <xs:element ref="separacion" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:element name="capitulo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="tema" type="xs:string" />
+        <xs:element ref="seccion" maxOccurs="unbounded" />
+      </xs:sequence>   
+      <xs:attribute name="materia" default="XML">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="XML"/>
+            <xs:enumeration value="Java"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="seccion">
+    <xs:complexType>
+      <xs:simpleContent> 
+        <xs:extension base="xs:string"> 
+          <xs:attribute name="apartados" type="xs:nonNegativeInteger"/> 
+          <xs:attribute name="dificil" default="no">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="si"/>
+                <xs:enumeration value="no"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:extension> 
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="separacion">
+    <xs:complexType />
+  </xs:element>  
+
+  
+  <!--  
+  <!ELEMENT contenido (capitulo,separacion?)+>
+  -->
+  
+</xs:schema>

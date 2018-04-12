@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<listaPeliculas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="peliculas.xsd">
+	
+	<pelicula id="p1" clasificacion="A">
+		<titulo>Juegos de Guerra</titulo>
+		<director>
+			<nombre>John </nombre>
+			<inicial>JB</inicial>
+			<apellido>Badham</apellido>
+		</director>
+	</pelicula>
+
+	<pelicula id="p2">
+		<titulo>WALLE</titulo>
+		<director>
+			<nombre>Andrew</nombre>
+			<apellido>Stanton</apellido>
+		</director>
+	</pelicula>
+
+
+</listaPeliculas>

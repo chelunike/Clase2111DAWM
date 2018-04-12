@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xs:element name="prestamo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="bibliotecario" type="T_persona"/>
+        <xs:element name="fecha" type="T_fecha"/>
+        <xs:element name="lector" type="T_lector"/>
+        <xs:element name="prestamo" type="T_prestamo" maxOccurs="3"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  
+  <xs:complexType name="T_persona">
+      <xs:sequence>
+          <xs:element name="dni">
+              <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                      <xs:pattern value="[0-9]{8}[A-Z]"/>
+                  </xs:restriction>
+              </xs:simpleType>
+          </xs:element>
+          <xs:element name="nombre" type="xs:string"/>
+          <xs:element name="apellido1" type="xs:string"/>
+          <xs:element name="apellido2" type="xs:string"/>
+      </xs:sequence>  
+  </xs:complexType>
+  
+  <xs:complexType name="T_fecha">
+      <xs:attribute name="fechaPrestamo" type="xs:date" use="required"/>
+      <xs:attribute name="fechaDevolucion" type="xs:date" use="required"/>
+  </xs:complexType>
+  
+  <xs:complexType name="T_lector">
+      <xs:complexContent>
+          <xs:extension base="T_persona">
+              <xs:sequence>
+                  <xs:element name="telefono">
+                        <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                  <xs:pattern value="[+][0-9]{2}[0-9]{9}|[0-9]{9}"/>
+                              </xs:restriction>
+                        </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="direccion" type="T_direccion"/>
+              </xs:sequence>
+          </xs:extension>
+      </xs:complexContent>  
+  </xs:complexType>
+  
+  <xs:complexType name="T_direccion">
+      <xs:sequence>
+          <xs:element name="tipo">
+              <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="(calle|avenida)"/>
+                    </xs:restriction>
+              </xs:simpleType>
+          </xs:element>
+          <xs:element name="nombre" type="xs:string"/>
+          <xs:element name="numero" type="xs:nonNegativeInteger"/>
+          <xs:element name="piso" type="xs:string"/>
+          <xs:element name="letra">
+              <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="[A-Z]"/>
+                    </xs:restriction>
+              </xs:simpleType>
+          </xs:element>
+          <xs:element name="CP">
+              <xs:simpleType>
+                  <xs:restriction base="xs:integer">
+                      <xs:minInclusive value="1001"/>
+                      <xs:maxInclusive value="52080"/>
+                  </xs:restriction>
+              </xs:simpleType>
+          </xs:element>
+          <xs:element name="localidad" type="xs:string"/>
+          <xs:element name="provincia" type="xs:string"/>
+      </xs:sequence>
+  </xs:complexType>
+
+
+  <xs:complexType name="T_prestamo">
+      <xs:sequence>
+            <xs:element name="numregistro" type="xs:nonNegativeInteger"/>
+            <xs:element name="titulo" type="xs:string"/>
+            <xs:element name="autor" type="xs:string" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="id" type="xs:ID" use="required"/>
+  </xs:complexType>
+</xs:schema>

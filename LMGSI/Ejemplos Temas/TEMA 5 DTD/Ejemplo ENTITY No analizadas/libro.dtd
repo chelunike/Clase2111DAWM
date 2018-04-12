@@ -1,0 +1,17 @@
+<!NOTATION jpg SYSTEM "c:\programas\visor.exe">
+<!ENTITY foto_alhambra SYSTEM "alhambra.jpg" NDATA jpg>
+<!ENTITY foto_generalife SYSTEM "generalife.jpg" NDATA jpg>
+<!ENTITY foto_torrelavela SYSTEM "torre_de_la_vela.jpg" NDATA jpg>
+
+
+<!ELEMENT libro (capitulo+)>
+<!ATTLIST libro portada ENTITY #REQUIRED>
+<!ATTLIST libro fecha NMTOKEN #REQUIRED>
+
+<!ELEMENT capitulo (parrafo,enlace?)+>
+<!ATTLIST capitulo  referencia ID #REQUIRED>
+
+<!ELEMENT parrafo (#PCDATA)>
+
+<!ELEMENT enlace EMPTY>
+<!ATTLIST enlace destino IDREFS #REQUIRED>

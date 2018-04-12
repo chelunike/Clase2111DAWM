@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE biblioteca SYSTEM "ejercicio5.8.dtd">
+<biblioteca>
+  <prestamo id="P001">
+    <bibliotecario apellidos="Fernandez" nombre="Anto"/>
+    <fechas prestamo="" devolucion=""/>
+    <lector>
+      <id>l1234</id>
+      <nombre>Perico</nombre>
+      <telefono>644199321</telefono>
+      <telefono>958934872</telefono>
+      <direccion tipo="calle" nombrevia="Balsas" numero="4" piso="3" letra="" cp="18650" localidad="Dúrcal" provincia="Granada"/>
+    </lector>
+    <ejemplares>
+      <ejemplar registro="e02" titulo="Juego de Molinos">
+        <autor>Cervantes</autor>
+        <autor>George RR Martin</autor>
+      </ejemplar>
+    </ejemplares>
+  </prestamo>
+</biblioteca>

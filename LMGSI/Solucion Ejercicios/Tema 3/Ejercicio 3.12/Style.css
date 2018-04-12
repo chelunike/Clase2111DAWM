@@ -1,0 +1,13 @@
+#t1{text-align: left; color: blue; font-size: 20px; font-family: verdana; line-height: 2em;}
+#t2{text-align: right; color: purple; font-size: 50px; font-family: times new romans; margin: 100px;}
+#t3{text-align: center; color: orange; font-size: 40px; font-family: arial;}
+.capitalLetter{
+   float:left;
+   color:black;
+   background:white;
+   border:1px solid #999999;
+   font-size:80px;
+   line-height:60px;
+   padding:2px;
+   font-family:times;
+   margin-right: 5px;}

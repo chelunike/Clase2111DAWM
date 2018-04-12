@@ -1,0 +1,40 @@
+
+/*-- Maquetación ----------------------------------------------------------*/
+#contenedor {width: 900px; margin: 0 auto;}
+#contenidos {display: table;}
+#lateralI { width: 15%; display:table-cell}
+#central { width: 57%; display:table-cell}
+#lateralD{ width: 23%; display:table-cell}
+#pie { clear: both;}
+
+
+
+/*-- fondos -----------------------------------------------------------*/
+body {background:#CCC;}
+#cabecera, #pie{ background: #0BB;}
+#central {background:	#EEE;}
+.laterales{ background: #5D5;}
+
+/*-- Relleno -------------------------------------------------*/
+#cabecera {padding-right:5em;}
+#central, .laterales {padding: 0.75em 0.25em;}
+#central p {padding: 0.5em 2em;}
+#pie { padding: 0.3em 1em}
+ul.menu {padding:1em;}
+ul.menu li{padding: 0.6em 0;}
+
+/*-- bordes -----------------------------------------------------------*/
+#cabecera, .laterales { border: 1px  solid blue}
+#pie { border-top: 1px  solid blue; border-bottom: 1px  solid blue;}
+#lateralD p {border-bottom:1px solid red;}
+
+/*-- tipografía -------------------------------------------------------*/
+#contenedor { font: .9em/1.4 Helvetica, sans-serif;}
+#cabecera h1 {font-size:2.5em; text-align:right;}
+#central p {text-align:justify;}
+
+ul.menu li {list-style:none;}
+ul.menu li a {font-size: 1.3em; color: #FFF;}
+
+h3 {color:red; }
+h3, .laterales p {text-align:center;}

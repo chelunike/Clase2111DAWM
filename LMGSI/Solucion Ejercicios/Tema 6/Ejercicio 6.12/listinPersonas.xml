@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<listinPersonas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="persona.xsd">
+	
+	<persona id="p1" sexo="hombre">
+		<nombre>Batman</nombre>
+		<email>mursielagorl@negro.com</email>
+		<relacion amigo-de="p3" enemigo-de="p2"/>
+	</persona>
+
+	<persona id="p2" sexo="hombre">
+		<nombre>Joker</nombre>
+		<email>elexcluidodel@baraja.com</email>
+		<relacion enemigo-de="p1"/>
+	</persona>
+
+	<persona id="p3" sexo="hombre">
+		<nombre>Robin</nombre>
+		<email>elpekerobin@gmail.com</email>
+		<relacion amigo-de="p1" enemigo-de="p2"/>
+	</persona>
+
+</listinPersonas>

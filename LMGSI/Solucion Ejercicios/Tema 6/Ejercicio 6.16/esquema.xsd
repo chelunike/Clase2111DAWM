@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="clase">
+    <xs:complexType>
+      <xs:sequence >
+        <xs:element ref="alumno" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="alumno">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nombre" type="xs:string"/>
+        <xs:element name="nota" type="T_nota" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:simpleType name="T_nota">
+    <xs:union memberTypes="T_notaStr T_notaInt"/>
+  </xs:simpleType>
+
+  <xs:simpleType name="T_notaStr">
+    <xs:restriction base="xs:string">
+    	<xs:pattern value="sb|nt|sf|if"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="T_notaInt">
+    <xs:restriction base="xs:int">
+    	<xs:pattern value="[0-10]"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

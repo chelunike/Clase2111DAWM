@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<listas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="listas.xsd">
+    <enteros>-123 45 234567 -3456 0 12</enteros>
+    <edades>2 56 125 21 34 78 98 26 45</edades>
+    <tres_gatos>Ray Sakiro Panzer</tres_gatos>
+</listas>

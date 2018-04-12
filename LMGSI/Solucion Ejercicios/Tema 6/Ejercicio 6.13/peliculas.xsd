@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+  <xs:element name="listaPeliculas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="pelicula" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="pelicula">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="titulo" type="xs:string"/>
+        <xs:element ref="director" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="id" type="xs:ID" use="required"/>
+      <xs:attribute name="clasificacion" type="T_clasificacion" default="C"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="director">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nombre" type="xs:string"/>
+        <xs:element name="inicial" type="xs:string" minOccurs="0"/>
+        <xs:element name="apellido" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:simpleType name="T_clasificacion">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="A|B|C|D|E"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<articulo xmlns="http://fer.ieszv.com" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xsi:schemaLocation="http://fer.ieszv.com articulo.xsd">
+	<descripcion>Tornillo</descripcion>
+    <unidades>50</unidades>
+    <fecha>2012-02-14</fecha>
+</articulo>

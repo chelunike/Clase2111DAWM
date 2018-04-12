@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type"
+		 content="text/html;charset=utf-8">
+	<title>Objetos</title>
+	<script type="text/javascript">
+		function imprimeDatosTotal(){ 
+   			document.write("<br><br>C&oacute;digo: " + this.codigo);
+   			document.write("<br>Nombre: " + this.nombre);
+   			document.write("<br>Precio: " + this.precio);
+		}
+
+		function ProductosAlimenticios(codigo_in, nombre_in, precio_in){ 
+   			this.codigo = codigo_in;
+   			this.nombre = nombre_in;
+			this.precio = precio_in;
+   			this.imprimeDatos = imprimeDatosTotal; 
+		}
+	</script>
+</head>
+<body>
+	<script type="text/javascript">
+		var producto1 = new ProductosAlimenticios("1","Pan", "0.40");
+		var producto2 = new ProductosAlimenticios("2","Lentejas", "1.50");
+		var producto3 = new ProductosAlimenticios("3","Agua", "0.30");
+		
+		var productos = new Array(producto1, producto2, producto3);
+		for(i=0; i<productos.length; i++){
+			productos[i].imprimeDatos();
+		}
+	</script>
+</body>
+</html>
+
+

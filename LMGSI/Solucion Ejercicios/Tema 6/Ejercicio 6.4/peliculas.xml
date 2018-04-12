@@ -1,0 +1,44 @@
+﻿<?xml version="1.0"?>
+<catalogoPeliculas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="peliculas.xsd">
+	<pelicula>
+		<titulo>The Matrix</titulo>
+		<duracion>136</duracion>
+		<genero>sci-fi</genero>
+		<actores>
+			<actor>Keanu Reeves</actor>
+			<actor>Laurence Fishburne</actor>
+			<actor>Carrie Ann Moss</actor>
+		</actores>
+		<fecha>1999</fecha>
+		<director>Wachowski Brothers</director>
+		<director>Wachowski Brothers</director>
+		<formato>DVD</formato>
+		<trailer>matrix.avi</trailer>
+	</pelicula>
+	<pelicula>
+		<titulo>Titanic</titulo>
+		<duracion>194</duracion>
+		<genero>drama</genero>
+		<actores>
+			<actor>Leonardo DiCaprio</actor>
+			<actor>Kate Winslet</actor>
+		</actores>
+		<fecha>1999</fecha>
+		<formato>DVD</formato>
+		<cartel>titanic.jpg</cartel>
+	</pelicula>
+	<pelicula>
+		<titulo>The Sixth Sense</titulo>
+		<duracion>106</duracion>
+		<genero>thriller</genero>
+		<actores>
+			<actor>Bruce Willis</actor>
+			<actor>Haley Joel Osment</actor>
+		</actores>
+		<fecha/>
+		<director>M. Night Shyamalan</director>
+		<formato>VHS</formato>
+		<trailer>sixthSense.avi</trailer>
+		<cartel> sixthSense.jpg</cartel>
+	</pelicula>
+</catalogoPeliculas>

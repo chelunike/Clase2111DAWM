@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>Arrays</title>
+<script type="text/javascript">
+	function manipularArray() {
+		var palabras = new Array();
+    	var ventana;
+    	var numero_palabras
+		palabras=formulario.area.value.split(" "); 
+    	numero_palabras=palabras.length;
+		ventana=window.open("","","width=400,height=300"); 
+    	ventana.document.write("<title>Manipular arrays</title>");
+		ventana.document.write("<br><b>Primera palabra: </b>" + palabras[0]);
+		ventana.document.write("<br><b>&Uacute;ltima palabra: </b>" + palabras[numero_palabras-1]);
+		ventana.document.write("<br><b>N&uacute;mero de palabras: </b>" + + numero_palabras);
+		ventana.document.write("<br><b>Ordenadas alfab&eacute;ticamente: </b><br>" + palabras.sort().join(" - "));
+	}
+
+</script>
+</head>
+<body>
+	<h1>Manipular Arrays</h1>
+	<form name="formulario">
+	<br><b>Introduce algunas palabras:</b><br><br>
+	<textarea name="area" rows=3 cols=40></textarea>
+	<br><br>
+	<input type=button value="Aceptar" name="boton" onClick="manipularArray()">
+	</form>
+</body>
+</html>

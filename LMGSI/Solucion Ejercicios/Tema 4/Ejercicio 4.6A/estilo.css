@@ -1,0 +1,25 @@
+mensaje{
+	border:1px solid black;
+	width:400px;
+	padding:15px;
+	margin:20px auto;
+	display:block;
+}
+	
+remitente, destinatario{
+	color:blue;display:block}
+
+remitente,destinatario,asunto{font-size:1.2em}
+
+remitente nombre::before{content:"De: "}
+
+destinatario nombre::before{content:"Para: "}
+
+email::before{content:"("}
+email::after{content:")"}
+
+asunto{color:red;display:block}
+asunto::before{content:"Asunto: "}
+
+texto{border-top:1px solid black;display:block;margin-top:5px}
+parrafo{margin-left:30px;display:block}

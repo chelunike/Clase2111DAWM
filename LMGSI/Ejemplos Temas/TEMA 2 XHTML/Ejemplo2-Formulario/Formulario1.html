@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="es"> 
+	<head> 
+	<meta charset="UTF-8" > 
+	<title>Ejemplo Formulario 1</title>   	
+</head>
+<body>     
+	<form action="#" method="post">			
+		<p> 
+			Nombre <input type="text" name = "nombre" value="" size="20" maxlength="25"/>
+		</p>
+		
+		<p>
+			<label for="apellidos">Apellidos</label>
+			<input type="text" id ="apellidos" name="apellidos" value="Teclee aquí sus dos apellidos" size="40" maxlength="50"/>
+		</p>		
+		
+		<p>
+			<label for="clave">Su password</label>
+			<input type="password" id ="clave" name="clave" value="" />
+		</p>		
+		
+		<p>		
+			¿Trabaja actualmente? <input type="checkbox" name="estado" value="trabaja" />
+		</p>		
+		
+		<p>		
+			<label for="estudia">¿Estudia?</label>
+			<input type="checkbox" id="estudia" name="estudia" value="estudia" />
+		</p>		
+		<fieldset>
+			<legend>Indique su sexo</legend>
+			<input type="radio" name="sexo" value="f" checked="checked" />femenino<br>
+			<input type="radio" name="sexo" value="m" />masculino<br>
+		</fieldset>
+		
+		<fieldset>
+			<legend>Indique su sexo</legend>
+			<input type="radio" name="sexo2" id="fem" value="f" checked="checked" /><label for="fem">femenino</label>
+			<input type="radio" name="sexo2" id="mas" value="m" />					<label for="mas">masculino</label>
+		</fieldset>
+		
+		<p>
+			Puede proporcionar una foto. Pulse el botón Examinar... para seleccionarla.
+			<input type="file" name="foto"/>
+		</p>
+		
+        <p>
+			<!-- Esto se enviará pero no se mostrará... -->
+			<input type="hidden" name="pais" value="España" /> 
+        </p>
+            
+		<p>
+			<textarea name="comentarios" cols="50" rows="6">Sus comentarios aquí...
+			</textarea>
+        </p>
+		
+        <p>			
+			Elija su color favorito<br>
+			<select name="color" size="3">
+				<option value="bl">blanco</option>
+				<option value="rj" selected="selected">rojo</option>
+				<option value="az">azul</option>
+				<option value="ng">negro</option>
+				<option value="am">amarillo</option>
+			</select>
+		</p>
+		
+        <div>
+            <input type="image" src="enviar.gif" alt="Enviar..." /> 		
+            <input type="submit" value="Enviar datos" />
+            <input type="reset" value="Limpiar formulario" />
+        </div>
+	</form>    
+</body>
+</html>

@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  
+  <xs:element name="biblioteca">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="libro" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="libro">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="titulo" type="xs:string"/>
+        <xs:element ref="disponible"/>
+        <xs:element name="autor" type="xs:string"/>
+        <xs:element name="formato" type="xs:string"/>
+        <xs:element name="publicacion" type="xs:date"/>
+        <xs:element ref="precio"/>
+        <xs:element ref="descuento"/>
+        <xs:element ref="enlacelibro"/>
+        <xs:element ref="portada"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+    
+  <xs:element name="disponible">
+    <xs:complexType>
+      <xs:attribute name="tiempo" type="xs:NMTOKEN" use="required"/> <!--NMTOKEN SOLO ADMITE UNA PALABRA COMPATIBLE CON DTD-->
+      <xs:attribute name="unidad" type="xs:NMTOKEN" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="precio">
+    <xs:complexType>
+      <xs:attribute name="cantidad" type="T_moneda" use="required"/>
+      <xs:attribute name="moneda" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="euro"/> <!--PERMITE INDICAR TODOS LOS POSIBLES VALORES DE UN TIPO-->
+            <xs:enumeration value="dolar"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:simpleType name="T_moneda">
+    <xs:restriction base="xs:decimal">
+      <xs:fractionDigits value="2" />
+    </xs:restriction>
+  </xs:simpleType>  
+  
+  <xs:element name="descuento">
+    <xs:complexType>
+      <xs:attribute name="cantidad" use="optional">
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:fractionDigits value="2"/>
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="100"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="enlacelibro">
+    <xs:complexType>
+      <xs:attribute name="href" type="xs:anyURI" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="portada">
+    <xs:complexType>
+      <xs:attribute name="archivo" type="T_nombreArchivo"/>
+    </xs:complexType>
+  </xs:element>
+  
+   <xs:simpleType name="T_nombreArchivo">
+    <xs:restriction base="xs:string">
+      <xs:pattern value=".+"/>
+    </xs:restriction>
+  </xs:simpleType>  
+  
+</xs:schema>

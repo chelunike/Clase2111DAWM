@@ -1,0 +1,8 @@
+h1,h2,h3{color:red;}
+h1{font-size:4em;}
+h2{font-size:3em;}
+h3{font-size:2em;}
+/* Regla con comentario 1 */
+#titulo{text-decoration:underline; color:blue; margin:10px; font-family:Arial;}
+/* Regla con comentario 2 */
+.Regla2{color:green; font-style:italic;}

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<alumno matricula="7012" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="extensiones.xsd">
+	<npila>Juan</npila>
+  <ape1>Ruiz</ape1>
+  <ape2>Morales</ape2>  
+	<domicilio>Pablo Picasso, 5</domicilio>
+	<localidad>La Palma del Condado</localidad>
+	<provincia>Huelva</provincia>
+</alumno>

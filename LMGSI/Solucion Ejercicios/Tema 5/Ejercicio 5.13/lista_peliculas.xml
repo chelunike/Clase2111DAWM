@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE lista_peliculas SYSTEM "peliculas.dtd">
+<lista_peliculas>
+  <aviso>&av;</aviso>
+  <pelicula identificador="p1" clasificacion="A" archivo="pelicula1">
+    <titulo>Pelicula primera</titulo>
+    <director>
+      <nombre>Pepe</nombre>
+      <inicial>J</inicial>
+      <apellido>Santos</apellido>
+    </director>
+    <recomendacion>&OM;</recomendacion>
+  </pelicula>
+  <aviso>&av;</aviso>
+  <pelicula identificador="p2" archivo="pelicula2">
+    <titulo>Pelicula segunda</titulo>
+    <director>
+      <nombre>Rafael</nombre>
+      <apellido>Verdasco</apellido>
+    </director>
+    <director>
+      <nombre>Luisa</nombre>
+      <inicial>M</inicial>
+      <apellido>Mingorance</apellido>
+    </director>
+    <recomendacion>&BO;</recomendacion>
+  </pelicula>
+</lista_peliculas>

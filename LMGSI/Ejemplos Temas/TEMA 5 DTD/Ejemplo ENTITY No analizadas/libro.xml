@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE libro SYSTEM "libro.dtd">
+<libro portada="foto_alhambra" fecha="01-01-2013">
+   <capitulo referencia="c1">
+     <parrafo>sgffg f  d f jdf sdfjk d fdjfdf</parrafo>
+     <parrafo>iwtw twrti rtirt rti rtrt rtewois fasdkfsd fs</parrafo>
+  </capitulo>
+  <capitulo referencia="c2">
+     <parrafo>sgffg f  d f jdf sdfjk d fdjfdf</parrafo>
+     <enlace destino="c3 c1 c2" />
+     <parrafo>iwtw twrti rtirt rti rtrt rtewois fasdkfsd fs</parrafo>
+  </capitulo>
+  <capitulo referencia="c3">
+     <parrafo>sgffg f  d f jdf sdfjk d fdjfdf</parrafo>
+     <parrafo>iwtw twrti rtirt rti rtrt rtewois fasdkfsd fs</parrafo>
+     <enlace destino="c1" />
+  </capitulo>
+  <capitulo referencia="c4">
+     <parrafo>sgffg f  d f jdf sdfjk d fdjfdf</parrafo>
+     <enlace destino="c3 c1" />
+     <parrafo>iwtw twrti rtirt rti rtrt rtewois fasdkfsd fs</parrafo>
+     <enlace destino="c3 c1" />
+  </capitulo>
+</libro>

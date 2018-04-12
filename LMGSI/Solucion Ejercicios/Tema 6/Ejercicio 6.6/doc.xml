@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<cd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:noNamespaceSchemaLocation="esquema.xsd"
+    titulo="Titulo del album">
+  <canciones>
+    <cancion duracion="00:04:47" anio="2008">
+      <titulo>Give it 2</titulo>
+      <compositores>
+        <compositor>
+          <nombre>Pharrel</nombre>
+          <apellidos>Williams</apellidos>
+        </compositor>
+      </compositores>
+      <productores>
+        <productor>
+          <nombre>Pharrel</nombre>
+          <apellidos>Williams</apellidos>
+        </productor>
+      </productores>
+      <sello>Warner Bros. Records</sello>
+      <artista>Madonna</artista>
+    </cancion>
+  </canciones>
+  <fecha dia="20" mes="2" anio="2008"/>
+</cd>

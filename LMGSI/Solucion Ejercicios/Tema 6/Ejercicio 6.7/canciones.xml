@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<cd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="canciones.xsd" titulo="">
+  <canciones>
+    <cancion duracion="00:04:47" anio="2008" precio="0.99" moneda="dolar">
+      <titulo>Give it 2 me</titulo>
+      <compositores>
+        <compositor>
+          <nombres>Pharrel</nombres>
+          <apellidos>Williams</apellidos>
+        </compositor>
+      </compositores>
+      <productores>
+        <productor>
+          <nombres>Sick and Dope</nombres>
+          <apellidos>Juanillo</apellidos>
+        </productor>
+      </productores>
+      <sello>Warner Bros. Records</sello>
+      <artista>Madonna</artista>
+    </cancion>
+  </canciones>
+  <fecha dia="20" mes="02" anio="2008"/>
+</cd>

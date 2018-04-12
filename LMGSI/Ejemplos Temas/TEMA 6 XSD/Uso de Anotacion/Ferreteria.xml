@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ferreteria xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+			xsi:noNamespaceSchemaLocation="ferreteria.xsd">
+	<articulo>Tornillo</articulo>
+	<unidades>50</unidades>
+	<fecha>2012-02-14</fecha>
+</ferreteria>

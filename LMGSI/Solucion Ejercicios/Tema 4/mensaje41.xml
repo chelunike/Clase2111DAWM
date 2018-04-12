@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<mensaje>
+  <remitente>
+    <nombre>pepe</nombre>
+    <email>pepe@gmail.com</email>
+  </remitente>
+  <destinatario>
+    <nombre>paco</nombre>
+    <email>paco@gmail.com</email>
+  </destinatario>
+  <asunto>saludos</asunto>
+  <texto>
+    <parrafo>Hola Paco</parrafo>
+    <parrafo>Mañana nos vemos</parrafo>
+    <parrafo>Hasta mañana</parrafo>
+  </texto>
+</mensaje>

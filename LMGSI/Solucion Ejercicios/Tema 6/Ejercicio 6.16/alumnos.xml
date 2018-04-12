@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<clase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="esquema.xsd">
+	<alumno>
+		<!-- Nota: Entero entre 1 y 10 o los valores sb nt sf in-->
+		<!-- Con un tipo union -->
+		<nombre>Pepito</nombre>
+		<nota>nt</nota>
+		<nota>sb</nota>
+		<nota>sf</nota>
+		<nota>9</nota>
+	</alumno>
+	<alumno>
+		<!-- Nota: Entero entre 1 y 10 o los valores sb nt sf in-->
+		<!-- Con un tipo union -->
+		<nombre>Antonio</nombre>
+		<nota>7</nota>
+		<nota>8</nota>
+		<nota>sf</nota>
+		<nota>9</nota>
+	</alumno>
+</clase>

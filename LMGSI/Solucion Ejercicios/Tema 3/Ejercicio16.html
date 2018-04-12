@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+	<html lang="es"> 
+		<head>
+			<title>Ejercicio 3.16</title>   
+			<link rel="stylesheet" type="text/css" href="estilo16.css" media="screen" />       
+		</head>
+	<body>
+		<div id="contenedor">
+			<div id="SupI"> 
+				<h1>TELEBIRRIA</h1>
+				<h3>PARA REALIZAR SU PEDIDO, RELLENE EL FORMULARIO</h3>    
+			</div>
+			<div id="SupD">                            
+				<form action="#" method="post">
+					<div id= "conectar">
+						<p>Si es ya cliente introduzca su nombre de usuario y clave</p>           
+						<label for="usuario">usuario</label>
+						<input type="text" id="usuario" name="usuario" size="12" maxlength="13" required="required"/>            
+						<label for="clave">clave</label>
+						<input type="password" id="clave" name="clave" size="8" maxlength="9" required="required"/>                         
+						<input type="submit" class="boton" value="Conectar" />
+					</div>
+				</form>                       
+			</div>     
+			<div id="Central">
+				<form action="#" method="get">
+				<div id="MedI">                           
+					<fieldset>
+						<legend><strong>Datos personales y de envío (sólo si no es cliente)</strong></legend>                
+						<label for="nombre">Nombre</label>
+						<input type="text" id="nombre" name="nombre" size="20" maxlength="25" required="required"/>
+						<br />
+						<label for="apellidos">Apellidos</label>
+						<input type="text" id="apellidos" name="apellidos" size="40" maxlength="50" required="required"/>
+						<br />
+						<label for="domicilio">Domicilio</label>
+						<input type="text" id="domicilio" name="domicilio" size="20" maxlength="25" required="required"/>
+						<br />
+						<label for="localidad">Localidad</label>
+						<input type="text" id="localidad" name="localidad" size="20" maxlength="25" required="required"/>
+						<br />                
+						<label for="CPostal">C. Postal</label>
+						<input type="text" id="CPostal"  name="CPostal" size="6" maxlength="5" required="required" pattern="[0-9]{5}"/>
+						<br />
+						<label for="telefono">Teléfono</label>
+						<input type="text" id="telefono"  name="telefono" size="10" maxlength="9" required="required"/>
+						<br />
+					</fieldset>
+					<br />
+					<fieldset>
+						<legend><strong>Elija la opción de entrega</strong></legend>                
+						<input type="radio" name ="envio" id="tp_recoger" value="recoger" checked="checked" />
+						<label for="tp_recoger">Recoger en el local</label>                                
+						<br />
+						<input type="radio" name ="envio" id="tp_email" value="enviar" />
+						<label for="tp_email">Enviar a domicilio</label>                  
+						<br />
+					</fieldset>
+					<br />
+					<fieldset>
+						<legend><strong>¿Quiere que le enviemos nuestras ofertas?</strong></legend>
+						<input type="checkbox" id="of_correo" name ="of_correo" value="correo" checked="checked" />               
+						<label for="of_correo">Enviar a su domicilio</label>    
+						<br />
+						<input type="checkbox" id="of_email" name ="of_email" value="email" checked="checked" />
+						<label for="of_email">Enviar por email</label>  
+						<label for="email">(Introduzca su email)</label>
+						<input type="email" id="email" name="email" size="60"/>   
+						<br />
+					</fieldset>            
+				</div>
+				
+				<div id="MedD">
+					<fieldset>
+						<legend><strong>Elija su menu</strong></legend>
+						<label for="tamano">Tamaño del bocadillo</label>
+						<br />
+						<select id="tamano" name="tamamo" size="4">
+							<option value="pequeno">pequeño</option>
+							<option value="mediano" selected="selected">mediano</option>
+							<option value="grande">grande</option>
+							<option value="enorme">enorme</option>
+						</select>
+						<br /><br />
+						<label for="contenido">Contenido del bocadillo</label>
+						<br />
+						<select id="contenido" name="contenido" size="8" multiple="multiple">
+							<optgroup label="conservas">
+								<option value="atún">atún</option>
+								<option value="anchoas">anchoas</option>
+								<option value="calamares">calamares</option>
+								<option value="mejillones">mejillones</option>
+							</optgroup>
+							<optgroup label="embutidos">
+								<option value="jamon">jamon</option>
+								<option value="queso">queso</option>
+								<option value="lomo">lomo</option>
+								<option value="chorizo">chorizo</option>
+								<option value="mortadela">mortadela</option>                 
+							</optgroup>
+							<optgroup label="varios">
+								<option value="boniatos">boniatos</option> 
+								<option value="macarrones">macarrones</option>  
+								<option value="sorpresa">sor presa</option>  
+								<option value="sorteresa">sor teresa</option>                    
+							</optgroup>
+						</select>
+						<br /><br />
+						<label for="comentarios">Aquí puede comentarnos sus sugerencias</label><br />
+						<textarea id="comentarios" name="comentarios" cols="60" rows="6">Por ejemplo calentar antes el pan, etc.
+						</textarea>                
+					</fieldset>
+					<br />
+				</div>
+				
+				<div id="Pie">            
+					<p>Para enviar el pedido  ahora pulse el botón <input class="boton" type="submit" value="Enviar pedido" /></p>            
+					<p>Si quiere comenzar de nuevo pulse el botón <input class="boton" type="reset" value="Borrar todo" /></p>
+				</div>
+			</form>   
+			</div>
+		</div> 
+	</body>
+</html>

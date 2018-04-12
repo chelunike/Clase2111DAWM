@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<sorteos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="sorteo.xsd">
+  <sorteo>
+    <fecha>2017-09-02</fecha>
+    <numero>01 02 1 1 1 49 </numero>
+  </sorteo>
+  <sorteo>
+    <fecha>2016-08-02</fecha>
+    <numero>01 02 1 1 1 49 </numero>
+  </sorteo>
+  <sorteo>
+    <fecha>2002-09-02</fecha>
+    <numero>24 02 1 1 1 49 </numero>
+  </sorteo>
+  <sorteo>
+    <fecha>2005-09-02</fecha>
+    <numero>08 32 1 1 1 49 </numero>
+  </sorteo>
+  <sorteo>
+    <fecha>2004-09-02</fecha>
+    <numero>01 02 1 49 1 49 </numero>
+  </sorteo>
+</sorteos>

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="cd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="canciones"/>
+        <xs:element ref="fecha"/>
+      </xs:sequence>
+      <xs:attribute name="titulo" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="canciones">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="cancion" type="T_cancion"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fecha">
+    <xs:complexType>
+      <xs:attribute name="dia" type="T_dia" use="required"/>
+      <xs:attribute name="mes" type="T_mes" use="required"/>
+      <xs:attribute name="anio" type="xs:gYear" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="T_dia">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="1"/>
+      <xs:maxInclusive value="31"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="T_mes">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="1"/>
+      <xs:maxInclusive value="12"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--Definimos el tipo cancion-->
+  <xs:complexType name="T_cancion">
+    <xs:sequence>
+      <xs:element name="titulo" type="xs:string"/>
+      <xs:element ref="compositores"/>
+      <xs:element ref="productores"/>
+      <xs:element name="sello" type="xs:string"/>
+      <xs:element name="artista" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="anio" type="xs:string" use="required"/>
+    <xs:attribute name="duracion" type="xs:time" use="required"/>
+    <xs:attribute name="precio" type="T_precio" use="required"/>
+    <xs:attribute default="euro" name="moneda" type="T_moneda"/>
+  </xs:complexType>
+  <xs:simpleType name="T_precio">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="0.99|1.49|1.99"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="T_moneda">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="dolar|euro"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="compositores">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="compositor" type="T_persona"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="productores">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="productor" type="T_persona"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--Definimos el tipo persona-->
+  <xs:complexType name="T_persona">
+    <xs:sequence>
+      <xs:element name="nombres" type="xs:string"/>
+      <xs:element name="apellidos" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

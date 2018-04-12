@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="sorteos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="sorteo" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="sorteo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="fecha" type="xs:date"/>
+        <xs:element name="numero" type="T_numRestr"/>
+        <!--
+          <xs:simpleType>
+            <xs:list itemType="T_restrNum"/>
+          </xs:simpleType>-->
+        
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:simpleType name="T_numRestr">
+  <xs:restriction base="T_listaNum">
+    <xs:minLength value="6"/>
+    <xs:maxLength value="6"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="T_listaNum">
+  <xs:list itemType='T_num'/>
+</xs:simpleType>
+
+ <xs:simpleType name='T_num'>
+  <xs:restriction base="xs:integer">
+    <xs:minInclusive value="1"/>
+    <xs:maxInclusive value="49"/>
+  </xs:restriction>
+</xs:simpleType>
+  <!--
+  <xs:simpleType name="T_numero">
+      <xs:list itemType="T_restrNum2"/>
+  </xs:simpleType>
+  
+  
+  <xs:simpleType name="T_restrNum">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="1"/>
+      <xs:maxInclusive value="49"/>
+     </xs:restriction>
+  </xs:simpleType>
+  
+    <xs:simpleType name="T_restrNum2">
+    <xs:restriction base="T_restrNum">
+      <xs:minLength value="6"/>
+      <xs:maxLength value="6"/>
+     </xs:restriction>
+  </xs:simpleType>
+  -->
+  
+</xs:schema>

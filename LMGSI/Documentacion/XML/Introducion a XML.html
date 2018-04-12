@@ -1,0 +1,863 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	  <link rel="stylesheet" href="desenvolvimento-2.0.css">
+   <title>Introducci&oacute;n a XML</title><meta name="generator" content="DocBook XSL Stylesheets V1.65.1"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="book" lang="es"><div class="titlepage"><div><div><h1 class="title"><a name="d0e1"></a>Introducci&oacute;n a XML</h1></div><div><div class="author"><h3 class="author"><span class="firstname">Claudio</span> <span class="surname">Bustos</span></h3></div></div><div><p class="copyright">Copyright &copy; 2004 Claudio Bustos.</p></div><div><div class="legalnotice"><p>Se garantiza el permiso para copiar, distribuir y modificar este documento seg&uacute;n los t&eacute;rminos de la  GNU Free Documentation License, Version 1.2  o cualquiera posterior publicada por la  Free Software Foundation, sin secciones invariantes ni textos de cubierta delantera o trasera. Una copia de esta licencia se encuentra en <a href="#gfdl" title="Ap&eacute;ndice B. GNU Free Documentation License">Ap&eacute;ndice&nbsp;B, <i>GNU Free Documentation License</i></a></p></div></div><div><p class="pubdate">2004</p></div></div><div></div><hr></div><div class="toc"><p><b>Tabla de contenidos</b></p><dl><dt><span class="preface"><a href="#d0e24">Introducci&oacute;n</a></span></dt><dd><dl><dt><span class="section"><a href="#justificaci%C3%B3n">Justificaci&oacute;n</a></span></dt><dt><span class="section"><a href="#publico_objetivo">P&uacute;blico objetivo</a></span></dt><dt><span class="section"><a href="#objetivos">Objetivos</a></span></dt></dl></dd><dt><span class="chapter"><a href="#cap1">1. Fundamentos de XML</a></span></dt><dd><dl><dt><span class="sect1"><a href="#lenguajes_marcado">Los lenguajes de marcado</a></span></dt><dd><dl><dt><span class="sect2"><a href="#sgml">SGML</a></span></dt><dt><span class="sect2"><a href="#html">HTML</a></span></dt><dt><span class="sect2"><a href="#justificacion_xml">Justificaci&oacute;n de XML</a></span></dt></dl></dd><dt><span class="sect1"><a href="#xml">Qu&eacute; es XML</a></span></dt><dd><dl><dt><span class="sect2"><a href="#xml_w3c">Especificaci&oacute;n W3C</a></span></dt><dt><span class="sect2"><a href="#xml_aplicaciones">Aplicaciones m&aacute;s comunes para el uso de XML</a></span></dt><dt><span class="sect2"><a href="#xml_ventajas">Ventajas de XML</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#cap2">2. Construcci&oacute;n de documentos XML y DTD</a></span></dt><dd><dl><dt><span class="sect1"><a href="#xml_estructura">Estructura de un documento XML</a></span></dt><dd><dl><dt><span class="sect2"><a href="#xml_estructura_encabezado">Encabezado</a></span></dt><dt><span class="sect2"><a href="#xml_cuerpo">Cuerpo de un documento XML</a></span></dt></dl></dd><dt><span class="sect1"><a href="#xml_validacion">Documentos XML v&aacute;lidos: uso de DTD</a></span></dt><dd><dl><dt><span class="sect2"><a href="#xml_doctype">Elemento DOCTYPE</a></span></dt><dt><span class="sect2"><a href="#dtd">Estructura de un documento DTD</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#cap3">3. Lenguajes derivados de XML</a></span></dt><dd><dl><dt><span class="sect1"><a href="#xhtml">XHTML</a></span></dt><dd><dl><dt><span class="sect2"><a href="#xhtml_html">Diferencias entre HTML y XHTML</a></span></dt></dl></dd><dt><span class="sect1"><a href="#xsl">La Familia de de Lenguajes de Estilos Extensible: XSL</a></span></dt><dd><dl><dt><span class="sect2"><a href="#xsl_usos">Usos de XSL</a></span></dt><dt><span class="sect2"><a href="#xpath">XPath</a></span></dt><dt><span class="sect2"><a href="#xslt">XSLT</a></span></dt><dt><span class="sect2"><a href="#xls-fo">XSL-FO</a></span></dt></dl></dd><dt><span class="sect1"><a href="#docbook">Docbook</a></span></dt><dd><dl><dt><span class="sect2"><a href="#docbook_uso">Uso de Docbook</a></span></dt><dt><span class="sect2"><a href="#docbook_estructura">Estructura de un documento Docbook</a></span></dt><dt><span class="sect2"><a href="#docbook_ejemplo">Esquema b&aacute;sico del manual</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#cap4">4. Tecnolog&iacute;as asociadas a XML</a></span></dt><dd><dl><dt><span class="sect1"><a href="#parser">Procesadores o Parsers</a></span></dt><dd><dl><dt><span class="sect2"><a href="#parser_sax">SAX</a></span></dt><dt><span class="sect2"><a href="#parser_dom">DOM</a></span></dt></dl></dd><dt><span class="sect1"><a href="#d0e1922">Navegadores</a></span></dt><dd><dl><dt><span class="sect2"><a href="#d0e1931">Internet Explorer</a></span></dt><dt><span class="sect2"><a href="#d0e1944">Mozilla - Firefox</a></span></dt></dl></dd><dt><span class="sect1"><a href="#editores_xml">Editores de XML</a></span></dt><dd><dl><dt><span class="sect2"><a href="#editores_xml_texto">Procesadores de texto adaptados a XML</a></span></dt><dt><span class="sect2"><a href="#d0e2050">Editores espec&iacute;ficos de XML</a></span></dt></dl></dd><dt><span class="sect1"><a href="#d0e2101">Herramientas auxiliares</a></span></dt><dd><dl><dt><span class="sect2"><a href="#d0e2104">Validadores de XML</a></span></dt><dt><span class="sect2"><a href="#d0e2141">Herramientas XSL</a></span></dt></dl></dd></dl></dd><dt><span class="appendix"><a href="#apendice_i">A. Instalaci&oacute;n de jEdit</a></span></dt><dt><span class="appendix"><a href="#gfdl">B. GNU Free Documentation License</a></span></dt><dd><dl><dt><span class="section"><a href="#gfdl-0">PREAMBLE</a></span></dt><dt><span class="section"><a href="#gfdl-1">APPLICABILITY AND DEFINITIONS</a></span></dt><dt><span class="section"><a href="#gfdl-2">VERBATIM COPYING</a></span></dt><dt><span class="section"><a href="#gfdl-3">COPYING IN QUANTITY</a></span></dt><dt><span class="section"><a href="#gfdl-4">MODIFICATIONS</a></span></dt><dt><span class="section"><a href="#gfdl-5">COMBINING DOCUMENTS</a></span></dt><dt><span class="section"><a href="#gfdl-6">COLLECTIONS OF DOCUMENTS</a></span></dt><dt><span class="section"><a href="#gfdl-7">AGGREGATION WITH INDEPENDENT WORKS</a></span></dt><dt><span class="section"><a href="#gfdl-8">TRANSLATION</a></span></dt><dt><span class="section"><a href="#gfdl-9">TERMINATION</a></span></dt><dt><span class="section"><a href="#gfdl-10">FUTURE REVISIONS OF THIS LICENSE</a></span></dt><dt><span class="section"><a href="#gfdl-addendum">ADDENDUM: How to use this License for
+  your documents</a></span></dt></dl></dd><dt><span class="glossary"><a href="#d0e2516">Glosario</a></span></dt></dl></div><div class="list-of-figures"><p><b>Lista de figuras</b></p><dl><dt>3.1. <a href="#docbook_uso_publicacion_diagrama">Diagrama de publicaci&oacute;n de documentos Docbook</a></dt><dt>4.1. <a href="#d0e1903">Parser tipo SAX</a></dt><dt>4.2. <a href="#d0e1914">Parser tipo DOM</a></dt><dt>4.3. <a href="#d0e1938">Documento XML en Internet Explorer, sin CSS y con CSS</a></dt><dt>4.4. <a href="#d0e1954">Documento XML en Firefox, sin CSS y con CSS</a></dt></dl></div><div class="list-of-tables"><p><b>Lista de tablas</b></p><dl><dt>2.1. <a href="#entidades_predefinidas">Entidades predefinidas</a></dt><dt>2.2. <a href="#dtd_atributos_tipo">Tipo de atributo para ATTLIST</a></dt><dt>2.3. <a href="#dtd_atributos_def">Valores por defecto para ATTLIST</a></dt><dt>3.1. <a href="#d0e1411">Expresiones m&aacute;s comunes utilizadas en XPath</a></dt><dt>3.2. <a href="#d0e1840">DOCTYPE para identificadores p&uacute;blicos</a></dt><dt>4.1. <a href="#editores_xml_texto_caracteristicas">Funcionalidades deseables en un editor de texto XML</a></dt><dt>4.2. <a href="#d0e2057">Lista de editores gr&aacute;ficos XML</a></dt></dl></div><div class="list-of-examples"><p><b>Lista de ejemplos</b></p><dl><dt>1.1. <a href="#d0e152">C&oacute;digo HTML</a></dt><dt>2.1. <a href="#ejemplo_1">Cuerpo XML</a></dt><dt>2.2. <a href="#d0e392">Uso correcto e incorrecto del elemento ra&iacute;z</a></dt><dt>2.3. <a href="#d0e435">Uso de comentarios</a></dt><dt>2.4. <a href="#d0e492">Uso de CDATA</a></dt><dt>2.5. <a href="#d0e619">Referencia externa a DTD</a></dt><dt>2.6. <a href="#d0e641">Referencia interna a DTD</a></dt><dt>2.7. <a href="#ex.attlist">Uso de ATTLIST</a></dt><dt>2.8. <a href="#ex.attlist_2">Uso de entidades para definir atributos</a></dt><dt>3.1. <a href="#d0e1500">Estructura b&aacute;sica de un documento XSLT</a></dt><dt>3.2. <a href="#d0e1545">Uso de XSLT</a></dt></dl></div><div class="preface" lang="es"><div class="titlepage"><div><div><h2 class="title"><a name="d0e24"></a>Introducci&oacute;n</h2></div></div><div></div></div><div class="toc"><p><b>Tabla de contenidos</b></p><dl><dt><span class="section"><a href="#justificaci%C3%B3n">Justificaci&oacute;n</a></span></dt><dt><span class="section"><a href="#publico_objetivo">P&uacute;blico objetivo</a></span></dt><dt><span class="section"><a href="#objetivos">Objetivos</a></span></dt></dl></div><div class="section" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="justificaci%C3%B3n"></a>Justificaci&oacute;n</h2></div></div><div></div></div><p>La r&aacute;pida evoluci&oacute;n de la Red ha tenido como pilar fundamental el lenguaje de marcado HTML. La demanda creciente por nuevas funciones llev&oacute; a que los distintos fabricantes de herramientas para Internet dise&ntilde;aran extensiones propietarias que resultaron en la incompatibilidad del c&oacute;digo HTML entre navegadores.</p><p>Para solucionar esto, la organizaci&oacute;n a cargo del HTML, la W3C, desarrollo un nuevo entorno de programaci&oacute;n para reemplazar al HTML, el cual tiene como centro el XML o Lenguaje Extensible de Marcado, por sus siglas en ingl&eacute;s. Tal como su nombre lo indica, su principal diferencia con el antiguo HTML es que le entrega al desarrollador la posibilidad de configurar los documentos de acuerdo a sus preferencias y necesidades, garantizando la compatibilidad de este c&oacute;digo entre distintas herramientas, al ser sus especificaciones est&aacute;ndares de dominio p&uacute;blico.</p></div><div class="section" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="publico_objetivo"></a>P&uacute;blico objetivo</h2></div></div><div></div></div><div class="itemizedlist"><ul type="disc"><li><p>Usuarios con experiencia el manejo de sistemas operativos (Windows, Linux), procesadores de texto e Internet.</p></li><li><p>Deseable conocimiento de HTML</p></li></ul></div></div><div class="section" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="objetivos"></a>Objetivos</h2></div></div><div></div></div><div class="itemizedlist"><ul type="disc"><li><p>Conocer el origen de XML y su relaci&oacute;n con otros lenguajes de marcado como HTML</p></li><li><p>Comprender que es XML, a partir de las especificaciones W3C</p></li><li><p>Evaluar en que situaciones es recomendable utilizar XML, conocimiento sus ventajas y limitaciones</p></li><li><p>Construir documentos XML v&aacute;lidos y bien formados, de acuerdo a una especificaci&oacute;n DTD</p></li><li><p>Conocer los fundamentos b&aacute;sicos de los lenguajes XHTML, XSL y Docbook</p></li><li><p>Comprender el funcionamiento de los procesadores de XML de tipo SAX y DOM</p></li><li><p>Conocer tecnolog&iacute;as relacionadas al uso de XML: editores, validadores, API para distintos lenguajes, navegadores, etc.</p></li></ul></div></div></div><div class="chapter" lang="es"><div class="titlepage"><div><div><h2 class="title"><a name="cap1"></a>Cap&iacute;tulo 1. Fundamentos de XML</h2></div></div><div></div></div><div class="toc"><p><b>Tabla de contenidos</b></p><dl><dt><span class="sect1"><a href="#lenguajes_marcado">Los lenguajes de marcado</a></span></dt><dd><dl><dt><span class="sect2"><a href="#sgml">SGML</a></span></dt><dt><span class="sect2"><a href="#html">HTML</a></span></dt><dt><span class="sect2"><a href="#justificacion_xml">Justificaci&oacute;n de XML</a></span></dt></dl></dd><dt><span class="sect1"><a href="#xml">Qu&eacute; es XML</a></span></dt><dd><dl><dt><span class="sect2"><a href="#xml_w3c">Especificaci&oacute;n W3C</a></span></dt><dt><span class="sect2"><a href="#xml_aplicaciones">Aplicaciones m&aacute;s comunes para el uso de XML</a></span></dt><dt><span class="sect2"><a href="#xml_ventajas">Ventajas de XML</a></span></dt></dl></dd></dl></div><div class="sect1" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="lenguajes_marcado"></a>Los lenguajes de marcado</h2></div></div><div></div></div><p>Hist&oacute;ricamente, el t&eacute;rmino marcado hace referencia al proceso de hacer marcas en los manuscritos con instrucciones para el uso de determinados tipos de tama&ntilde;os y tipos de fuentes, espaciado, intendaci&oacute;n, etc.</p><p>El marcado de documentos electr&oacute;nicos tuvo en un sus inicios la misma intenci&oacute;n, describir solamente el formato del texto. Sin embargo, en los a&ntilde;os 70, surgi&oacute; el concepto de separar la presentaci&oacute;n del contenido del texto, esto es, definiendo de modo preciso la estructura l&oacute;gica de un documento dado, es posible implementar diversas formas de presentarlo, adem&aacute;s de ser facilitar su indexaci&oacute;n, la generaci&oacute;n de vistas selectivas, etc. Es as&iacute; que en el a&ntilde;o 1974, Charles F. Goldfarb, liderando un grupo de trabajo de la IBM, da a conocer los primeros bocetos del lenguaje SGML, el antecesor de los lenguajes de marcado descriptivos usados en la actualidad.</p><p>Habiendo establecido este peque&ntilde;o marco hist&oacute;rico, es posible definir los dos grandes tipos de lenguajes de marcado:</p><div class="variablelist"><dl><dt><span class="term">Lenguajes descriptivos</span></dt><dd><p>Son aquellos que entregan informaci&oacute;n sobre la estructura l&oacute;gica de un documento, indicando a que tipo de elemento pertenece cada porci&oacute;n de texto. A los lenguajes de marcado descriptivo que permiten crear otros lenguajes, se les denomina meta-lenguajes, por ejemplo, XML y SGML</p></dd><dt><span class="term">Lenguajes procedimentales</span></dt><dd><p>Son aquellos que especifican la presentaci&oacute;n del texto, es decir, el tipo y tama&ntilde;os de fuente, m&aacute;rgenes, colores, etc.</p></dd></dl></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="sgml"></a>SGML</h3></div></div><div></div></div><p>
+        El Lenguage de Marcado Generalizado Estandar o
+        SGML (Standard Generalized Markup Language) es un est&aacute;ndar que determina c&oacute;mo especificar un lenguaje de marcado de documentos o un conjunto de etiquetas. SGML en s&iacute; no es un lenguaje, sino una descripci&oacute;n de como especificar uno; en otras palabras, en un metalenguaje.
+        </p><p>Una aplicaci&oacute;n o lenguaje derivado de SGML contiene los siguientes elementos</p><div class="variablelist"><dl><dt><span class="term">La declaraci&oacute;n SGML</span></dt><dd><p>Especifica que caracteres y delimitadores pueden aparecer en una aplicaci&oacute;n</p></dd><dt><span class="term">La definici&oacute;n de tipo de documento(DTD).</span></dt><dd><p> La DTD define la sintaxis de los constructos de marcado. Un DTD puede incluir definiciones adicionales como entidades definidas por n&uacute;meros o nombres</p></dd><dt><span class="term">Especificaci&oacute;n sem&aacute;ntica</span></dt><dd><p>Describe la sem&aacute;ntica que est&aacute; adherida al marcado. Impone restricciones sint&aacute;cticas que no pueden ser expresadas por el DTD</p></dd><dt><span class="term">Documentos</span></dt><dd><p>Instancias concretas, que contienen datos y marcado. Poseen una referencia al DTD</p></dd></dl></div><p>La definici&oacute;n de cada uno de estos elementos escapa al objetivo de este curso. Sin embargo, varios de ellos ser&aacute;n analizados cuando se presenten los lenguajes HTML y XML.</p></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="html"></a>HTML</h3></div></div><div></div></div><p>HTML es un lenguaje de marcado, derivado de <a href="#glosario_sgml">SGML</a>, cuyo objetivo es servir como lenguaje de publicaci&oacute;n en la WWW. Su nombre es el acr&oacute;nimo de Lenguaje de Marcado de Hipertexto (HiperText Markup Language), en ingl&eacute;s</p><p>HTML le permite a los autores:</p><div class="itemizedlist"><ul type="disc"><li><p>Publicar documentos en l&iacute;nea con encabezados, textos, tablas, listas, fotos, etc.</p></li><li><p>Recuperar informaci&oacute;n a trav&eacute;s de hiperv&iacute;nculos, a trav&eacute;s de un click en un bot&oacute;n</p></li><li><p>Dise&ntilde;ar formularios para el env&iacute;o de informaci&oacute;n a servicios remotos</p></li><li><p>Incluir diversos tipos de aplicaciones dentro del documento principal, como archivos de audio, video, etc.</p></li></ul></div><p>El lenguaje HTML se ubica en una categor&iacute;a intermedia entre los lenguajes de marcado descriptivo y procedimentales, ya que incluye tanto etiquetas estructurales (encabezados, parr&aacute;fos, citas, etc), como etiquetas de formato (negrita, cursiva, saltos de l&iacute;nea, etc).</p><div class="example"><a name="d0e152"></a><p class="title"><b>Ejemplo 1.1. C&oacute;digo HTML</b></p><pre class="programlisting">
+
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Este es el titulo&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;/body&gt;
+    &lt;h1&gt;Este es un encabezado&lt;/h1&gt;
+    &lt;p&gt;Este es un p&aacute;rrafo&lt;/p&gt;
+    &lt;p&gt;Este es un p&aacute;rrafo, tambi&eacute;n, pero ahora viene un salto de l&iacute;nea
+    &lt;br /&gt;
+    Etiquetas de formato: &lt;b&gt;negrita&lt;/b&gt;, &lt;i&gt;cursiva&lt;/i&gt;, y &lt;u&gt;subrayado&lt;/u&gt;
+    &lt;p&gt;Otro p&aacute;rrafo
+    &lt;/body&gt;
+&lt;/html&gt;
+
+      </pre></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="justificacion_xml"></a>Justificaci&oacute;n de XML</h3></div></div><div></div></div><p>Si bien HTML ha tenido un inmenso &eacute;xito como lenguaje de publicaci&oacute;n en la WWW, con el tiempo las siempre crecientes necesidades hicieron patentes sus deficiencias y limites</p><div class="itemizedlist"><ul type="disc"><li><p>Mezcla marcado estructural y de presentaci&oacute;n: si bien HTML naci&oacute; principalmente como lenguaje de marcado descriptivo, dirigido a la publicaci&oacute;n de contenidos t&eacute;cnicos, la expansi&oacute;n de la red y el acceso de usuarios de diversa &iacute;ndole produjo la necesidad, por parte de los desarrolladores, de tener un mayor control sobre la apariencia de los sitios. Esto redund&oacute; en un uso inadecuado de las etiquetas estructurales con fines decorativos y la proliferaci&oacute;n desordenada de etiquetas de presentaci&oacute;n.</p></li><li><p>Dificultad de procesamiento computacional: la especificaci&oacute;n HTML permite el uso de variadas abreviaciones en el marcado y es bastante permisiva con errores en &eacute;ste, lo cual implica un gran esfuerzo de los desarrolladores de software para crear programas que procesen de modo adecuado este lenguaje. </p></li><li><p>Problemas de internacionalizaci&oacute;n: La especificaci&oacute;n para el uso de caract&eacute;res no occidentales en HTML, si bien es bastante clara, fue ignorada por muchos desarrolladores de navegadores, lo que llev&oacute; a importantes inconvenientes en la visualizaci&oacute;n de documentos en idiomas for&aacute;neos, especialmente asi&aacute;ticos</p></li><li><p>Intepretaci&oacute;n ambigua: a partir de la permisividad de la especificaci&oacute;n, la mezcla de etiquetas de marcado y estructura y el uso inapropiado de las primeras con usos est&eacute;ticos, es bastante l&oacute;gico entender porque distintos navegadores presentan diversas versiones del mismo documento. Todo esto, adem&aacute;s, implica que la posibilidad de obtener informaci&oacute;n sem&aacute;ntica significativa sobre un documento (por ejemplo, cuales son los nombres de las secciones), sea pr&aacute;cticamente imposible</p></li><li><p>Uso especif&iacute;co para Web: El HTML fue dise&ntilde;ado expresamente para su uso en la web. Ld facilidad para crear documentos ha impulsado su uso en otros &aacute;mbitos, lo que ha hecho a&uacute;n m&aacute;s patente sus limitaciones para, por ejemplo, almacenar informaci&oacute;n de manera ordenada y sistem&aacute;tica que sea susceptible de an&aacute;lisis computacional.</p></li></ul></div><p>Esta y otras razones impulsaron al W3C a crear una nueva especificaci&oacute;n, pero esta vez no sobre un lenguaje especifico, sino sobre una forma de dise&ntilde;ar nuevos lenguajes y los procedimientos para analizarlos, que fuesen compatibles con las caracter&iacute;sticas de la WWW, pero que no limitase a &eacute;sta. Este es el objetivo que dio origen al Lenguaje de Marcado Extensible, <a href="#glosario_xml">XML</a>
+      </p></div></div><div class="sect1" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="xml"></a>Qu&eacute; es XML</h2></div></div><div></div></div><p>Seg&uacute;n la propia <a href="http://www.w3.org/XML/" target="_top">W3C</a>, XML es un formato de texto simple y flexible derivado de <a href="#glosario_sgml">SGML</a>. Su desarroll&oacute; comenz&oacute; en el a&ntilde;o 1996, y fue adoptado como est&aacute;ndar en Febrero de 1998.
+      </p><p>En primera instancia, se orient&oacute; a satisfacer las necesidades de publicaci&oacute;n electr&oacute;nica no satisfechas por <a href="#glosario_html">HTML</a>. En la actualidad, ha tomado un importante rol como formato est&aacute;ndar para el intercambio de datos en la Web y en otros contextos.</p><p><a href="#glosario_xml">XML</a> no es un lenguaje de marcado, como <a href="#glosario_html">HTML</a>, sino un metalenguaje que permite definir otros lenguajes de marcado para usos especificos. Esto quiere decir que es nuestra aplicaci&oacute;n espec&iacute;fica la que debe encargarse de reconocer los contenidos incluidos dentro del documento XML para, por ejemplo, presentarlos. No existe nada dentro de la especificaci&oacute;n que se&ntilde;ale c&oacute;mo debe presentarse o procesarse el contenido del documento.</p><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="xml_w3c"></a>Especificaci&oacute;n W3C</h3></div></div><div></div></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Nota</h3><p>El contenido de esta secci&oacute;n es altamente t&eacute;cnico, y muchos de los conceptos aqu&iacute; presentados son explicados y ejemplificados m&aacute;s adelante. Por tanto, puede omitirse su lectura en una primera instancia.
+        </p></div><p>Seg&uacute;n la W3C, XML es un subconjunto de SGML, cuyo objetivo es permitir la entrega, recepci&oacute;n y procesamiento de documentos SGML en la Web, m&aacute;s all&aacute; de las capacidades de HTML.</p><p>El lenguaje XML describe una clase de documentos, los documentos XML, y define de forma parcial el comportamiento de los programas computacionales que los procesan. A estos &uacute;ltimos se les denomina procesadores (parsers) de XML</p><p>Los documentos XML est&aacute;n compuestos de unidades de almacenamiento denominadas entidades, que contienen datos procesables y no procesables. Los datos procesables est&aacute;n compuestos de car&aacute;cteres, algunos de los cuales pasan a ser datos de car&aacute;cteres (CDATA) y otros marcado. El marcado describe la estructura l&oacute;gica del documento.</p><p>Los objetivos del dise&ntilde;o de XML son:</p><div class="itemizedlist"><ul type="disc"><li><p>Uso directo en Internet</p></li><li><p>Permitir una gran variedad de aplicaciones</p></li><li><p>Compatibilidad con SGML</p></li><li><p>Facilidad para desarrollar programas que procesen XML</p></li><li><p>N&uacute;mero de car&aacute;cter&iacute;sticas opcionales reducidas al m&iacute;nimo</p></li><li><p>Documentos legibles para los humanos, con una relativa claridad</p></li><li><p>Dise&ntilde;o de documentos r&aacute;pido, formal y conciso</p></li><li><p>Facilidad de creaci&oacute;n de documentos XML</p></li><li><p>Formato de las etiquetas es de m&iacute;nima importancia</p></li></ul></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="xml_w3c_documento"></a>Definici&oacute;n de documento XML</h4></div></div><div></div></div><p>Un documento XML es aquel que cumple con las caracter&iacute;sticas de un documento bien formado, de acuerdo a la especificaci&oacute;n W3C.</p><p>Los documentos XML tienen una estructura f&iacute;sica y l&oacute;gica. F&iacute;sicamente, los documentos XML est&aacute;n compuestos de entidades. Una entidad puede hacer referencia  a otras entidades, lo que causar&aacute; la inclusi&oacute;n de estas en el documento. Un documento comienza con un elemento ra&iacute;z. La estructura l&oacute;gica del documento est&aacute; compuesta por declaraciones, elementos, comentarios, referencia a caracteres e instrucciones de proceso, las cuales son indicadas en el texto por marcado expl&iacute;cito. La estructura l&oacute;gica y f&iacute;sica debe presentar una jerarqu&iacute;a adecuada.</p></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="xml_w3c_parser"></a>Definici&oacute;n de procesador de XML (parser)</h4></div></div><div></div></div><p>Un procesador o parser de XML es un m&oacute;dulo de software que lee documentos XML y provee acceso a su contenido y estructura. Se entiende que este m&oacute;dulo act&uacute;a en favor de otro m&oacute;dulo, llamado aplicaci&oacute;n. </p><p>Los procesadores XML se dividen en dos clases: validadores y no validadores. Ambos tipos de procesadores deben dar cuenta de cual falla formal del documento XML que procesa. Los procesadores validadores deben, adem&aacute;s, deben reportar cualquier violaci&oacute;n a las restricciones impuestas a la estructura por un DTD o un XML Schema.</p></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="xml_aplicaciones"></a>Aplicaciones m&aacute;s comunes para el uso de XML</h3></div></div><div></div></div><p></p></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="xml_ventajas"></a>Ventajas de XML</h3></div></div><div></div></div><p>Entre las ventajas m&aacute;s importantes de XML se encuentran</p><div class="itemizedlist"><ul type="disc"><li><p>Es f&aacute;cilmente procesable por humanos como por software: la posibilidad de escribir la etiquetas de acuerdo a los propios requerimientos hace que la lectura humana de un documento XML sea bastante f&aacute;cil. Adem&aacute;s, la serie de imposiciones sobre la sintaxis del documento implica una gran facilidad para procesar los documentos, a diferencia del HTML u otros derivados de SGML.</p></li><li><p>Promueve la separaci&oacute;n de presentaci&oacute;n y contenido: el uso de tecnolog&iacute;as como el CSS y el XSLT permiten omitir cualquier tipo de marcado de presentaci&oacute;n en el documento, permitiendo que un determinado contenido pueda ser presentado de muchas formas posibles e, incluso, en formatos de archivo distintos (PDF, RTF, XLS). Lo mismo ocurre, pero a la inversa: esto es, se puede usar la misma plantilla de presentaci&oacute;n para mostrar los m&aacute;s diversos contenidos.</p></li><li><p>Dise&ntilde;ado para ser usado en cualquier idioma: La adopci&oacute;n del est&aacute;ndar UTF-8 permite el uso de XML en cualquier idioma conocido
+        </p></li><li><p>Es particularmente adecuado para la transmisi&oacute;n de informaci&oacute;n a trav&eacute;s de la WWW: Al ser XML una tecnolog&iacute;a adaptada a la red, f&aacute;cilmente procesable por software y que permite establecer est&aacute;ndares de modo f&aacute;cil y claro, resulta particularmente indicada para la transmisi&oacute;n de datos entre diversos actores en la red, especialmente las realizadas entre negocios.
+        </p></li><li><p>F&aacute;cil an&aacute;lisis sint&aacute;ctico por lo estricto de las regulaciones de composici&oacute;n de documentos, lo que posibilita la creaci&oacute;n de poderosas herramientas de extracci&oacute;n de datos.
+          </p></li></ul></div></div></div></div><div class="chapter" lang="es"><div class="titlepage"><div><div><h2 class="title"><a name="cap2"></a>Cap&iacute;tulo 2. Construcci&oacute;n de documentos XML y DTD</h2></div></div><div></div></div><div class="toc"><p><b>Tabla de contenidos</b></p><dl><dt><span class="sect1"><a href="#xml_estructura">Estructura de un documento XML</a></span></dt><dd><dl><dt><span class="sect2"><a href="#xml_estructura_encabezado">Encabezado</a></span></dt><dt><span class="sect2"><a href="#xml_cuerpo">Cuerpo de un documento XML</a></span></dt></dl></dd><dt><span class="sect1"><a href="#xml_validacion">Documentos XML v&aacute;lidos: uso de DTD</a></span></dt><dd><dl><dt><span class="sect2"><a href="#xml_doctype">Elemento DOCTYPE</a></span></dt><dt><span class="sect2"><a href="#dtd">Estructura de un documento DTD</a></span></dt></dl></dd></dl></div><div class="sect1" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="xml_estructura"></a>Estructura de un documento XML</h2></div></div><div></div></div><p>Los documentos XML tienen una estructura fija, compuesta de dos partes, el encabezado y el cuerpo. En el encabezado se especifican las caracteristicas del documento en s&iacute;, como la versi&oacute;n de XML a la cual pertenece, la especificaci&oacute;n de la estructura al cual debe adherir, etc. En el cuerpo se incluyen la informaci&oacute;n propiamente tal y est&aacute; compuesto por distintos elementos.</p><p>C&oacute;mo se se&ntilde;alo en la secci&oacute;n <a href="#xml_w3c_documento" title="Definici&oacute;n de documento XML">&#8220;Definici&oacute;n de documento XML&#8221;</a>,el documento se divide en marcado y los datos de caracteres (CDATA). El marcado corresponde a las instrucciones que el parser de XML debe procesar. Las marcas o 'tags' se reconocen porque comienzan con el car&aacute;cter <tt class="literal">"&gt;"</tt> y terminan con el car&aacute;cter <tt class="literal">"&lt;"</tt>; la &uacute;nica excepci&oacute;n son las referencia a entidades, que comienzan con el car&aacute;cter <tt class="literal">"&amp;"</tt>; y terminan con el car&aacute;cter <tt class="literal">";"</tt>. Los datos de caracteres, por su parte, corresponden a todo lo que no es marcado y forma el texto del documento. </p><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="xml_estructura_encabezado"></a>Encabezado</h3></div></div><div></div></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="xml_estructura_encabezado_instruccion"></a>Instrucci&oacute;n &lt;?XML ?&gt;</h4></div></div><div></div></div><p>Todos los documentos XML deben comenzar con un encabezado, que en su forma m&aacute;s simple se presenta como:</p><p>
+            </p><pre class="programlisting">
+       &lt;?xml ?&gt;
+      </pre><p>
+          </p><p>Ahora bien, este codigo no ser&aacute; aceptado por ning&uacute;n procesador de XML, ya que se requiere siempre la identificaci&oacute;n de la versi&oacute;n de XML a la cual pertenece el documento. Para ello, agregamos el atributo <span class="emphasis"><em>version</em></span>.</p><p>
+            </p><pre class="programlisting">
+       &lt;?xml version="1.0" ?&gt;
+      </pre><p>
+          </p><p>Como vemos, un atributo se define escribiendo el nombre de la variable (en este caso 'version'), un signo igual <tt class="literal">=</tt> y el valor de la variable, entre comillas simples o dobles</p><p>El encabezado puede tener otros dos atributos, los cuales por lo general son omitidos. El primero es <tt class="varname">encoding</tt>, el cual determina el tipo de codificaci&oacute;n del documento, importante para la interpretaci&oacute;n de los car&aacute;cteres seg&uacute;n la lengua, lo cual es especialmente importante en lenguajes como el japon&eacute;s. Los conjuntos m&aacute;s utilizados para el lenguaje espa&ntilde;ol son el <tt class="literal">ISO-8859-1</tt> y el <tt class="literal">UTF-8</tt>. El segundo atributo es <tt class="varname">standalone</tt>, el cual indica si se necesita un documento externo (DTD o XML Schema) para definir la estructura del documento; puede adoptar los valores <tt class="literal">yes</tt> o <tt class="literal">no</tt>
+          </p><p>
+            </p><pre class="programlisting">
+       &lt;?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?&gt;
+      </pre><p>
+          </p><p>Si bien el encabezado puede contener m&aacute;s objetos, para la comprensi&oacute;n cabal  de &eacute;stos es necesario entender, primero, cual es la composici&oacute;n del cuerpo de un documento XML. Por tanto, la descripci&oacute;n de los elementos faltantes se realizar&aacute; en secciones posteriores</p></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="xml_cuerpo"></a>Cuerpo de un documento XML</h3></div></div><div></div></div><p>El cuerpo de un documento XML est&aacute; formado por el contenido en s&iacute; del documento, el cual se divide en texto y marcado. El marcado, a su vez, se divide en elementos, atributos, comentarios, referencia a entidades e instrucciones de proceso. A continuaci&oacute;n, presentamos un ejemplo t&iacute;pico de cuerpo XML</p><div class="example"><a name="ejemplo_1"></a><p class="title"><b>Ejemplo 2.1. Cuerpo XML</b></p><pre class="programlisting">
+
+&lt;libro&gt;
+  &lt;titulo&gt;Mi libro&lt;/libro&gt;
+  &lt;prefacio /&gt;
+    &lt;capitulos&gt;
+        &lt;capitulo id="cap_1"&gt;
+            &lt;titulo&gt;Capitulo 1&lt;/titulo&gt;
+        &lt;/capitulo&gt;
+        &lt;capitulo id="cap_2"&gt;
+            &lt;titulo&gt;Capitulo 2&lt;/titulo&gt;
+        &lt;/capitulo&gt;
+    &lt;/capitulos&gt;
+&lt;/libro&gt;
+      </pre></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="xml_estructura_elementos"></a>Elementos</h4></div></div><div></div></div><p>Los elementos son los objetos esenciales de un documento XML. Los elementos pueden contener otros tipos de objetos, incluyendo a otros elementos. Como vemos en el <a href="#ejemplo_1" title="Ejemplo 2.1. Cuerpo XML">ejemplo</a>, los elementos se definen con dos etiquetas (tags), la primera se&ntilde;alando el inicio del elemento, con la nomenclatura  <tt class="literal">&lt;nombre&gt;</tt> y la segunda se&ntilde;alando el t&eacute;rmino, de la forma <tt class="literal">&lt;/nombre&gt;</tt>.</p><p>Si bien en HTML se puede omitir la etiqueta de cierre, en XML eso no es posible. Si se desea se&ntilde;alar que un elemento est&aacute; vac&iacute;o, se puede utilizar la forma abreviada <tt class="literal">&lt;nombre /&gt;</tt>. Adem&aacute;s, es importante mantener la correcta anidaci&oacute;n de los elementos, o sea, que la etiqueta de cierre de un elemento no se encuentre despu&eacute;s del cierre del elemento que lo contiene.</p><p>Por &uacute;ltimo, es necesario destacar que un documento XML debe poseer un elemento, el cual es denominado ra&iacute;z, que contenga a todos los otros</p><div class="example"><a name="d0e392"></a><p class="title"><b>Ejemplo 2.2. Uso correcto e incorrecto del elemento ra&iacute;z</b></p><div class="variablelist"><dl><dt><span class="term">Uso correcto</span></dt><dd><pre class="programlisting">
+&lt;?xml version="1.0" ?&gt;
+&lt;libro&gt;
+    &lt;titulo&gt;Este es el titulo&lt;/titulo&gt;
+&lt;/libro&gt;
+
+        </pre></dd><dt><span class="term">Uso incorrecto</span></dt><dd><pre class="programlisting">
+&lt;?xml version="1.0" ?&gt;
+&lt;libro&gt;
+    &lt;titulo&gt;Este es el titulo&lt;/titulo&gt;
+&lt;/libro&gt;
+&lt;libro&gt;
+    &lt;titulo&gt;Este es el titulo del segundo libro&lt;/titulo&gt;
+&lt;/libro&gt;
+
+        </pre></dd></dl></div></div></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="xml_estructura_atributos"></a>Atributos</h4></div></div><div></div></div><p>Los elementos son la unidad b&aacute;sica del XML y es posible utilizar s&oacute;lo este tipo de objetos para definir un documento, pero si tenemos una situaci&oacute;n como la siguiente</p><pre class="programlisting">
+
+&lt;inventario&gt;
+  &lt;item&gt;
+      &lt;tipo&gt;computador&lt;/tipo&gt;
+      &lt;id&gt;50&lt;/id&gt;
+      &lt;marca&gt;HP&lt;/marca&gt;
+      &lt;modelo&gt;5100&lt;/modelo&gt;
+      &lt;descripcion&gt;Descripcion HP 5100&lt;/descripcion&gt;
+  &lt;/item&gt;
+  &lt;item&gt;
+      &lt;tipo&gt;computador&lt;/tipo&gt;
+      &lt;id&gt;60&lt;/id&gt;
+      &lt;marca&gt;HP&lt;/marca&gt;
+      &lt;modelo&gt;6100&lt;/modelo&gt;
+      &lt;descripcion&gt;Descripcion HP 6100&lt;/descripcion&gt;
+  &lt;/item&gt;
+&lt;/invetario&gt;
+      </pre><p>es bastante obvio que los elementos <tt class="literal">tipo</tt> o <tt class="literal">id</tt> son car&aacute;cteristicas del item, m&aacute;s que objetos o entes propiamente tales. Para este y otros casos, W3C defini&oacute; los atributos, que son objetos que definen las propiedades de un elemento dado. El formato de un atributo es </p><pre class="programlisting"> nombre_atributo = "valor_atributo" </pre><p>, permiti&eacute;ndose el uso de comillas simples o dobles alrededor del valor del atributo. Nuestro c&oacute;digo anterior quedar&iacute;a, entonces, del siguiente modo:</p><pre class="programlisting">
+
+&lt;inventario&gt;
+  &lt;item tipo="computador" id="50" marcar="HP" modelo="5100"&gt;
+   Descripcion HP 5100
+  &lt;/item&gt;
+  &lt;item tipo="computador" id="60" marcar="HP" modelo="6100"&gt;
+    Descripcion HP 6100&lt;/descripcion&gt;
+  &lt;/item&gt;
+&lt;/inventario&gt;
+      </pre></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="xml_comentarios"></a>Comentarios</h4></div></div><div></div></div><p>Muchas veces, especialmente si el codigo crece mucho, es necesario colocar alg&uacute;n tipo de aviso dentro del documento para recordar para que se serv&iacute;a un determinado elemento, o para documentar la falta de un datos, etc. Para esos casos, se pueden agregar comentarios dentro del c&oacute;digo, los cuales no ser&aacute;n considerados por el procesador de XML. Este objeto tiene la estructura </p><pre class="synopsis">&lt;!-- Aqu&iacute; va el comentario --&gt; </pre><div class="example"><a name="d0e435"></a><p class="title"><b>Ejemplo 2.3. Uso de comentarios</b></p><pre class="programlisting">
+
+&lt;libro&gt;
+  &lt;!-- Debo agregar el codigo ISDN, porque aun no lo encuentro --&gt;
+  &lt;isdn&gt;&lt;/isdn&gt;
+  &lt;!--- y tambi&eacute;n debo cambiar el nombre.... --&gt;
+  &lt;nombre&gt;Nombre Falso&lt;/nombre&gt;
+&lt;/libro&gt;
+
+        </pre></div></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="xml_estructura_textos"></a>Texto y entidades</h4></div></div><div></div></div><p>C&oacute;mo se habr&aacute; percatado por los ejemplos anteriores, dentro de los elementos se puede incluir o no texto. Es importante considerar que a diferencia de HTML, se considera relevante todo car&aacute;cter de espacio que se utilice. Por ejemplo:
+        </p><pre class="programlisting">&lt;item&gt;Nombre&lt;/item&gt;</pre><p>
+        es considerado distinto a
+        </p><pre class="programlisting">&lt;item&gt;
+Nombre
+&lt;/item&gt;</pre><p>
+        y el procesador de XML debe tomar en cuenta ese hecho, para eliminar los espacios o los saltos de l&iacute;nea, si es necesario.</p><p>Otro factor a considerar es que, dependiendo del procesador y de la codificaci&oacute;n utilizada, existen ciertos car&aacute;cteres que no pueden ser ingresados tal cual, como los signos <tt class="literal">&lt;</tt>, <tt class="literal">&amp;</tt>
+            <tt class="literal">&gt;</tt>. Para ello, existen dos alternativas:</p><div class="variablelist"><dl><dt><span class="term">Referencia a Entidades</span></dt><dd><p>Las referencias a entidades son objetos que representan a otros. Poseen la estructura:</p><p>
+                  <tt class="literal">&amp;nombre_entidad;</tt>
+                </p><p>Por ejemplo, el signo <tt class="literal">&lt;</tt> es representado por la entidad &amp;lt;. Existen 5 entidades predefinidas en XML, existiendo la posibilidad por parte del usuario de crear las que considere necesarias. (Ver
+                <a href="#entidades_predefinidas" title="Tabla 2.1. Entidades predefinidas">Tabla&nbsp;2.1, &#8220;Entidades predefinidas&#8221;</a>)</p></dd><dt><span class="term">CDATA</span></dt><dd><p>
+            Si bien utilizar entidades es el m&eacute;todo por excelencia para hacer referencia a car&aacute;cteres no posibles de escribir directamente, en ocasiones resulta poco pr&aacute;ctico, como cuando se requiere escribir c&oacute;digo fuente. En este caso, seria deseable una instrucci&oacute;n para desactivar el procesamiento, lo cual tambi&eacute;n ser&iacute;a deseable en el caso de que el procesador eliminase los espacios y se desease mantenerlos. La instrucci&oacute;n para ello es <tt class="literal">CDATA</tt> y tiene la estructura</p><pre class="synopsis">&lt;![CDATA[ texto_sin_procesar ]]&gt;</pre><div class="example"><a name="d0e492"></a><p class="title"><b>Ejemplo 2.4. Uso de CDATA</b></p><pre class="programlisting">
+
+&lt;codigo&gt;
+&lt;!-- El siguiente texto no ser&aacute; procesado --&gt;
+    &lt;![CDATA[
+  // Ejemplo de c&oacute;digo JavaScript
+  for(var x=0;x&lt;10;x++) {
+      y+=x;
+  }
+  ]]&gt;
+&lt;/codigo&gt;
+</pre></div></dd></dl></div><div class="table"><a name="entidades_predefinidas"></a><p class="title"><b>Tabla 2.1. Entidades predefinidas</b></p><table summary="Entidades predefinidas" border="1"><colgroup><col width="33%"><col width="33%"><col width="34%"></colgroup><thead><tr><th>Entidad</th><th>Reemplaza a</th><th>Nombre</th></tr></thead><tbody><tr><td>&amp;lt;</td><td>&lt;</td><td>Menos que</td></tr><tr><td>&amp;gt;</td><td>&gt;</td><td>Mayor que</td></tr><tr><td>&amp;amp;</td><td>&amp;</td><td>Ampersand</td></tr><tr><td>&amp;apos;</td><td>'</td><td>Comilla simple</td></tr><tr><td>&amp;quot;</td><td>"</td><td>Comilla doble</td></tr></tbody></table></div></div></div></div><div class="sect1" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="xml_validacion"></a>Documentos XML v&aacute;lidos: uso de DTD</h2></div></div><div></div></div><p>Si escribimos un documento XML con las reglas expuestas en las dos secciones anteriores sin cometer errores, estaremos en presencia de un documento bien formado. Ahora bien, generalmente esto no basta para crear una aplicaci&oacute;n, ya que debemos limitar en mayor o menor medida el tipo de datos a ingresar. Por ejemplo, si tenemos una aplicaci&oacute;n de gu&iacute;a tel&eacute;fonica, un marcado como el siguiente ser&iacute;a, por decir lo menos, in&uacute;til</p><pre class="programlisting">
+
+&lt;?xml version="1.0" ?&gt;
+&lt;directorio&gt;
+    &lt;persona&gt;
+        &lt;nombre&gt;Juan&lt;/nombre&gt;
+        &lt;apellido_paterno&gt;Perez&lt;/apellido_paterno&gt;
+        &lt;apellido_paterno&gt;Salgado&lt;/apellido_paterno&gt;
+        &lt;apellido_paterno&gt;Mu&ntilde;oz&lt;/apellido_paterno&gt;
+        &lt;color_pelo&gt;Negro&lt;/color_pelo&gt;
+        &lt;persona&gt;&lt;nombre&gt;Segunda personalidad&lt;/nombre&gt;&lt;/persona&gt;
+        &lt;/persona&gt;
+&lt;/directorio&gt;
+
+      </pre><p>Como se puede observar, si bien el documento est&aacute; bien formado, ya que el marcado est&aacute; escrito correctamente, cuenta s&oacute;lo con un elemento ra&iacute;z y contiene car&aacute;cteres presentes en la codificaci&oacute;n pre-establecida, presenta evidentes errores l&oacute;gicos. Es evidente que no existen personas con m&aacute;s dos apellidos y que una persona no puede estar contenida dentro de otra ni es una caracter&iacute;stica de ella.</p><p>Debe existir alguna forma de especificar restricciones sint&aacute;cticas al marcado para definir su estructura, o sea, que objetos se aceptar&aacute;n en el documento, en que cantidad y en que orden. El documento que se encarga de realizar esta especificaci&oacute;n se llama Documento de Definici&oacute;n de Tipo (DTD, por sus sigla en ingl&eacute;s).</p><p>Esta descripci&oacute;n permite que cada XML porte una descripci&oacute;n de su propia estructura. Adem&aacute;s, grupos independientes pueden acordar el uso de un DTD com&uacute;n para intercambiar datos y verificar que los documentos propios como ajenos tengan la estructura adecuada, o sea, sean v&aacute;lidos.</p><p>Con lo expuesto anteriormente, es tiempo de definir los conceptos de <span class="emphasis"><em>documento v&aacute;lidos</em></span> y <span class="emphasis"><em>documento bien formado</em></span>.</p><div class="variablelist"><dl><dt><span class="term">Documento bien formado</span></dt><dd><p>Es aquel que responde a las caracter&iacute;sticas de un documento XML tal como la especifica la recomendaci&oacute;n W3C, no existiendo limitaciones sobre el n&uacute;mero o tipo de contenidos. Esto implica, entre otras cosas:
+                </p><div class="itemizedlist"><ul type="disc"><li><p>Ocupar s&oacute;lo car&aacute;cteres aceptados por la codificaci&oacute;n del documento, la cual fue definida en el atributo <tt class="varname">encoding</tt> del encabezado</p></li><li><p>La estructura de elementos es estrictamente jer&aacute;rquica: existe s&oacute;lo un elemento ra&iacute;z y todos los tags est&aacute;n correctamente anidados, no existiendo superposiciones de elementos.</p></li><li><p>Los nombres de elementos est&aacute;n compuestos por letras, n&uacute;meros y los signos <tt class="literal">-_.:</tt>, siendo importante la presencia o no de caracteres con may&uacute;scula.</p></li><li><p>Los valores de los atributos van cerrados entre comillas simples o dobles</p></li></ul></div><p>
+            </p></dd><dt><span class="term">Documento v&aacute;lido</span></dt><dd><p>Es aquel que, estando bien formado, respeta las restricciones establecidas por una definici&oacute;n externa, correspondienta &eacute;sta a un documento DTD o XML Schema, en cuanto a los elementos y atributos aceptados, su cantidad y en el orden en el cual pueden aparecer.</p></dd></dl></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="xml_doctype"></a>Elemento DOCTYPE</h3></div></div><div></div></div><p>Como vimos, un documento v&aacute;lido debe debe hacer a una definici&oacute;n del tipo, cantidad y orden de los contenidos considerados pertinentes. Si bien existen dos especificaciones para realizar esta labor, DTD y XML Schema, explicaremos el uso de la primera de estas forma, ya que es la m&aacute;s antigua y com&uacute;n.</p><p>La referencia de un DTD se realiza por medio del elemento DOCTYPE, el cual ubica en el encabezado del documento, a continuaci&oacute;n de la instrucci&oacute;n <span class="markup">&lt;?XML ?&gt;</span>. Dependiendo de la ubicaci&oacute;n del DTD, el elemento DOCTYPE adoptar&aacute; dos formas</p><div class="variablelist"><dl><dt><span class="term">Referencia externa</span></dt><dd><p>La definici&oacute;n del documento DTD se encuentra en un archivo distinto al XML.</p><div class="example"><a name="d0e619"></a><p class="title"><b>Ejemplo 2.5. Referencia externa a DTD</b></p><pre class="programlisting">
+
+&lt;?xml version="1.0" encoding="ISO-8859-1" standalone="no" ?&gt;
+&lt;!DOCTYPE libro SYSTEM "libro.dtd" &gt;
+&lt;libro /&gt;
+      </pre></div><p>Como vemos, despu&eacute;s de <tt class="literal">&lt;DOCTYPE</tt> se incluye el nombre del elemento raiz (libro, en nuestro caso), el t&eacute;rmino <tt class="literal">SYSTEM</tt>, que indica que se debe acceder a un archivo local o remoto, y el nombre del archivo, que en este caso es <tt class="literal">libro.dtd</tt>
+              </p></dd><dt><span class="term">Referencia interna</span></dt><dd><p>La definici&oacute;n del DTD se encuentra dentro del mismo documento.</p><div class="example"><a name="d0e641"></a><p class="title"><b>Ejemplo 2.6. Referencia interna a DTD</b></p><pre class="programlisting">
+
+&lt;?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?&gt;
+&lt;!DOCTYPE libro [
+  &lt;!ELEMENT libro EMPTY &gt;
+]&gt;
+&lt;libro /&gt;
+      </pre></div><p>En este ejemplo, despu&eacute;s de <tt class="literal">&lt;DOCTYPE</tt> se incluye el nombre del elemento raiz (libro) y se ubica el texto del DTD entre corchetes (<tt class="literal">[</tt> y <tt class="literal">]</tt>)</p></dd></dl></div><p>En la secci&oacute;n sobre <a href="#xml_estructura_encabezado" title="Encabezado">el encabezado del documento XML</a>, se nombr&oacute; la existencia del atributo standalone. Con los datos anteriormente expuestos, es f&aacute;cil entender que un <tt class="literal">standalone = "yes"</tt> quiere decir que el documento no tiene un DTD o este se incluye directamente en el encabezado. La referencia externa, en cambio, determina un valor de <tt class="literal">standalone = "no"</tt>
+        </p></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="dtd"></a>Estructura de un documento DTD</h3></div></div><div></div></div><p>La forma en la cual se puede organizar un documento DTD es bastante libre. Es conveniente, eso s&iacute;, seguir el orden en el cual deben presentarse los objetos en el documento XML, definiendo primero los objetos que aparecen primero y/o que pueden ser incluidos en varios otros elementos, con sus respectivos atributos, para luego definir el resto de los elementos</p><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="dtd_elementos"></a>Elementos</h4></div></div><div></div></div><p>La definici&oacute;n de los elementos presenta la siguiente sintaxis b&aacute;sica</p><pre class="synopsis">&lt;!ELEMENT nombre-elemento categor&iacute;a&gt;</pre><p>o</p><pre class="synopsis">&lt;!ELEMENT nombre-elemento (contenido-elemento)&gt;
+          </pre><p>La primera nomenclatura se utiliza para asignar a un elemento una de las  categor&iacute;as gen&eacute;ricas (<tt class="literal">ANY</tt> o (<tt class="literal">EMPTY</tt>) . La segunda, cuando se quiere definir de forma exacta el tipo y orden de elementos que puede incluir el elemento en cuesti&oacute;n</p><div class="variablelist"><p class="title"><b>Sintaxis b&aacute;sica para definir elementos en DTD</b></p><dl><dt><span class="term">ANY</span></dt><dd><p>Indica que el elemento puede contener cualquier tipo de contenido</p><div class="informalexample"><pre class="programlisting">&lt;?xml version="1.0" encoding="ISO-8859-1" ?&gt;
+&lt;!DOCTYPE cualquier_cosa [
+  &lt;!ELEMENT cualquier_cosa ANY &gt;
+  &lt;!ELEMENT parrafo ANY &gt;
+]&gt;
+&lt;cualquier_cosa&gt;
+&lt;parrafo&gt;Esto es un parrafo&lt;/parrafo&gt;
+Fuera de parrafo
+&lt;/cualquier_cosa&gt;</pre></div></dd><dt><span class="term">EMPTY</span></dt><dd><p>Indica que el elemento no puede contener nada, o que es lo mismo, que es un elemento vac&iacute;o</p><div class="informalexample"><pre class="programlisting">&lt;?xml version="1.0" encoding="ISO-8859-1" ?&gt;
+&lt;!DOCTYPE vacio [
+  &lt;!ELEMENT vacio EMPTY &gt;
+]&gt;
+&lt;vacio /&gt;</pre></div></dd><dt><span class="term">Secuencia de elementos</span></dt><dd><p>Se define cual va a ser el orden y n&uacute;mero de elementos permitidos. No se puede agregar otro contenido, aparte del definido.</p><div class="informalexample"><pre class="programlisting">&lt;?xml version="1.0" encoding="ISO-8859-1" ?&gt;
+&lt;!DOCTYPE secuencia [
+  &lt;!ELEMENT secuencia (primero,segundo,tercero) &gt;
+  &lt;!ELEMENT primero EMPTY&gt;
+  &lt;!ELEMENT segundo EMPTY&gt;
+  &lt;!ELEMENT tercero EMPTY&gt;
+  ]&gt;
+&lt;secuencia&gt;
+&lt;primero /&gt;
+&lt;segundo /&gt;
+&lt;tercero /&gt;
+&lt;/secuencia&gt;</pre></div></dd><dt><span class="term">Datos de car&aacute;cter</span></dt><dd><p>El elemento s&oacute;lo contiene datos de car&aacute;cter, y no elementos en su interior. Se representa por la expresi&oacute;n <tt class="literal">#PCDATA</tt>
+                </p><pre class="programlisting">&lt;?xml version="1.0" encoding="ISO-8859-1" ?&gt;
+&lt;!DOCTYPE solo_texto [
+  &lt;!ELEMENT solo_texto (#PCDATA) &gt;
+  ]&gt;
+&lt;solo_texto&gt;
+Este elemento s&oacute;lo permite ingresar texto, nada m&aacute;s.
+&lt;/solo_texto&gt;</pre></dd></dl></div><div class="variablelist"><p class="title"><b>Sintaxis para definir orden y cantidad de elementos en un DTD</b></p><dl><dt><span class="term">Un s&oacute;lo elemento</span></dt><dd><div class="informalexample"><pre class="programlisting">&lt;!ELEMENT nota (mensaje)&gt;</pre></div><p>El elemento <tt class="literal">mensaje</tt> debe presentarse una vez dentro del elemento <tt class="literal">nota</tt>
+                </p></dd><dt><span class="term">Dos o m&aacute;s elementos en una secuencia definida</span></dt><dd><div class="informalexample"><pre class="programlisting">&lt;!ELEMENT persona (nombres, apellido_paterno,
+apellido_materno)&gt;</pre></div><p>El elemento persona debe contener los elementos <tt class="literal">nombres</tt>, <tt class="literal">apellido_paterno</tt> y <tt class="literal">apellido_materno</tt>, en ese mismo orden</p></dd><dt><span class="term">Presencia de una o m&aacute;s apariciones del mismo elemento </span></dt><dd><div class="informalexample"><pre class="programlisting">&lt;!ELEMENT jauria (perro+)&gt;</pre></div><p>El elemento <tt class="literal">jaur&iacute;a</tt> debe contener uno o m&aacute;s elementos <tt class="literal">perro</tt>
+                </p></dd><dt><span class="term">Presencia de cero o m&aacute;s apariciones del mismo elemento </span></dt><dd><div class="informalexample"><pre class="programlisting">&lt;!ELEMENT persona (hijo*)&gt;</pre></div><p>El elemento <tt class="literal">hijo</tt> puede presentarse 0, 1 o m&aacute;s veces dentro del elemento <tt class="literal">persona</tt>.</p></dd><dt><span class="term">Presencia de cero o una aparici&oacute;n del mismo elemento </span></dt><dd><div class="informalexample"><pre class="programlisting">&lt;!ELEMENT persona (apendice?)&gt;</pre></div><p>El elemento <tt class="literal">apendice</tt> puede estar 1 vez o no estar dentro del elemento <tt class="literal">persona</tt>
+                </p></dd><dt><span class="term">Presencia de elementos alternativos</span></dt><dd><div class="informalexample"><pre class="programlisting">&lt;!ELEMENT vivienda (casa|departamento|mediagua)&gt;</pre></div><p>El elemento <tt class="literal">vivienda</tt> puede contener uno de los siguientes elementos: <tt class="literal">casa</tt>,<tt class="literal">departamento</tt> o <tt class="literal">mediagua</tt>. </p></dd><dt><span class="term">Presencia de contenido mezclado</span></dt><dd><div class="informalexample"><pre class="programlisting">&lt;?xml version="1.0" encoding="ISO-8859-1" ?&gt;
+&lt;!DOCTYPE mensaje[
+  &lt;!ELEMENT mensaje (#PCDATA|negrita|cursiva)*&gt;
+  &lt;!ELEMENT negrita (#PCDATA|cursiva)* &gt;
+  &lt;!ELEMENT cursiva (#PCDATA) &gt;
+]&gt;
+&lt;mensaje&gt;
+Este texto contiene texto libre,
+&lt;negrita&gt;negritas&lt;/negrita&gt;,
+&lt;cursiva&gt;cursiva&lt;/cursiva&gt; y
+&lt;negrita&gt;&lt;cursiva&gt;ambos&lt;/cursiva&gt;&lt;/negrita&gt;
+&lt;/mensaje&gt;</pre></div><p>Se puede tener datos de car&aacute;cter y elementos mezclados dentro de un elemento padre, pero en la definici&oacute;n deben se&ntilde;alarse como elementos alternativos (uso de <tt class="literal">|</tt>), y en modo <tt class="literal">*</tt> (0 o m&aacute;s elementos aceptados).</p></dd><dt><span class="term">Uso de par&eacute;ntesis</span></dt><dd><div class="informalexample"><pre class="programlisting">&lt;?xml version="1.0" encoding="ISO-8859-1" ?&gt;
+&lt;!DOCTYPE libro[
+  &lt;!ELEMENT libro ((titulo?,titulo_breve?)?,
+            introduccion?,
+            (capitulo|seccion)*,
+            glosario?) &gt;
+  &lt;!ELEMENT titulo ANY &gt;
+  &lt;!ELEMENT titulo_breve ANY &gt;
+  &lt;!ELEMENT introduccion ANY &gt;
+  &lt;!ELEMENT seccion ANY &gt;
+  &lt;!ELEMENT capitulo ANY &gt;
+  &lt;!ELEMENT glosario ANY &gt;
+]&gt;
+&lt;libro&gt;
+&lt;titulo&gt;&lt;/titulo&gt;
+&lt;titulo_breve&gt;&lt;/titulo_breve&gt;
+&lt;capitulo /&gt;
+&lt;seccion /&gt;
+&lt;seccion /&gt;
+&lt;capitulo /&gt;
+&lt;capitulo /&gt;
+&lt;glosario&gt;
+&lt;/glosario&gt;
+&lt;/libro&gt;</pre></div><p>Se pueden agrupar distintas expresiones entre par&eacute;ntesis, para lograr detallados ajustes de orden y cantidad. En el ejemplo, tenemos que existe una definici&oacute;n basada en orden de 4 elementos, siendo el primero y el tercero agrupaciones. </p><p>En la primera agrupaci&oacute;n, vemos que se puede tener 0 o 1 <tt class="literal">titulo</tt> y a continuaci&oacute;n 0 o 1 <tt class="literal">titulo_breve</tt>, y todo esto puede o no estar antes de la <tt class="literal">introduccion</tt>.</p><p>En la tercera agrupaci&oacute;n, se ha establecido que se pueden tener 0 o m&aacute;s elementos de <tt class="literal">capitulo</tt> o <tt class="literal">seccion</tt> entre la introducci&oacute;n y el glosario.</p></dd></dl></div></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="dtd_atributos"></a>Atributos</h4></div></div><div></div></div><p>Los atributos de los elementos son declarados a trav&eacute;s de una instrucci&oacute;n <tt class="literal">ATTLIST</tt>
+          </p><pre class="synopsis">&lt;!ATTLIST nombre-elemento nombre-atributo
+ tipo-atributo valor-preestablecido&gt;</pre><div class="table"><a name="dtd_atributos_tipo"></a><p class="title"><b>Tabla 2.2. Tipo de atributo para ATTLIST</b></p><table summary="Tipo de atributo para ATTLIST" border="1"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Valor</th><th>Explicaci&oacute;n</th></tr></thead><tbody><tr><td>CDATA</td><td>El valor contiene datos de car&aacute;cter.</td></tr><tr><td>Atributos enumerados (en1|en2|..)</td><td>El valor del atributo corresponde a algunos de los enumerados en la lista</td></tr><tr><td>ID</td><td>El valor debe ser un ID &uacute;nico</td></tr><tr><td>IDREF</td><td>El valor debe corresponder a un ID ya existente</td></tr><tr><td>IDREFS</td><td>El valor es una lista ID ya existententes, separados por espacios</td></tr><tr><td>NMTOKEN</td><td>El valor es un nombre XML v&aacute;lido</td></tr><tr><td>NMTOKENS</td><td>El valor es una lista de nombre XML v&aacute;lidos, separados por espacios</td></tr><tr><td>ENTITY</td><td>El valor es una entidad</td></tr><tr><td>ENTITIES</td><td>El valor es una lista de entidades, separadas por espacios</td></tr><tr><td>NOTATION</td><td>El valor es el nombre de una notaci&oacute;n</td></tr><tr><td>xml:</td><td>El valor es un valor predefinido de xml</td></tr></tbody></table></div><div class="table"><a name="dtd_atributos_def"></a><p class="title"><b>Tabla 2.3. Valores por defecto para ATTLIST</b></p><table summary="Valores por defecto para ATTLIST" border="1"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Valor</th><th>Explicaci&oacute;n</th></tr></thead><tbody><tr><td>valor</td><td>El valor por defecto para el atributo</td></tr><tr><td>#REQUIRED</td><td>El atributo debe ser incluido en el elemento</td></tr><tr><td>#IMPLIED</td><td>El atributo no debe ser incluido</td></tr><tr><td>#FIXED valor</td><td>El valor del atributo es fijo. No tiene mucha utilidad, excepto cuando se altera una DTD para fijar un valor que antes era variable.</td></tr></tbody></table></div><p>Por ejemplo, si tenemos el elemento <tt class="literal">persona</tt>, podemos incluir el atributo <tt class="literal">nacionalidad</tt>. Si quisiesemos aceptar cualquier valor literal para esta variable, y fuese obligatario incluirla, su definici&oacute;n ser&iacute;a</p><pre class="programlisting">&lt;!ATTLIST persona nacionalidad CDATA #REQUIRED &gt;</pre><p>Si s&oacute;lo aceptaramos personas de nacionalidad chilena y argentina, siendo mayor el n&uacute;mero de chilenos, podr&iacute;amos definir el atributo con una enumeraci&oacute;n, dejando como valor por defecto 'chilena'</p><pre class="programlisting">&lt;!ATTLIST persona nacionalidad (chilena|argentina) "chilena" &gt; </pre><p>C&oacute;mo realizar una explicaci&oacute;n de cada posibilidad ser&iacute;a bastante tedioso, as&iacute; que a continuaci&oacute;n se presentar&aacute; un ejemplo comentado, que muestra las formas m&aacute;s usuales de definir atributos. Este ejemplo introduce, adem&aacute;s, el uso de un DTD externo para validad un documento XML.</p><div class="example"><a name="ex.attlist"></a><p class="title"><b>Ejemplo 2.7. Uso de ATTLIST</b></p><p>
+              <tt class="filename">catalogo.dtd</tt>
+            </p><div class="programlistingco"><pre class="programlisting">&lt;!ELEMENT catalogo (categoria|libro|autor)+ &gt;
+  &lt;!ELEMENT categoria (#PCDATA) &gt;
+  &lt;!ELEMENT autor (#PCDATA) &gt;
+  &lt;!ELEMENT libro EMPTY &gt;
+    &lt;!ATTLIST categoria categoria_id ID #REQUIRED &gt;        <span class="co"><img src="images/callouts/1.png" alt="(1)"></span><span class="co"><img src="images/callouts/6.png" alt="(6)"></span>
+    &lt;!ATTLIST autor id ID #REQUIRED &gt;                      <span class="co"><img src="images/callouts/1.png" alt="(1)"></span><span class="co"><img src="images/callouts/6.png" alt="(6)"></span>
+    &lt;!ATTLIST autor iniciales CDATA #IMPLIED&gt;              <span class="co"><img src="images/callouts/2.png" alt="(2)"></span><span class="co"><img src="images/callouts/7.png" alt="(7)"></span>
+    &lt;!ATTLIST libro id ID #REQUIRED &gt;                      <span class="co"><img src="images/callouts/1.png" alt="(1)"></span><span class="co"><img src="images/callouts/6.png" alt="(6)"></span>
+    &lt;!ATTLIST libro categoria_id IDREFS "general" &gt;        <span class="co"><img src="images/callouts/4.png" alt="(4)"></span><span class="co"><img src="images/callouts/8.png" alt="(8)"></span>
+    &lt;!ATTLIST libro id IDREF #IMPLIED &gt;                    <span class="co"><img src="images/callouts/3.png" alt="(3)"></span><span class="co"><img src="images/callouts/7.png" alt="(7)"></span>
+    &lt;!ATTLIST libro estado                                 <span class="co"><img src="images/callouts/5.png" alt="(5)"></span><span class="co"><img src="images/callouts/8.png" alt="(8)"></span>
+              (intacto|da&ntilde;ado|robado|prestado)
+              "intacto"&gt;
+    </pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><img src="images/callouts/1.png" alt="1" border="0"></td><td valign="top" align="left"><p>Tipo de atributo: ID. El valor de este atributo para el documento debe ser &uacute;nico.</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/callouts/2.png" alt="2" border="0"></td><td valign="top" align="left"><p>Tipo de atributo: CDATA. Se puede ingresar cualquier dato de car&aacute;cter, o sea, texto que no sea marcado</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/callouts/3.png" alt="3" border="0"></td><td valign="top" align="left"><p>Tipo de atributo: IDREF. El valor del atributo debe corresponder un ID ya especificado.</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/callouts/4.png" alt="4" border="0"></td><td valign="top" align="left"><p>Tipo de atributo: IDREFS. El valor del atributo debe corresponder a uno o m&aacute;s IDs ya especificados, separados por espacios.</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/callouts/5.png" alt="5" border="0"></td><td valign="top" align="left"><p>Tipo de atributo: enumeraci&oacute;n. El valor del atributo debe corresponder a alguno de los especificados en la lista.</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/callouts/6.png" alt="6" border="0"></td><td valign="top" align="left"><p>Valor por defecto: #REQUIRED. Se requiere ingresar un valor para el atributo</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/callouts/7.png" alt="7" border="0"></td><td valign="top" align="left"><p>Valor por defecto: #IMPLIED. No se requiere ingresar un valor para el atributo</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/callouts/8.png" alt="8" border="0"></td><td valign="top" align="left"><p>Valor por defecto espec&iacute;fico. Si no se ingresa un valor, se utiliza el asignado</p></td></tr></table></div></div><p>
+              <tt class="filename">catalogo.xml</tt>
+            </p><pre class="programlisting">&lt;?xml version="1.0" encoding="ISO-8859-1"
+      standalone="no" ?&gt;
+&lt;!DOCTYPE catalogo SYSTEM "catalogo.dtd" &gt;
+&lt;catalogo&gt;
+&lt;categoria id="general"&gt;General&lt;/categoria&gt;
+&lt;categoria id="referencia"&gt;Libros de referencia&lt;/categoria&gt;
+&lt;categoria id="circulaci&oacute;n"&gt;Libros en circulaci&oacute;n&lt;/categoria&gt;
+&lt;autor id="autor1"&gt;Autor 1&lt;/autor&gt;
+&lt;autor id="autor2" iniciales="a2"&gt;Autor 2&lt;/autor&gt;
+&lt;libro id="libro1"/&gt;
+&lt;libro id="libro2" categoria_id="general referencia"/&gt;
+&lt;libro id="libro3" estado ="prestado" /&gt;
+&lt;/catalogo&gt;</pre></div><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Sugerencia</h3><p>Si se necesita definir m&aacute;s de un atributo para un mismo elemento, se puede utilizar la misma sintaxis</p><pre class="synopsis">
+&lt;!ATTLIST nombre-elemento
+           nombre-atributo tipo-atributo valor-preestablecido
+           nombre-atributo tipo-atributo valor-presetablecido ...&gt;</pre><p>Por ejemplo</p><div class="informalexample"><pre class="programlisting">
+&lt;!ATTLIST libro id   ID    #REQUIRED
+                isdn CDATA #IMPLIED &gt;
+
+    </pre></div></div></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="dtd_entidades"></a>Entidades</h4></div></div><div></div></div><p>El &uacute;ltimo tipo de objeto a definir dentro de un DTD son las entidades, que como ya hemos se&ntilde;alado en la secci&oacute;n <a href="#xml_estructura_textos" title="Texto y entidades">&#8220;Texto y entidades&#8221;</a> nos permiten representar car&aacute;cteres no posibles de incluir como texto o cualquier otro tipo de texto.</p><p>La sintaxis de definici&oacute;n de una entidad es bastante simple, siendo</p><pre class="synopsis">&lt;!ENTITY identificador "valor" &gt;</pre><p>El uso m&aacute;s importante de las entidades, aparte de permitir la representaci&oacute;n de caracteres, es la de incluir texto o marcado de manera est&aacute;ndar. Cuando se realiza una referencia a una entidad, el procesador la reemplaza de forma literal por el contenido asignado como valor, el cual puede incluir marcado.</p><p>Por ejemplo, en HTML existe la etiqueta <span class="markup">&lt;a&gt;</span>, que con el atributo <tt class="literal">href</tt> nos permite hacer un link a una p&aacute;gina. Por ejemplo:</p><div class="informalexample"><pre class="programlisting">&lt;a href='http://www.google.cl'&gt;Google&lt;/a&gt;
+       </pre></div><p>Crea un link con el texto 'Google', dirigido a <tt class="literal">http://www.google.cl</tt>. Puede darse el caso que necesitemos ocupar repetidamente esa estructura en nuestro texto. Para evitar el trabajo de escribirlo una y otra vez, es posible crear una entidad <tt class="literal">&amp;google;</tt>, que funcione como abreviatura de la expresi&oacute;n completa. Su DTD ser&iacute;a:</p><pre class="programlisting">&lt;!ENTITY google "&lt;a href='http://www.google.cl'&gt;Google&lt;/a&gt;"&gt;
+       </pre><p>Entonces, si tenemos en nuestro texto</p><pre class="programlisting">
+A continuaci&oacute;n tendremos un link a google:
+&amp;google;
+       </pre><p>El procesador reemplazar&aacute; la entidad por su definici&oacute;n y obtendremos:</p><pre class="programlisting">
+A continuaci&oacute;n tendremos un link a google:
+&lt;a href='http://www.google.cl'&gt;Google&lt;/a&gt;
+</pre><p>Una variante de lo anterior es incluir el contenido de un archivo completo a trav&eacute;s de la entidad. La sintaxis para ellos es:</p><pre class="synopsis">&lt;!ENTITY identificador SYSTEM "nombre_archivo" &gt;</pre><p>Por ejemplo, podemos dividir el contenido el contenido de un libro en tres archivos xml (capitulo_1.xml,capitulo_2.xml,capitulo_3.xml) e incluirlos dentro del archivo principal, definiendo tres entidades. </p><div class="informalexample"><pre class="programlisting">
+&lt;?xml version="1.0" ?&gt;
+&lt;!DOCTYPE libro [
+    &lt;!ENTITY capitulo_1 SYSTEM "capitulo1.xml" &gt;
+    &lt;!ENTITY capitulo_2 SYSTEM "capitulo1.xml" &gt;
+    &lt;!ENTITY capitulo_3 SYSTEM "capitulo1.xml" &gt;
+]&gt;
+&lt;libro&gt;
+&amp;capitulo_1;
+&amp;capitulo_2;
+&amp;capitulo_3;
+&lt;/libro&gt;
+
+</pre></div><p>Por &uacute;ltimo, es posible utilizar las entidades para ahorrar trabajo en la creaci&oacute;n del DTD. Por ejemplo, si tenemos un atributo que es com&uacute;n a muchas entidades, es posible crear una entidad que la represente. La sintaxis es bastante similar a la de una entidad com&uacute;n</p><pre class="synopsis">&lt;!ENTITY % identificador "valor" &gt;</pre><p>Por ejemplo, hemos visto en varios ejemplos que los identificadores obligatorios se crean siempre como <tt class="literal">ID #REQUIRED</tt>. Entonces, podemos resumir la definici&oacute;n del DTD realizada en el <a href="#ex.attlist" title="Ejemplo 2.7. Uso de ATTLIST">ejemplo de uso de attlist</a> usando entidades y el formato abreviado de definici&oacute;n de atributos.</p><div class="example"><a name="ex.attlist_2"></a><p class="title"><b>Ejemplo 2.8. Uso de entidades para definir atributos</b></p><pre class="programlisting">
+&lt;!ELEMENT catalogo (categoria|libro|autor)+ &gt;
+  &lt;!ELEMENT categoria (#PCDATA) &gt;
+  &lt;!ELEMENT autor (#PCDATA) &gt;
+  &lt;!ELEMENT libro EMPTY &gt;
+  &lt;!ENTITY % IdRequerido "id ID #REQUIRED" &gt;
+    &lt;!ATTLIST categoria %IdRequerido; &gt;
+    &lt;!ATTLIST autor     %IdRequerido;
+                        iniciales CDATA #IMPLIED&gt;
+    &lt;!ATTLIST libro     %IdRequerido;
+                        categoria_id IDREFS "general"
+                        autor_id IDREF #IMPLIED
+                        estado
+                        (intacto|da&ntilde;ado|robado|prestado)
+                        "intacto"&gt;
+
+</pre></div></div></div></div></div><div class="chapter" lang="es"><div class="titlepage"><div><div><h2 class="title"><a name="cap3"></a>Cap&iacute;tulo 3. Lenguajes derivados de XML</h2></div></div><div></div></div><div class="toc"><p><b>Tabla de contenidos</b></p><dl><dt><span class="sect1"><a href="#xhtml">XHTML</a></span></dt><dd><dl><dt><span class="sect2"><a href="#xhtml_html">Diferencias entre HTML y XHTML</a></span></dt></dl></dd><dt><span class="sect1"><a href="#xsl">La Familia de de Lenguajes de Estilos Extensible: XSL</a></span></dt><dd><dl><dt><span class="sect2"><a href="#xsl_usos">Usos de XSL</a></span></dt><dt><span class="sect2"><a href="#xpath">XPath</a></span></dt><dt><span class="sect2"><a href="#xslt">XSLT</a></span></dt><dt><span class="sect2"><a href="#xls-fo">XSL-FO</a></span></dt></dl></dd><dt><span class="sect1"><a href="#docbook">Docbook</a></span></dt><dd><dl><dt><span class="sect2"><a href="#docbook_uso">Uso de Docbook</a></span></dt><dt><span class="sect2"><a href="#docbook_estructura">Estructura de un documento Docbook</a></span></dt><dt><span class="sect2"><a href="#docbook_ejemplo">Esquema b&aacute;sico del manual</a></span></dt></dl></dd></dl></div><p>Como hemos se&ntilde;alado reiteradas veces, XML no es un lenguaje en s&iacute;, sino un metalenguaje que entrega especificaciones destinadas a que los desarrolladores creen nuevos lenguajes. </p><p>En <a href="http://www.xml.org" target="_top">xml.org</a>, uno de los sitios m&aacute;s importantes de lenguajes XML, existen m&aacute;s de 200 especificaciones distintas, que cubren los m&aacute;s variados &aacute;mbitos.</p><p>De los muchos lenguajes XML existentes, hay algunos que son especialmente relevantes, ya sea porque corresponden a versiones actualizadas de lenguajes extendidos ya existentes (HTML, Docbook), o por su aceptaci&oacute;n como herramientas est&aacute;ndar para el manejo de ciertas tareas (XML Schema, XSL-FO, XLS, MathML, etc.).</p><p>Es los siguientes cap&iacute;tulos describiremos 3 lenguajes XML especialmente relevantes:</p><div class="itemizedlist"><ul type="disc"><li><p>XHTML (Lenguaje de Hipertexto Extensible): El sucesor de HTML, el lenguaje de publicaci&oacute;n de facto en la WWW, ahora en formato XML</p></li><li><p>XSL (Lenguaje de Hojas de Estilo Extensible): Conjunto de tecnolog&iacute;as destinadas a la transformaci&oacute;n y presentaci&oacute;n de documentos XML. Comprende tres lenguajes relacionados: XPath, XSLT y XSL FO.</p></li><li><p>Docbook: uno de los lenguajes de creaci&oacute;n de textos electr&oacute;nicos m&aacute;s populares, junto a LaTex.</p></li></ul></div><div class="sect1" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="xhtml"></a>XHTML</h2></div></div><div></div></div><p>Seg&uacute;n el <a href="#glosario_w3c">W3C</a>, el Lenguaje de Hipertexto Extensible o <a href="#glosario_xhtml">XHTML</a> es la familia de documentos presentes y futuros que reproduce, contiene y extiende <a href="#glosario_html">HTML</a>, reformulados en XML. XHTML es el sucesor de HTML y cuenta una serie de especificaciones propias.</p><p>La principal ventaja de usar XHTML sobre HTML es la posibilidad de usar las poderosas herramientas de transformaci&oacute;n XML (como XSLT) y la posibilidad de integrar otros lenguajes, como MathML, SML o SVG dentro del documento, lo que no puede hacerse con HTML.</p><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="xhtml_html"></a>Diferencias entre HTML y XHTML</h3></div></div><div></div></div><p>HTML es un derivado de SGML, por lo que pr&aacute;cticas que son perfectamente legales, como no escribir el fin de tags vac&iacute;os, deben ser corregidas para que el documento sea compatible con XML.</p><p>A continuaci&oacute;n, se presentaran las principales diferencias entre ambos lenguajes</p><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="d0e1193"></a>Los documentos deben estar bien formados</h4></div></div><div></div></div><p>Este concepto, propio de <a href="#glosario_xml">XML</a>, indica que cada elemento debe contar con su marca de cierre y que la anidaci&oacute;n de elementos debe ser correcta, no permiti&eacute;ndose el solapado de elementos</p><div class="informalexample"><p>Correcto</p><pre class="programlisting">&lt;p&gt;Este es un &lt;b&gt;p&aacute;rrafo&lt;/b&gt; correcto&lt;/p&gt;</pre><p>Incorrecto</p><pre class="programlisting">&lt;p&gt;Este es un &lt;b&gt;p&aacute;rrafo incorrecto&lt;/p&gt;&lt;/b&gt;</pre></div></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="d0e1209"></a>Los elementos y atributos deben estar escritos en min&uacute;sculas</h4></div></div><div></div></div><p>Los documentos XHTML deben usar min&uacute;sculas para todos los elementos y atributos HTML. Esta diferencia es necesaria, debido a que <a href="#glosario_xml">XML</a> es sensible a las may&uacute;scula: <tt class="literal">&lt;li&gt;</tt> y <tt class="literal">&lt;LI&gt;</tt> son etiquetas distintas.</p></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="d0e1222"></a>Se requiere tag de cierre para los elementos no vacios</h4></div></div><div></div></div><p>Para los documentos basados en HTML, se permite omitir la etiqueta de cierre. En <a href="#glosario_xml">XML</a>, en cambio, todos los elementos deben tener un tag de cierre, incluso aquellos marcados como EMPTY en el DTD, pudiendo usarse la forma abreviada.</p><div class="informalexample"><p>Correcto</p><pre class="programlisting">&lt;p&gt;Estos son tags &lt;br /&gt; bien &lt;/p&gt;&lt;p&gt;cerrados &lt;/p&gt;</pre><p>Incorrecto</p><pre class="programlisting">&lt;p&gt;Estos no son tags &lt;br&gt; bien &lt;p&gt;cerrados &lt;/p&gt;</pre></div></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="d0e1238"></a>Los valores de atributos deben estar siempre entre comillas</h4></div></div><div></div></div><p>Todos los valores de atributos deben estar entre comillas dobles o sencillas, aunque sus valores sean num&eacute;ricos</p><div class="informalexample"><p>Correcto</p><pre class="programlisting">&lt;td colspan="2"&gt;</pre><p>Incorrecto</p><pre class="programlisting">&lt;td colspan=3&gt;</pre></div></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="d0e1252"></a>Minimizaci&oacute;n de atributos</h4></div></div><div></div></div><p>A diferencia de <a href="#glosario_html">HTML</a>, <a href="#glosario_xml">XML</a> no permite la minimizaci&oacute;n de atributos. Los pares de atributo-valor deben ser escritos en plenitud, no pudiendo omiterse el valor</p><div class="informalexample"><p>Correcto</p><pre class="programlisting">&lt;input type='radio' checked='checked'&gt;</pre><p>Incorrecto</p><pre class="programlisting">&lt;input type='radio' checked&gt;</pre></div></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="d0e1270"></a>Elementos script y style</h4></div></div><div></div></div><p>En <a href="#glosario_xhtml">XHTML</a>, los contenidos de elemento <tt class="literal">script</tt> y <tt class="literal">style</tt> son declarados como <tt class="literal">#PCDATA</tt>. Por tanto, caracteres como &lt; y &amp;, bastante comunes en los lenguajes de programaci&oacute;n, ser&aacute;n tratados como inicio de etiqueta y entidad, respectivamente. Para evitar esto, es mejor incluir el contenido del script o de la hoja de estilo entre <a href="#xml_estructura_textos" title="Texto y entidades">etiquetas CDATA</a>
+            </p><div class="informalexample"><p>Correcto</p><pre class="programlisting">
+&lt;script language="Javascript" type="text/javascript"&gt;
+&lt;![CDATA[
+function sumarUno(x) {
+return x+1; }
+]]&gt;
+&lt;/script&gt;</pre><p>Incorrecto</p><pre class="programlisting">
+&lt;script language="Javascript" type="text/javascript"&gt;
+function sumarUno(x) {
+return x+1; }
+&lt;/script&gt;</pre></div><p>
+          </p></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="d0e1299"></a>Uso de name e id</h4></div></div><div></div></div><p>Las etiquetas a, applet, form, frame, iframe, img, y map cuentan en su definici&oacute;n HTML con el atributo name, que sirve para identificarlos. En <a href="#glosario_xml">XML</a> los atributos identificatorios son del <a href="#dtd_atributos_tipo" title="Tabla 2.2. Tipo de atributo para ATTLIST">tipo <tt class="literal">ID</tt>
+            </a>, y s&oacute;lo puede existir un atributo <tt class="literal">ID</tt> por elemento; en <a href="#glosario_xhtml">XHTML</a> el atributo id es del tipo <tt class="literal">ID</tt>, dejando obsoleto al atributo <tt class="literal">name</tt>
+          </p></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="d0e1323"></a>Atributos con nombres predefinidos</h4></div></div><div></div></div><p>En <a href="#glosario_html">HTML</a> ciertos atributos pod&iacute;an poseer valores que estuviesen dentro de un conjunto predeterminado de antemano (por ejemplo, el atributo <tt class="literal">type</tt> en el elemento <tt class="literal">input</tt>). En <a href="#glosario_xml">XML</a> son denominados <a href="#dtd_atributos_tipo" title="Tabla 2.2. Tipo de atributo para ATTLIST">atributos enumerados</a> y su interpretaci&oacute;n es sensible a las may&uacute;sculas, as&iacute; que el valor <tt class="literal">TEXT</tt> es distinto <tt class="literal">text</tt>; todos estos valores deben ser escritos en min&uacute;sculas</p><div class="informalexample"><p>Correcto</p><pre class="programlisting">&lt;input type='text' id='mitexto' /&gt;</pre><p>Incorrecto</p><pre class="programlisting">&lt;input type='TEXT' id='mitexto' /&gt;</pre></div></div></div></div><div class="sect1" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="xsl"></a>La Familia de de Lenguajes de Estilos Extensible: XSL</h2></div></div><div></div></div><p>XSL es la familia de recomendaciones para definir transformaciones y la presentaci&oacute;n de documentos XML. Consiste de tres partes:</p><div class="variablelist"><dl><dt><span class="term">Transformaciones XSL (XSLT)</span></dt><dd><p>Un lenguaje XML que permite transformar un documento XML en otro.</p></dd><dt><span class="term">Lenguaje de ruta XML (XPath)</span></dt><dd><p>Un lenguaje expresivo, usado por XSLT para acceder o referirse a partes de un documento XML.</p></dd><dt><span class="term">Objetos de Formato XSL (XSL-FO)</span></dt><dd><p>Un vocabulario XML destinado a especificar una sem&aacute;ntica de formato, o sea, especifica de forma detallada como debe presentarse un determinado contenido.</p></dd></dl></div><p>Una hoja de estilo XSLT especifica como se presentar&aacute; un documento XML, especificando las transformaciones necesarias para convertirlo en un vocabulario XML de presentaci&oacute;n, como <a href="#glosario_xhtml">XHTML</a> o XSL-FO.
+      </p><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="xsl_usos"></a>Usos de XSL</h3></div></div><div></div></div><p>Al ser XSL un conjunto de tecnolog&iacute;as relacionadas, es posible utilizar todas o partes de ella para prop&oacute;sitos determinados.
+        </p><div class="itemizedlist"><ul type="disc"><li><p>El uso adecuado de distintas plantillas XSLT nos permite transformar un mismo tipo documento XML, escrito por ejemplo en Docbook, en otros formatos, como XHTML, HTML o XSL-FO. Al ser XSLT un lenguaje XML, se pueden reutilizar las herramientras utilizadas en la creaci&oacute;n de los documentos XML para el dise&ntilde;o de las plantillas XSLT.</p></li><li><p>XPath es un lenguaje que permite navegar de modo  flexible por la estructura del documento, a trav&eacute;s de instrucciones sencillas y breves. Existen diversas implementaciones de esta tecnolog&iacute;a para otros lenguajes, tales como Java o PHP, que permiten reducir la complejidad y extensi&oacute;n de las aplicaciones</p></li><li><p>Un documento XSL-FO, escrito directamente o producto de una transformaci&oacute;n XSLT, puede ser transformado a distintos formatos de imagen - GIF, JPG, PNG - o de impresi&oacute;n - Postscript, PDF.</p></li></ul></div><p>
+        </p><p></p></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="xpath"></a>XPath</h3></div></div><div></div></div><p>XPath es un lenguaje que permite acceder a los distintos objetos de un documento XML, usando una sintaxis compacta, no-XML; opera en la estructura l&oacute;gica del documento, m&aacute;s que en su sintaxis superficial.</p><p>XPath modela el documento como un &aacute;rbol de nodos, siendo cada uno de &eacute;stos un elemento, un atributo o texto. Cada uno de estos nodos puede contener, a su vez, a uno o m&aacute;s nodos y presenta un nombre &uacute;nico, que es muy similar al que utilizan los distintos sistemas de archivo, sobre todos los de tipo Unix. Utilizaremos como base el siguiente XML para los ejemplos</p><div class="informalexample"><pre class="programlisting">
+&lt;AAA id="aaa1"&gt;
+    &lt;BBB id="bbb1"/&gt;
+    &lt;CCC id="ccc1"/&gt;
+    &lt;BBB id="bbb2"/&gt;
+    &lt;DDD id="ddd1"&gt;
+         &lt;BBB id="bbb3"/&gt;
+    &lt;/DDD&gt;
+    &lt;CCC id="ccc2"&gt;
+         &lt;DDD id="ddd2"&gt;
+              &lt;BBB id="bbb4"/&gt;
+              &lt;BBB id="bbb5"/&gt;
+         &lt;/DDD&gt;
+    &lt;/CCC&gt;
+&lt;/AAA&gt;</pre></div><div class="table"><a name="d0e1411"></a><p class="title"><b>Tabla 3.1. Expresiones m&aacute;s comunes utilizadas en XPath</b></p><table summary="Expresiones m&aacute;s comunes utilizadas en XPath" border="1"><colgroup><col width="33%"><col width="50%"><col width="17%"></colgroup><thead><tr><th>Ejemplo</th><th>Significado</th><th>Resultado</th></tr></thead><tbody><tr><td>/AAA</td><td>Selecciona el elemento raiz AAA del documento</td><td><pre class="programlisting">&lt;AAA id="aaa1"&gt;
+  &lt;BBB id="bbb1"/&gt;
+  &lt;CCC id="ccc1"/&gt;
+  &lt;BBB id="bbb2"/&gt;
+  &lt;DDD id="ddd1"&gt;
+    &lt;BBB id="bbb3"/&gt;
+  &lt;/DDD&gt;
+  &lt;CCC id="ccc2"&gt;
+    &lt;DDD id="ddd2"&gt;
+      &lt;BBB id="bbb4"/&gt;
+      &lt;BBB id="bbb5"/&gt;
+    &lt;/DDD&gt;
+  &lt;/CCC&gt;
+&lt;/AAA&gt;</pre></td></tr><tr><td>/AAA/BBB</td><td>Selecciona todos los elementos BBB que son hijos del elemento raiz AAA</td><td><pre class="programlisting">&lt;BBB id="bbb1"/&gt;
+&lt;BBB id="bbb2"/&gt;</pre></td></tr><tr><td>//BBB</td><td>Selecciona todos los elementos BBB dentro del documento</td><td><pre class="programlisting">&lt;BBB id="bbb1"/&gt;
+&lt;BBB id="bbb2"/&gt;
+&lt;BBB id="bbb3"/&gt;
+&lt;BBB id="bbb4"/&gt;
+&lt;BBB id="bbb5"/&gt;</pre></td></tr><tr><td>//CCC/*</td><td>Selecciona todos los elementos que est&aacute;n dentro de un elemento CCC</td><td><pre class="programlisting">&lt;DDD id="ddd2"&gt;
+  &lt;BBB id="bbb4"/&gt;
+  &lt;BBB id="bbb5"/&gt;
+&lt;/DDD&gt;</pre></td></tr><tr><td>/AAA/BBB[2]</td><td>Selecciona el segundo elemento BBB, hijo del elemento raiz AAA</td><td><pre class="programlisting">&lt;BBB id="bbb2"/&gt;</pre></td></tr><tr><td>//@id</td><td>Selecciona todos los atributos id</td><td><pre class="programlisting">id="aaa1"
+id="bbb1"
+id="ccc1"
+id="bbb2"
+id="ddd1"
+id="bbb3"
+id="ccc2"
+id="ddd2"
+id="bbb4"
+id="bbb5"
+</pre></td></tr><tr><td>//BBB[@id='bbb1']</td><td>Selecciona todos los elementos BBB que tengan un id igual a <tt class="literal">'bbb1'</tt></td><td><pre class="programlisting">&lt;BBB id="bbb1"/&gt;</pre></td></tr></tbody></table></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="xslt"></a>XSLT</h3></div></div><div></div></div><p>XSLT es un lenguaje XML que permite, con las herramientas adecuadas, transformar un documento XML en otro. Para ello, es necesario crear un documento escrito en XSL que contiene las reglas de transformaci&oacute;n, el cual llamaremos <span class="emphasis"><em>plantilla</em></span>
+        </p><p>La plantilla est&aacute; compuesta por uno o m&aacute;s elementos <span class="emphasis"><em>template</em></span>. Cada uno de estos elementos define que objetos van a ser transformados y cuales van a ser las transformaciones que van a sufrir. Para la definici&oacute;n de los elementos a transformar se ocupa XPath</p><p>Un documento XSLT presenta la siguiente estructura b&aacute;sica:</p><div class="example"><a name="d0e1500"></a><p class="title"><b>Ejemplo 3.1. Estructura b&aacute;sica de un documento XSLT</b></p><pre class="programlisting">&lt;?xml version="1.0" ?&gt;
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"&gt;
+  &lt;xsl:template match="/"&gt;
+    &lt;xsl:apply-templates /&gt;
+  &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;
+        </pre></div><p>Este documento nos entrega algunas sorpresas. En primer lugar, observamos que todos los elementos presentan la sintaxis &lt;xls:nombre_elemento /&gt;. El prefijo <tt class="literal">xls</tt> es denominado <tt class="literal">namespace</tt>, e identifica a todos los elementos que lo poseen como part&iacute;cipes del lenguaje XSL. Se hace referencia a la definici&oacute;n de los objetos propios de este lenguaje en el atributo <tt class="literal">xmlns</tt> del elemento ra&iacute;z <tt class="literal">xsl:stylesheet</tt>, el cual corresponde a una direcci&oacute;n de Internet, donde deber&iacute;a encontrarse la especificaci&oacute;n el lenguaje</p><p>Hablando sobre el lenguaje en s&iacute;, podemos ver que existen dos elementos b&aacute;sicos, <tt class="literal">xsl:template</tt> y <tt class="literal">xsl:apply-template</tt>. </p><div class="variablelist"><dl><dt><span class="term">xsl:template</span></dt><dd><p>Indica sobre cual o cuales elementos del elemento original deben realizarse las tranformaciones indicadas en sus  elementos hijos, a trav&eacute;s del atributo <tt class="literal">match</tt>, que contiene una expresi&oacute;n XPath.</p></dd><dt><span class="term">xsl:apply-template</span></dt><dd><p>Este elemento indica que los hijos del elemento sobre el cual act&uacute;a el template deben ser procesados por otro template. Si este no existiese, simplemente son descartados.</p></dd></dl></div><p>Reutilicemos el xml que utilizamos para analizar distintos XPath y veamos que XML resultante se puede obtener utilizando estos dos elementos XSLT</p><div class="example"><a name="d0e1545"></a><p class="title"><b>Ejemplo 3.2. Uso de XSLT</b></p><p>
+            <tt class="filename">fuente.xml</tt>
+          </p><pre class="programlisting">&lt;?xml version='1.0' encoding='ISO-8859-1'?&gt;
+&lt;?xml-stylesheet type="text/xsl" href="transformador.xsl" ?&gt;
+&lt;AAA id="aaa1"&gt;
+    &lt;BBB id="bbb1"/&gt;
+    &lt;CCC id="ccc1"/&gt;
+    &lt;BBB id="bbb2"/&gt;
+    &lt;DDD id="ddd1"&gt;
+         &lt;BBB id="bbb3"/&gt;
+    &lt;/DDD&gt;
+    &lt;CCC id="ccc2"&gt;
+         &lt;DDD id="ddd2"&gt;
+              &lt;BBB id="bbb4"/&gt;
+              &lt;BBB id="bbb5"/&gt;
+         &lt;/DDD&gt;
+    &lt;/CCC&gt;
+&lt;/AAA&gt;
+</pre><p>
+            <tt class="filename">transformador.xsl</tt>
+          </p><pre class="programlisting">&lt;?xml version="1.0" ?&gt;
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"&gt;
+	&lt;xsl:template match="/"&gt;
+		&lt;antes_raiz /&gt;
+			&lt;xsl:apply-templates /&gt;
+		&lt;despues_raiz /&gt;
+	&lt;/xsl:template&gt;
+	&lt;xsl:template match="/AAA"&gt;
+		&lt;a&gt;
+			&lt;xsl:apply-templates /&gt;
+		&lt;/a&gt;
+	&lt;/xsl:template&gt;
+	&lt;xsl:template match="//BBB"&gt;
+		&lt;bbb&gt;
+			&lt;xsl:apply-templates /&gt;
+		&lt;/bbb&gt;
+	&lt;/xsl:template&gt;
+	&lt;xsl:template match="//DDD/BBB"&gt;
+		&lt;bbb_hijo_de_ddd&gt;
+			&lt;xsl:apply-templates /&gt;
+		&lt;/bbb_hijo_de_ddd&gt;
+	&lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</pre><p>
+            <tt class="filename">resultado.xml</tt>
+          </p><pre class="programlisting">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;antes_raiz/&gt;
+&lt;a&gt;
+  &lt;bbb/&gt;
+  &lt;bbb/&gt;
+  &lt;bbb_hijo_de_ddd/&gt;
+  &lt;bbb_hijo_de_ddd/&gt;
+  &lt;bbb_hijo_de_ddd/&gt;
+&lt;/a&gt;
+&lt;despues_raiz/&gt;
+
+</pre></div><p>C&oacute;mo podemos observar, la expresi&oacute;n <tt class="literal">'/'</tt> selecciona al documento, antes del elemento ra&iacute;z, lo cual nos permite agregar contenido antes y despu&eacute;s de &eacute;l. El comportamiento del resto de los templates es bastante predecible, excepto la relaci&oacute;n entre <tt class="literal">//BBB</tt> y <tt class="literal">//DDD/BBB</tt>
+        </p><p>El orden en el cual se presentan los templates es significativo. Si posicionamos <tt class="literal">&lt;xsl:template match="//BBB"&gt;</tt> al final, todos los <tt class="literal">BBB</tt> se transforman en <tt class="literal">bbb</tt>, ya que el parser sigue en orden la aplicaci&oacute;n de los <tt class="literal">apply-template</tt>, y al no existir otros templates posteriores, no existe ninguna otra transformaci&oacute;n que se pueda realizar. En cambio, si el elemento <tt class="literal">&lt;xsl:template match="//DDD/BBB"&gt;</tt> se ubica despu&eacute;s, la adici&oacute;n de <tt class="literal">&lt;bbb /&gt;</tt> se omite debido a que este template toma el control por ser m&aacute;s especifico.</p></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="xls-fo"></a>XSL-FO</h3></div></div><div></div></div><p>La capacidad para producir versiones impresas de los documentos HTML y, por extensi&oacute;n, XML, de los navegadores t&iacute;picos es bastante limitada. Las herramientas de navegaci&oacute;n necesarias para presentar un texto en l&iacute;nea son diferentes a las de un medio escrito. Para este &uacute;ltimo, tenemos los medios utilizados desde hace much&iacute;simos a&ntilde;os para los libros: cabeceras, pies de p&aacute;gina,  n&uacute;meros de p&aacute;gina, citas, etc. Adem&aacute;s, para producir un documento escrito de calidad, es necesario tomar en consideraci&oacute;n la tipograf&iacute;a, las im&aacute;genes y como est&aacute;s se relacionan con un medio de proporciones fijas, como lo es la p&aacute;gina escrita.</p><p>Tomando en cuenta esta necesidad, el <a href="#glosario_w3c">W3C</a> defini&oacute; un vocabulario orientado a la creaci&oacute;n de material dirigido a la impresi&oacute;n, el cual tambi&eacute;n es aplicable a medios electr&oacute;nicos de p&aacute;gina de tama&ntilde;o fijo, como los lectores PDF.</p><p>La especificaci&oacute;n XSL-FO es bastante larga y compleja, con muchos detalles t&eacute;cnicos. Adem&aacute;s, el desarrollador com&uacute;n de XML no suele lidiar con este formato directamente, ya que se genera autom&aacute;ticamente a trav&eacute;s de XSLT y es procesado directamente por los programas que lo transforman, a su vez, en un documento PS o PDF. Por tanto, no se proceder&aacute; a una mayor explicaci&oacute;n sobre esta tecnolog&iacute;a.</p></div></div><div class="sect1" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="docbook"></a>Docbook</h2></div></div><div></div></div><p>
+      Docbook es un sistema que permite escribir documentos estructurados usando <a href="#glosario_sgml">SGML</a> o <a href="#glosario_xml">XML</a>. Est&aacute; especialmente indicado para la creaci&oacute;n de libros y art&iacute;culos relacionados con software y hardware, aunque no est&aacute; limitado a estos t&oacute;picos.</p><p>En lo t&eacute;cnico, Docbook es un DTD que provee un vocabulario y una estructura para la creaci&oacute;n de documentos. Debido a que es una especificaci&oacute;n amplia y robusta de lo que tradicionalmente se considera un libro, ha sido adoptada por un gran n&uacute;mero de autores y cuenta con muchas herramientas - de c&oacute;digo abierto y comerciales - que permiten realizar acciones tan variadas como la catalogaci&oacute;n, publicaci&oacute;n en WWW y creaci&oacute;n de documentos impresos.</p><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="docbook_uso"></a>Uso de Docbook</h3></div></div><div></div></div><p>El desarrollo de documentos en Docbook tiene dos fases principales, la creaci&oacute;n del documento y su publicaci&oacute;n en uno o m&aacute;s medios</p><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="docbook_uso_creacion"></a>Creaci&oacute;n del documento</h4></div></div><div></div></div><p>Para la creaci&oacute;n del documento Docbook, al igual que con cualquier otro documento XML, basta tener un editor de texto simple, como el Block de Notas de windows. Empero, la complejidad de la especificaci&oacute;n hace recomendable utilizar un editor que permite verificar la validez del documento que estamos construyendo, utilizando la DTD Docbook.</p><p>Particularmente indicado para este menester resulta la aplicaci&oacute;n Jedit, que a trav&eacute;s del plug-in de XML nos permite validar el documento cada vez que grabamos el archivo, avisando de cualquier error producido, adem&aacute;s de entregarnos un listado de etiquetas posibles de incluir dentro del contexto en el que trabajamos.</p><p>En <a href="#apendice_i" title="Ap&eacute;ndice A. Instalaci&oacute;n de jEdit">Ap&eacute;ndice&nbsp;A, <i>Instalaci&oacute;n de jEdit</i></a>, se detallan las instrucciones para instalar el programa con los plug-in respectivos, descargar la DTD y hacerlas funcionar en conjunto</p></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="docbook_uso_publicacion"></a>Publicaci&oacute;n del documento</h4></div></div><div></div></div><p>Una vez que hemos creado el documento Docbook y hemos verificado que est&eacute; bien formado y sea v&aacute;lido con respecto a la DTD, podemos proceder a su publicaci&oacute;n, lo cual significa crear uno o m&aacute;s archivos en formatos distintos, ya sea para su publicaci&oacute;n por v&iacute;a electr&oacute;nica o impresa.</p><p>Si bien existen herramientas comerciales que transforman directamente el documento Docbook en (X)HTML, RTF, PDF u otros formatos, lo m&aacute;s usual es utilizar XSLT para crear (X)HTML o XLS-FO, siendo este &uacute;ltimo susceptible de transformarse en un formato impreso, como RTF, PS o PDF.</p><div class="figure"><a name="docbook_uso_publicacion_diagrama"></a><p class="title"><b>Figura 3.1. Diagrama de publicaci&oacute;n de documentos Docbook</b></p><div class="mediaobject" align="center"><img src="diagrama_docbook.png" align="middle" alt="Diagrama de publicaci&oacute;n de documentos Docbook"></div></div></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="docbook_estructura"></a>Estructura de un documento Docbook</h3></div></div><div></div></div><p>La especificaci&oacute;n Docbook permite la creaci&oacute;n de las siguientes categor&iacute;as de elementos, siendo posible utilizar todas o s&oacute;lo algunas para prop&oacute;sitos determinados. Se presenta, entre corchetes, el nombre del elemento en ingl&eacute;s cuando corresponda.</p><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="docbook_estructura_conjunto"></a>Conjuntos [<tt class="literal">Set</tt>] </h4></div></div><div></div></div><p>Un conjunto puede contener uno m&aacute;s Libros. Es la jerarqu&iacute;a m&aacute;s alta de DocBook. Por ejemplo, permite agrupar a uno o m&aacute;s libros como una sola unidad</p></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="docbook_estructura_libro"></a>Libro [<tt class="literal">Book</tt>]</h4></div></div><div></div></div><p>Es el elemento principal m&aacute;s com&uacute;n. Su definici&oacute;n es bastante general y flexible. Puede contener una mezcla de los siguientes componentes</p><div class="variablelist"><dl><dt><span class="term">Dedicatoria [<tt class="literal">Dedication</tt>]</span></dt><dd><p>Generalmente ubicada al inicio del libro</p></dd><dt><span class="term">Navegaci&oacute;n</span></dt><dd><p>Comprende la Tabla de Contenidos[<tt class="literal">ToC</tt>], de T&iacute;tulos [<tt class="literal">LoT</tt>] (para im&aacute;genes, tablas, ejemplos,etc) y el &Iacute;ndice[<tt class="literal">Index</tt>]</p></dd><dt><span class="term">Divisiones</span></dt><dd><p>Son los elementos que siguien en jerarqu&iacute;a a Libro. Puede contener Partes [<tt class="literal">Part</tt>] y Referencias [<tt class="literal">Reference</tt>]. Las partes, a su vez, pueden contener Componentes. El libro puede no tener Divisiones y estar compuesto directamente de Componentes</p></dd><dt><span class="term">Componentes</span></dt><dd><p>Son los elementos que usualmente llamar&iacute;amos cap&iacute;tulos del libro</p></dd></dl></div></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="d0e1715"></a>Componentes</h4></div></div><div></div></div><p>Corresponden a lo que llamar&iacute;amos cap&iacute;tulos de un Libro o Parte: Prefacio [<tt class="literal">Preface</tt>], Cap&iacute;tulo [<tt class="literal">Chapter</tt>], Ap&eacute;ndice [<tt class="literal">Appendix</tt>], Glosario [<tt class="literal">Glossary</tt>] y Bibliograf&iacute;a [<tt class="literal">Bibliography</tt>]. En este nivel tambi&eacute;n podemos tener Art&iacute;culos [<tt class="literal">Article</tt>], que usualmente son utilizados como elemento principal en textos m&aacute;s breves</p></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="d0e1738"></a>Secciones</h4></div></div><div></div></div><p>Existen distintos tipos de secciones en Docbook</p><div class="variablelist"><dl><dt><span class="term">Sect1...Sect5</span></dt><dd><p>Es el elemento m&aacute;s com&uacute;n para definir secciones. Deben estar anidadas correctamente, o sea, una Sect2 debe incluirse dentro de una Sect1</p></dd><dt><span class="term">Secci&oacute;n [<tt class="literal">Section</tt>] </span></dt><dd><p>Es la alternativa a la nomenclatura anterior. Es recursiva, lo que indica que se permite incluir una Secci&oacute;n dentro de otra</p></dd><dt><span class="term">Secci&oacute;n Simple [<tt class="literal">SimpleSect</tt>]</span></dt><dd><p>Es una secci&oacute;n terminal, sin n&uacute;mero, que no contiene otras secciones en su interior</p></dd></dl></div></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="d0e1768"></a>Meta Informaci&oacute;n</h4></div></div><div></div></div><p>Todos los elementos antes nombrados y otros poseen adaptadores que permiten incluir meta-informaci&oacute;n sobre ellos, como el t&iacute;tulo [Title], autor [Author], editor [Publisher], etc.. Por ejemplo, Libro contiene un elemento Informaci&oacute;n de Libro [BookInfo]</p></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="d0e1773"></a>Elementos de Bloque</h4></div></div><div></div></div><p>A grandes rasgos, corresponden a los p&aacute;rrafos de informaci&oacute;n contenidos en alguna Secci&oacute;n. Se pueden en las siguientes categor&iacute;as:
+            </p><div class="itemizedlist"><ul type="disc"><li><p>Listas numeradas, con vi&ntilde;eta, de definici&oacute;n de t&eacute;rminos</p></li><li><p>Avisos</p></li><li><p>Secciones donde se preserva el formato de texto, para la presentaci&oacute;n de c&oacute;digo fuente</p></li><li><p>Ejemplos, figuras, tablas, ecuaciones, gr&aacute;ficos</p></li><li><p>P&aacute;rrafos</p></li></ul></div><p>
+          </p></div><div class="sect3" lang="es"><div class="titlepage"><div><div><h4 class="title"><a name="d0e1795"></a>Elementos en l&iacute;nea</h4></div></div><div></div></div><p>Estos elementos son porciones de texto, incluidos dentro de alg&uacute;n bloque de texto, que no causan un salto de l&iacute;nea y que entregan alguna informaci&oacute;n particular. Se dividen en:</p><div class="itemizedlist"><ul type="disc"><li><p>De publicaci&oacute;n: Acr&oacute;nimos, &Eacute;nfasis, Notas al Pie, Citas, etc.</p></li><li><p>Referencias cruzadas: Link a un elemento interno o a una URL, referencias a otro elemento, con y sin creaci&oacute;n de hiperv&iacute;nculos.</p></li><li><p>Marcado: Texto que debe ser presentado de manera especial para efectos de presentaci&oacute;n: Literal, Frase extranjera, etc.</p></li><li><p>Interfaz de usuario: Identifica elementos de una interfaz de usuario, como Botones, Iconos, Menus, etc.</p></li><li><p>Lenguajes de programaci&oacute;n y constructos: Identifica elementos relacionados con la programaci&oacute;n, como Accion, Clase, C&oacute;digo de Error, etc..</p></li><li><p>Uso general: Identifica elementos miscel&aacute;neos, como Email, Nombre de Archivo, Opcional, S&iacute;mbolo, etc.</p></li></ul></div></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="docbook_ejemplo"></a>Esquema b&aacute;sico del manual</h3></div></div><div></div></div><p>El manual que usted lee en estos momentos fue creado con Docbook. Por tanto, nada mejor que revise el c&oacute;digo fuente disponible en <a href="http://apsique.virtuabyte.cl/php/curso_xml" target="_top"><i class="citetitle">la p&aacute;gina web del autor.</i>
+          </a>. De todos modos, a continuaci&oacute;n se presentar&aacute; la estructura del primer cap&iacute;tulo, para ejemplicar la forma t&iacute;pica de un libro Docbook.</p><pre class="programlisting">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt; &lt;!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+"http://www.oasis-open.org/docbook/xml/4.3b2/docbookx.dtd" &gt;
+&lt;book lang="es"&gt;
+  &lt;bookinfo&gt;
+    &lt;title&gt;Introducci&oacute;n a XML&lt;/title&gt;
+    &lt;author&gt;
+      &lt;firstname&gt;Claudio&lt;/firstname&gt;
+      &lt;surname&gt;Bustos&lt;/surname&gt;
+    &lt;/author&gt;
+    &lt;pubdate&gt;2004&lt;/pubdate&gt;
+  &lt;/bookinfo&gt;
+  &lt;chapter id="cap1"&gt;
+    &lt;title&gt;Fundamentos de XML&lt;/title&gt;
+    &lt;sect1 id="lenguajes_marcado"&gt;
+      &lt;title&gt;Los lenguajes de marcado&lt;/title&gt;
+      &lt;variablelist /&gt;
+      &lt;sect2 id="sgml"&gt;
+        &lt;title&gt;SGML&lt;/title&gt;
+        &lt;variablelist /&gt;
+      &lt;/sect2&gt;
+      &lt;sect2 id="html"&gt;
+        &lt;title&gt;HTML&lt;/title&gt;
+        &lt;itemizedlist /&gt;
+        &lt;example&gt;
+          &lt;title&gt;C&oacute;digo HTML&lt;/title&gt;
+          &lt;programlisting /&gt;
+        &lt;/example&gt;
+      &lt;/sect2&gt;
+      &lt;sect2 id="justificacion_xml"&gt;
+        &lt;title&gt;Justificaci&oacute;n de XML&lt;/title&gt;
+        &lt;itemizedlist /&gt;
+      &lt;/sect2&gt;
+    &lt;/sect1&gt;
+    &lt;sect1 id="xml"&gt;
+      &lt;title&gt;Qu&eacute; es XML&lt;/title&gt;
+      &lt;sect2 id="xml_w3c"&gt;
+        &lt;title&gt;Especificaci&oacute;n W3C&lt;/title&gt;
+        &lt;note&gt;
+        &lt;/note&gt;
+        &lt;itemizedlist /&gt;
+        &lt;sect3 id="xml_w3c_documento"&gt;
+          &lt;title&gt;Definici&oacute;n de documento XML&lt;/title&gt;
+        &lt;/sect3&gt;
+        &lt;sect3 id="xml_w3c_parser"&gt;
+          &lt;title&gt;Definici&oacute;n de procesador de XML (parser)&lt;/title&gt;
+        &lt;/sect3&gt;
+      &lt;/sect2&gt;
+      &lt;sect2 id="xml_aplicaciones"&gt;
+        &lt;title&gt;Aplicaciones m&aacute;s comunes para el uso de XML&lt;/title&gt;
+      &lt;/sect2&gt;
+      &lt;sect2 id="xml_ventajas_limitaciones"&gt;
+        &lt;title&gt;Ventajas y limitaciones de XML&lt;/title&gt;
+        &lt;itemizedlist /&gt;
+      &lt;/sect2&gt;
+    &lt;/sect1&gt;
+  &lt;/chapter&gt;
+&lt;/book&gt;</pre><p>Es necesario hacer notar que, para hacer m&aacute;s breve el ejemplo, se eliminaron todos los elementos &lt;para&gt; y el contenido de los distintos tipos de listas.</p><p>Se inicia el XML con la instrucci&oacute;n de proceso <tt class="literal">&lt;?xml ?&gt;</tt>. La declaraci&oacute;n del DTD a utilizar a trav&eacute;s del DOCTYPE es distinta a las que hemos visto antes, ya que se hace referencia a un documento p&uacute;blico.</p><pre class="synopsis">&lt;!DOCTYPE elemento PUBLIC "identificador_publico"
+"url" &gt;</pre><div class="table"><a name="d0e1840"></a><p class="title"><b>Tabla 3.2. DOCTYPE para identificadores p&uacute;blicos</b></p><table summary="DOCTYPE para identificadores p&uacute;blicos" border="1"><colgroup><col width="20%"><col width="40%"><col width="40%"></colgroup><tbody><tr><td>Identificador p&uacute;blico formal</td><td><tt class="literal">"-//OASIS//DTD DocBook XML V4.3//EN"</tt></td><td>Nombre global y abstracto, conforme  al norma ISO 8879. En este caso, se se&ntilde;ala que el DTD es propiedad de la compa&ntilde;&iacute;a Oasis, que la versi&oacute;n del DTD que estamos ocupando es la 4.3, y que el lenguaje de las marcas est&aacute; basado en el ingl&eacute;s</td></tr><tr><td>Identificador de sistema</td><td><tt class="literal">"http://www.oasis-open.org/docbook/xml/4.3b2/docbookx.dtd"</tt></td><td>Al igual que los DOCTYPE de tipo SYSTEM, se puede incorporar, aparte de la referencia p&uacute;blic, una referencia al documento DTD tanto de forma local, como a un URL.</td></tr></tbody></table></div><p>Tras la definici&oacute;n del DOCTYPE, se abre el elemento <tt class="literal">book</tt>, ra&iacute;z de todo el documento. Inmediatamente lo sigue el elemento <tt class="literal">bookinfo</tt>, que almacena meta-informaci&oacute;n sobre el libro. Para dividir al libro se utiliza como unidad mayor <tt class="literal">chapter</tt>, el cual consta de varias secciones anidadas (<tt class="literal">sect1</tt>,<tt class="literal">sect2</tt> y<tt class="literal">sect3</tt>). Cada una de ellas cuenta con su t&iacute;tulo (<tt class="literal">title</tt>), y la mayor&iacute;a del contenido se ubica dentro de elementos de p&aacute;rrafo (<tt class="literal">para</tt>), los cuales fueron omitidos, como ya se se&ntilde;al&oacute;.</p></div></div></div><div class="chapter" lang="es"><div class="titlepage"><div><div><h2 class="title"><a name="cap4"></a>Cap&iacute;tulo 4. Tecnolog&iacute;as asociadas a XML</h2></div></div><div></div></div><div class="toc"><p><b>Tabla de contenidos</b></p><dl><dt><span class="sect1"><a href="#parser">Procesadores o Parsers</a></span></dt><dd><dl><dt><span class="sect2"><a href="#parser_sax">SAX</a></span></dt><dt><span class="sect2"><a href="#parser_dom">DOM</a></span></dt></dl></dd><dt><span class="sect1"><a href="#d0e1922">Navegadores</a></span></dt><dd><dl><dt><span class="sect2"><a href="#d0e1931">Internet Explorer</a></span></dt><dt><span class="sect2"><a href="#d0e1944">Mozilla - Firefox</a></span></dt></dl></dd><dt><span class="sect1"><a href="#editores_xml">Editores de XML</a></span></dt><dd><dl><dt><span class="sect2"><a href="#editores_xml_texto">Procesadores de texto adaptados a XML</a></span></dt><dt><span class="sect2"><a href="#d0e2050">Editores espec&iacute;ficos de XML</a></span></dt></dl></dd><dt><span class="sect1"><a href="#d0e2101">Herramientas auxiliares</a></span></dt><dd><dl><dt><span class="sect2"><a href="#d0e2104">Validadores de XML</a></span></dt><dt><span class="sect2"><a href="#d0e2141">Herramientas XSL</a></span></dt></dl></dd></dl></div><div class="sect1" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="parser"></a>Procesadores o Parsers</h2></div></div><div></div></div><p>Si bien las capacidades que nos brinda XSLT para navegar y transformar textos son notables, esde luego no ofrece todas las capacidades que un programador pudiese desear. Por tanto, para los distintos lenguajes de computaci&oacute;n se han desarrollado librer&iacute;as o m&oacute;dulos, denominados parsers, que le permiten al desarrollador tener un acceso f&aacute;cil al documento XML.</p><p>Existen dos grandes tipos de parsers, las del tipo SAX y las del tipo DOM.</p><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="parser_sax"></a>SAX</h3></div></div><div></div></div><div class="figure"><a name="d0e1903"></a><p class="title"><b>Figura 4.1. Parser tipo SAX</b></p><div class="mediaobject" align="center"><img src="parser_sax.png" align="middle" alt="Parser tipo SAX"></div></div><p>Los procesadores SAX navegan en forma secuencial a trav&eacute;s del archivo, generando callbacks a funciones determinadas por el desarrollador ante cada evento, como la apertura de un tag o su cierre. Su ventaja es que ocupan muy poca memoria y son muy r&aacute;pidos. La desventaja es que todo el trabajo de determinar la estructura del archivo (ver que tag se incluye dentro de otro), corre por cuenta del desarrollador.</p></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="parser_dom"></a>DOM</h3></div></div><div></div></div><div class="figure"><a name="d0e1914"></a><p class="title"><b>Figura 4.2. Parser tipo DOM</b></p><div class="mediaobject" align="center"><img src="parser_dom.png" align="middle" alt="Parser tipo DOM"></div></div><p>Los procesadores DOM, a diferencia de los SAX, guardan toda la informaci&oacute;n de estructura y contenido del documento XML en memoria. Su ventaja es que es muy f&aacute;cil navegar a trav&eacute;s del XML, subiendo o bajando a trav&eacute;s de los nodos, pudiendo recopilar informaci&oacute;n de muchas etiquetas en una sola instrucci&oacute;n. El problema radica en que son m&aacute;s lentos y que, dependiendo del tama&ntilde;o del documento, almacenar la estructura completa puede requerir mucha memoria.
+</p></div></div><div class="sect1" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e1922"></a>Navegadores</h2></div></div><div></div></div><p>Los distintos navegadores presentan enfoques dis&iacute;miles para el procesamiento de XML. Como ejemplo, utilizaremos el documento XML que contiene la introducci&oacute;n al manual, el cual es procesado primero en forma directa y, luego, a trav&eacute;s de hojas de estilo CSS, una tecnolog&iacute;a que permite especificar el modo de presentaci&oacute;n de las distintos elementos dentro de una p&aacute;gina HTML o XML</p><p>A continuaci&oacute;n se incluir&aacute; el c&oacute;digo CSS que contiene la descripci&oacute;n de como debiera presentarse el XML</p><pre class="programlisting">preface {
+background:white;
+border:1px solid black;
+font-size:9pt;
+}
+preface &gt; title {
+display:block;
+font-size:150%;
+color:blue;
+}
+
+section {
+border: 1px solid black;
+padding:5 px;
+display:block;
+margin;2px;
+margin:5px;
+}
+section &gt; title {
+display:block;
+font-weight:bold;
+margin:5px;
+}
+para {
+display:block;
+margin-bottom:10px;
+}
+itemizedlist {
+display:block; margin-left:40px;
+  list-style-type:disc;
+
+}
+listitem {
+	display:list-item;
+}</pre><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="d0e1931"></a>Internet Explorer</h3></div></div><div></div></div><p>Internet Explorer puede presentar la estructura de un documento XML como un &aacute;rbol y realizar validaci&oacute;n de DTD sencillos</p><p>El enfoque preferido para trabajar en esta plataforma es el uso de XSLT, con s&oacute;lo un m&iacute;nimo de soporte para CSS sobre XML. En otras palabras, se supone que el desarrollador debe entregar un XSLT que transforme el contenido en HTML, sobre el cual se aplican los estilos definidos en el CSS. El problema radicar&iacute;a en que el soporte XSLT de IE es bastante limitado</p><div class="figure"><a name="d0e1938"></a><p class="title"><b>Figura 4.3. Documento XML en Internet Explorer, sin CSS y con CSS</b></p><div class="mediaobject" align="center"><img src="explorer_xml.png" align="middle" alt="Documento XML en Internet Explorer, sin CSS y con CSS"></div></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="d0e1944"></a>Mozilla - Firefox</h3></div></div><div></div></div><p>Al igual que Internet Explorer, Mozilla y su derivado, Firefox, pueden presentar la estructura de un documento XML</p><p>El enfoque de Mozilla se centra en la utilizaci&oacute;n de CSS, siendo su implementaci&oacute;n de los est&aacute;ndares W3C para CSS 1 bastante completa. Para cada elemento se puede definir de manera bastante precisa su modo de presentaci&oacute;n, siendo especialmente &uacute;til el manejo de la propiedad <tt class="literal">block</tt>.</p><div class="figure"><a name="d0e1954"></a><p class="title"><b>Figura 4.4. Documento XML en Firefox, sin CSS y con CSS</b></p><div class="mediaobject" align="center"><img src="mozilla_xml.png" align="middle" alt="Documento XML en Firefox, sin CSS y con CSS"></div></div></div></div><div class="sect1" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="editores_xml"></a>Editores de XML</h2></div></div><div></div></div><p>XML se concibi&oacute; como un formato de texto, no binario, para que fuese f&aacute;cilmente editable. Hasta la plataforma m&aacute;s sencilla cuenta con alguna herramienta de edici&oacute;n de texto, por lo que es posible crear documentos XML incluso con el Block de Notas (notepad) de Windows, por dar un ejemplo. Ahora bien, para trabajar con documentos de cierta extensi&oacute;n es recomendable utilizar alguna herramienta m&aacute;s potente.</p><p>Existen dos grandes grupos de herramientas de desarrollo XML: los editores de texto propiamente tales y herramientas de edici&oacute;n gr&aacute;fica. Estas &uacute;ltimas ocultan el marcado XML y lo representan de diversas maneras: estructuras en &aacute;rbol, cajas anidades, presentaci&oacute;n del texto con diversos colores o s&iacute;mbolos, etc.</p><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="editores_xml_texto"></a>Procesadores de texto adaptados a XML</h3></div></div><div></div></div><p>Existe una infinidad de editores de texto, de los cuales resultan especialmente indicados para el desarrollo de XML aquellos que est&aacute;n dirigidos a los programadores. A continuaci&oacute;n presentaremos algunas de las caracter&iacute;sticas que facilitan el trabajo con documentos XML; presentamos el nombre en ingl&eacute;s en aquellos casos donde no existe en castellano a&uacute;n una forma com&uacute;n de denominarlas.</p><div class="table"><a name="editores_xml_texto_caracteristicas"></a><p class="title"><b>Tabla 4.1. Funcionalidades deseables en un editor de texto XML</b></p><table summary="Funcionalidades deseables en un editor de texto XML" border="1"><colgroup><col width="20%"><col width="40%"><col width="40%"></colgroup><thead><tr><th>Nombre</th><th>Funcionalidad</th><th>Ventaja</th></tr></thead><tbody><tr><td>Syntax Highlighting</td><td>Diferenciaci&oacute;n por colores de los distintos objetos del marcado.</td><td>Permite distinguir r&aacute;pidamente un elemento del marcado de otro y hace inmediatamente visible errores como la omisi&oacute;n de comillas.</td></tr><tr><td>Case Folding</td><td>Se omite la presentaci&oacute;n de ciertas secciones del c&oacute;digo que se encuentran bajo determinado nivel jer&aacute;rquico.</td><td>Evita la saturaci&oacute;n visual de elementos y hace extremadamente sencilla la tarea de mover o eliminar bloques completos</td></tr><tr><td>Autocompletaci&oacute;n</td><td>Al iniciarse el ingreso de un elemento de marcada, se presentan los nombres de marcas que tengan igual inicio. Tambi&eacute;n incluye la habilidad de crear autom&aacute;ticamente el &uacute;ltimo elemento abierto y de presentar los posibles atributos que puede tener un elemento</td><td>Es especialmente &uacute;til cuando se trabaja con DTD grandes, como docbook, donde es muy dif&iacute;cil recordar la nomenclatura exacta de los distintos objetos y en los documentos largos, donde es f&aacute;cil perder la cuenta de los distintos elementos abiertos</td></tr><tr><td>Sangr&iacute;a autom&aacute;tica (autoindenting)</td><td>Se agrega autom&aacute;ticamente sangr&iacute;a a los distintos elementos, siendo mayores los espacios para los elementos que se encuentran dentro de otros</td><td>Facilita la inspecci&oacute;n visual del documento, al hacer an&aacute;logas la estructura l&oacute;gica a la gr&aacute;fica del documento. </td></tr><tr><td>Validaci&oacute;n de DTD</td><td>Se puede validar el documento dentro del mismo ambiente de desarrollo. Ante la presencia de un error, el programa marca de alguna manera el elemento err&oacute;neo o permite acceder directamente a la l&iacute;nea transgresora haciendo click sobre el reporte de error.</td><td>Hace muy r&aacute;pida la localizaci&oacute;n y correcci&oacute;n de errores.</td></tr></tbody></table></div><p>Existe una infinidad de editores de texto, tanto gratuitos como comerciales, que ayudan al desarrollo de XML. C&oacute;mo escapa del alcance de este texto el hacer una rese&ntilde;a de estas herramientas, nos limitaremos a citar dos, las preferidas del autor del texto</p><div class="variablelist"><dl><dt><span class="term">jEdit</span></dt><dd><p>Es un editor de texto gen&eacute;rico, especialmente dise&ntilde;ado para desarrollar programas, escrito en Java bajo licencia GPL (c&oacute;digo abierto). Si bien en un inicio estuvo orientando a la creaci&oacute;n de programaci&oacute;n en Java, con el tiempo se convertido en una excelente de uso general, debido a su arquitectura robusta y flexible. En el caso espec&iacute;fico de XML, cuenta con todas las car&aacute;cteres citadas en la <a href="#editores_xml_texto_caracteristicas" title="Tabla 4.1. Funcionalidades deseables en un editor de texto XML">Tabla&nbsp;4.1, &#8220;Funcionalidades deseables en un editor de texto XML&#8221;</a> a trav&eacute;s de distintos plugins, adem&aacute;s de la posibilidad de realizar transformaciones XSLT y de b&uacute;squedas v&iacute;a XPath.</p><p>Su desventaja principal es la necesidad de contar con un equipo r&aacute;pido y con mucha memoria. En documentos grandes y complejos, puede ser necesario desactivar algunos plug-ins para evitar una excesiva demora en la edici&oacute;n</p><p>URL: <a href="http://www.jedit.org" target="_top">http://www.jedit.org</a>
+              </p></dd><dt><span class="term">Editplus.</span></dt><dd><p>Editor gen&eacute;rico, escrito en Delphi. Es un producto comercial, de tipo shareware. Es extremadamente r&aacute;pido y soporta muy bien la edici&oacute;n de documetos largos. Si bien s&oacute;lo cuenta en forma nativa con la diferenciaci&oacute;n de marcados por colores, es muy f&aacute;cil implementar funciones de autocompletaci&oacute;n, sangr&iacute;a y validaci&oacute;n a trav&eacute;s de herramientas externas. Si se cuenta con un computador con pocos recursos, es la opci&oacute;n preferida</p><p>URL: <a href="http://www.editplus.com/" target="_top">http://www.editplus.com/</a>
+              </p></dd></dl></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="d0e2050"></a>Editores espec&iacute;ficos de XML</h3></div></div><div></div></div><p>Adem&aacute;s de los editores gen&eacute;ricos de texto, existen muchas programas dise&ntilde;ados espec&iacute;ficamente para la edici&oacute;n de XML. Si bien la experiencia del autor no ha sido muy positiva con este tipo de software, para determinados requerimientos pueden ser adecuados. Estas herramientas por lo general cuentan con opciones para verificar que el documento est&eacute; bien formado y que sea v&aacute;lido con respecto a una DTD.</p><p>Los siguientes son algunos de los editores gr&aacute;ficos XML m&aacute;s importantes:</p><div class="table"><a name="d0e2057"></a><p class="title"><b>Tabla 4.2. Lista de editores gr&aacute;ficos XML</b></p><table summary="Lista de editores gr&aacute;ficos XML" border="1"><colgroup><col width="16%"><col width="33%"><col width="51%"></colgroup><thead><tr><th>Nombre</th><th>URL</th><th>Descripci&oacute;n</th></tr></thead><tbody><tr><td>xmlspy</td><td><a href="http://www.altova.com/dev_portal_xml_editing.html" target="_top">http://www.altova.com/dev_portal_xml_editing.html</a></td><td>Uno de los editores XML de pago m&aacute;s famosos, entre sus principales caracter&iacute;sticas se encuentra la posibilidad de visualizar los documentos en 5 formas distintas (grilla de texto, grilla, texto, Schema y navegador con compatibilidad XML-CSS), adem&aacute;s de la posibilidad de crear plantillas XSLT a trav&eacute;s de formularios y su completo soporte para XML Schema.</td></tr><tr><td>XMetal</td><td><a href="http://www.xmetal.com/" target="_top">http://www.xmetal.com/</a></td><td>Su principal caracter&iacute;stica es la creaci&oacute;n de plantillas para la creaci&oacute;n de XML, las cuales permiten realizar operaciones similares a las de procesadores de texto como Microsoft Word. Adem&aacute;s, permite transformar documentos SGML, cuenta con compatibilidad con sistemas de manejo de base de datos y cuenta con exportaci&oacute;n integrada a formatos como HTML y PDF.</td></tr><tr><td>Arbotext</td><td><a href="http://www.arbortext.com/" target="_top">http://www.arbortext.com/</a></td><td>Arbotext provee un conjunto de tecnolog&iacute;as para el desarrollo de XML, basadas en la interface de procesadores de texto. Provee de un modo de autor&iacute;a simple basada en navegadores y puede exportar documentos XML a distintos formatos de manera simple.</td></tr><tr><td>Butterfly XML</td><td><a href="www.butterflyxml.org" target="_top">www.butterflyxml.org</a></td><td>Una alternativa Open Source. Destaca principalmente por su GUI, que muestra en todo momento la estructura del documento en un formato similar al Explorer de Windows, adem&aacute;s de presentar el c&oacute;digo fuente con abuntantes indicaciones visuales para un r&aacute;pido reconocimiento y correcci&oacute;n de errores. Cuenta, adem&aacute;s, con soporte completo para Docbook, XSL-FO y XSLT.</td></tr></tbody></table></div></div></div><div class="sect1" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d0e2101"></a>Herramientas auxiliares</h2></div></div><div></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="d0e2104"></a>Validadores de XML</h3></div></div><div></div></div><p>Si bien lo recomendable es contar con un editor de XML que cuente con un validador DTD, en ocasiones puede ser necesario revisar en lote muchos documentos, para verificar que sean v&aacute;lidos. O, en otras, puede ser necesario validar un documento que est&aacute; en Internet.</p><p>Para el primer caso, podemos utilizar el validador de Sun, que permite validar documentos XML contra distintos esquemas (XML Schema, DTD, Relax, Trex). Lo podemos descargar en <a href="http://wwws.sun.com/software/xml/developers/multischema/index.html" target="_top">http://wwws.sun.com/software/xml/developers/multischema/index.html</a>
+        </p><p>Si nos vemos en la necesidad de utilizar un servicio de validaci&oacute;n en l&iacute;nea, tenemos los siguientes sitios a nuestro disposici&oacute;n.</p><div class="itemizedlist"><ul type="disc"><li><p>
+              <a href="http://validator.w3.org/" target="_top">http://validator.w3.org/</a>: El validador W3C oficial para HTML, aunque cuenta con un soporte limitado para XML.</p></li><li><p>
+              <a href="http://validator.w3.org/" target="_top">http://validator.w3.org/</a>: El validador W3C oficial para HTML, aunque cuenta con un soporte limitado para XML.</p></li><li><p>
+              <a href="http://www.xml.com/pub/a/tools/ruwf/check.html" target="_top">http://www.xml.com/pub/a/tools/ruwf/check.html</a>: Validador de xml.com basado en el procesador de Lark.</p></li><li><p>
+              <a href="http://www.ltg.ed.ac.uk/~richard/xml-check.html" target="_top">http://www.ltg.ed.ac.uk/~richard/xml-check.html</a>: Validador del grupo de Tecnolog&iacute;as de Lenguaje, basado en el parser RXP.</p></li><li><p>
+              <a href="http://www.stg.brown.edu/service/xmlvalid/" target="_top">http://www.stg.brown.edu/service/xmlvalid/</a>: El excelente validador del Scholarly Technology Group de la Universidad de Brown. Es el &uacute;nico del grupo que puede revisar documentos que no est&aacute;n on-line</p></li></ul></div></div><div class="sect2" lang="es"><div class="titlepage"><div><div><h3 class="title"><a name="d0e2141"></a>Herramientas XSL</h3></div></div><div></div></div><p>Existe una gran cantidad de software libre y propietario para el trabajo con la especificaci&oacute;n XSL. En general, las herramientas propietarias tienden a realizar todo el "trabajo sucio" ellas solas, siendo deber del usuario entregar el documento XML en el formato adecuado. Las herramientas libres, en cambio, suelen especializarse en una sola tarea y es labor del usuario unirlas para lograr el resultado esperado. </p><p>Tomando en consideraci&oacute;n el <a href="#docbook_uso_publicacion_diagrama" title="Figura 3.1. Diagrama de publicaci&oacute;n de documentos Docbook">diagrama para publicaci&oacute;n de Docbook</a>, nombraremos las herramientas de c&oacute;digo abierto que pueden ser utilizadas para este prop&oacute;sito. Aparecen remarcadas aquellos motores que cuentan con mejor soporte para Docbook.
+      </p><div class="itemizedlist"><ul type="disc"><li><p>Motores XSLT: Motores que soportan la especificaci&oacute;n para transformaciones XSLT</p><div class="itemizedlist"><ul type="circle"><li><p>
+                  <a href="http://saxon.sourceforge.net/" target="_top">
+                    <span class="bold"><b>Saxon</b></span>
+                  </a>
+                </p></li><li><p>
+                  <a href="http://xml.apache.org/xalan-j/" target="_top">
+                    <span class="bold"><b>Xalan</b></span>
+                  </a>
+                </p></li><li><p>
+                  <a href="http://xmlsoft.org/XSLT/" target="_top">libxslt</a>
+                </p></li><li><p>
+                  <a href="http://www.gingerall.com/charlie-bin/get/webGA/act/sablotron.act" target="_top">Sablotron</a>
+                </p></li></ul></div></li><li><p>Motores XSL-FO: Motores que soportan la especificaci&oacute;n para objetos de formato XSL-FO.</p><div class="itemizedlist"><ul type="circle"><li><p>
+                  <a href="http://xml.apache.org/fop/" target="_top">
+                    <span class="bold"><b>FOP</b></span>
+                  </a>
+                </p></li><li><p>
+                  <a href="http://www.tei-c.org.uk/Software/passivetex/" target="_top">PassiveTeX</a>
+                </p></li><li><p>
+                  <a href="http://www.esng.dibe.unige.it/REXP/REXP.html" target="_top">REXP</a>
+                </p></li></ul></div></li></ul></div></div></div></div><div class="appendix" lang="es"><div class="titlepage"><div><div><h2 class="title"><a name="apendice_i"></a>Ap&eacute;ndice A. Instalaci&oacute;n de jEdit</h2></div></div><div></div></div><p>El procedimiento para instalar y usar jEdit con el fin de crear documentos Docbook es el siguiente</p><div class="procedure"><p class="title"><b>Procedimiento A.1. Procedimiento para instalar jEdit</b></p><ol type="1"><li><p>Instalar Java Runtime Enviroment: Dirigirse a la p&aacute;gina de <a href="http://wwws.sun.com/software/download/" target="_top">descargas de  Sun</a>, y buscar el &uacute;ltimo Java Runtime Enviroment (JRE) disponible, necesario para correr aplicaciones Java. Si se trabaja sobre plataforma linux, se puede ocupar alternativas como <a href="http://www.blackdown.org/" target="_top">Blackdown</a>
+        </p></li><li><p>Instalar jEdit: Dirigirse a la p&aacute;gina de descargas de <a href="http://jedit.org/index.php?page=download" target="_top">jEdit</a> y descargar una versi&oacute;n de acuerdo a la plataforma. En Windows es altamente recomendable utilizar el formato ejecutable.</p></li><li><p>Activar soporte para DTD Docbook en jEdit</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Nota</h3><p>El plug-in XML de jEdit incluye, a la fecha, el DTD para Docbook 4.2. Los pasos siguientes s&oacute;lo son necesarios si se quiere instalar una versi&oacute;n m&aacute;s reciente</p></div><ol type="a"><li><p>Descargar el DTD de Docbook: El DTD de Docbook puede ser descargado desde la URL <a href="http://www.docbook.org/xml/index.html" target="_top">http://www.docbook.org/xml/index.html</a>. Se debe seleccionar la versi&oacute;n estable m&aacute;s reciente, o sea, aquella que no tiene una b (beta) al final del n&uacute;mero de versi&oacute;n. El archivo zip que se ofrece en la p&aacute;gina debe descomprimirse en un lugar conocido, por ejemplo <tt class="filename">c:/docbook/dtd</tt>.</p></li><li><p>Editar archivo catalog.xml: Esta es la parte m&aacute;s delicada del proceso. En el directorio donde se descomprimi&oacute; el DTD de Docbook, debe buscarse el archivo <tt class="filename">catalog.xml</tt> y debe reemplazarse la primera l&iacute;nea tras los comentarios: </p><pre class="programlisting">&lt;!-- ........................ --&gt;
+&lt;!-- DocBook driver file .... --&gt;
+&lt;public publicId="-//OASIS//DTD DocBook XML V4.3//EN"
+        uri="docbookx.dtd"/&gt;</pre><p>El contenido de la l&iacute;nea a agregar es dependiente de la posici&oacute;n en la cual se haya incorporado el DTD y de la versi&oacute;n de Windows. Si, tal como dijimos antes, descomprimimos en <tt class="filename">c:/docbook/dtd</tt>, y ocupamos Windows NT/2000/XP obtendriamos algo como:</p><pre class="programlisting">&lt;!-- ........................ --&gt;
+&lt;!-- DocBook driver file .... --&gt;
+&lt;group  prefer="public"  xml:base="file:///c:/docbook/dtd/" &gt;
+&lt;public publicId="-//OASIS//DTD DocBook XML V4.3//EN"
+        uri="docbookx.dtd"/&gt;</pre><p>Para Windows 98, es mejor utilizar</p><pre class="programlisting">&lt;!-- ........................ --&gt;
+&lt;!-- DocBook driver file .... --&gt;
+&lt;group  prefer="public"  xml:base="file:///./" &gt;
+&lt;public publicId="-//OASIS//DTD DocBook XML V4.3//EN"
+        uri="docbookx.dtd"/&gt;</pre></li></ol></li><li><p>Instalar plugins en jEdit: Una vez iniciado jEdit, ya sea a trav&eacute;s del Men&uacute; Inicio en Windows o la instrucci&oacute;n <tt class="literal">jedit</tt> en linux, procederemos a instalar el plugin <tt class="literal">XML</tt> y <tt class="literal">Console</tt> y configurarlos de modo adecuado. Para ello, debemos realizar el siguiente procedimiento en jEdit 4.2 (leer la documentaci&oacute;n del programa para versiones anteriores):</p><ol type="a"><li><p>Ir al men&uacute; Plugins-&gt;Plugin Manager</p></li><li><p>Ir a la pesta&ntilde;a Install, hacer click al lado de los items <tt class="literal">Console</tt> y <tt class="literal">XML</tt>. Presionar Install y esperar a que instalen los plugins. </p></li><li><p>Cerrar el programa e iniciarlo nuevamente</p></li><li><p>Ir al men&uacute; Plugins-&gt;Plugins Options. Abrir el men&uacute; XML y seleccionar la rama Catalogs. Presionar en el signo <tt class="literal">+</tt> que se encuentra bajo el listado y buscar el archivo <tt class="filename">catalog.xml</tt>, que deber&iacute;a estar en <tt class="filename">c:/docbook/dtd/catalog.xml</tt>
+            </p></li><li><p>Ir a la rama General del men&uacute; XML y seleccionar la opci&oacute;n 'Validate if DTD or schema available' y seleccionar de la lista con el titulo 'DTD and Schema downloading' la opci&oacute;n 'Only use local files and catalogs' </p></li><li><p>Para activar la consola, nos dirigimos al Men&uacute; Plugins y activamos la opci&oacute;n 'Console' dentro del submen&uacute; Console. Se deber&iacute;a abrir una ventana flotante. Para adosarla a alguno de los bordes, basta con presionar en el tri&aacute;ngulo que est&aacute; bajo el nombre y seleccionar una de las opciones 'Dock at...'</p></li></ol></li><li><p>Para que jEdit utilice el DTD Docbook que acabamos de descargar, es necesario que incluyamos la cabecera adecuada en nuestro documento XML. Para ello, debemos utilizar el mismo identificador p&uacute;blico que est&aacute; en la definici&oacute;n del DTD, que corresponde al escrito en la l&iacute;nea que editamos en el archivo <tt class="filename">catalog.xml</tt>. EN nuestro ejemplo, el identificador era <tt class="literal">"-//OASIS//DTD DocBook XML V4.3//EN"</tt>, as&iacute; que nuestra cabecera de XML quedar&iacute;a</p><pre class="programlisting">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+"http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" &gt;</pre></li></ol></div></div><div class="appendix" lang="es"><div class="titlepage"><div><div><h2 class="title"><a name="gfdl"></a>Ap&eacute;ndice B. GNU Free Documentation License</h2></div><div><h3 class="subtitle"><i>Version 1.2, November 2002</i></h3></div></div><div></div></div><div class="toc"><p><b>Tabla de contenidos</b></p><dl><dt><span class="section"><a href="#gfdl-0">PREAMBLE</a></span></dt><dt><span class="section"><a href="#gfdl-1">APPLICABILITY AND DEFINITIONS</a></span></dt><dt><span class="section"><a href="#gfdl-2">VERBATIM COPYING</a></span></dt><dt><span class="section"><a href="#gfdl-3">COPYING IN QUANTITY</a></span></dt><dt><span class="section"><a href="#gfdl-4">MODIFICATIONS</a></span></dt><dt><span class="section"><a href="#gfdl-5">COMBINING DOCUMENTS</a></span></dt><dt><span class="section"><a href="#gfdl-6">COLLECTIONS OF DOCUMENTS</a></span></dt><dt><span class="section"><a href="#gfdl-7">AGGREGATION WITH INDEPENDENT WORKS</a></span></dt><dt><span class="section"><a href="#gfdl-8">TRANSLATION</a></span></dt><dt><span class="section"><a href="#gfdl-9">TERMINATION</a></span></dt><dt><span class="section"><a href="#gfdl-10">FUTURE REVISIONS OF THIS LICENSE</a></span></dt><dt><span class="section"><a href="#gfdl-addendum">ADDENDUM: How to use this License for
+  your documents</a></span></dt></dl></div><div class="blockquote"><a name="fsf-copyright"></a><blockquote class="blockquote"><div class="blockquote-title"><p><b>FSF Copyright note</b></p></div><p>Copyright (C) 2000,2001,2002  Free Software Foundation, Inc.
+59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+Everyone is permitted to copy and distribute verbatim copies
+of this license document, but changing it is not allowed.</p></blockquote></div><div class="section" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="gfdl-0"></a>PREAMBLE</h2></div></div><div></div></div><p>The purpose of this License is to make a manual, textbook, or
+other functional and useful document "free" in the sense of freedom: to
+assure everyone the effective freedom to copy and redistribute it, with
+or without modifying it, either commercially or noncommercially.
+Secondarily, this License preserves for the author and publisher a way
+to get credit for their work, while not being considered responsible for
+modifications made by others.</p><p>This License is a kind of "copyleft", which means that derivative
+works of the document must themselves be free in the same sense.  It
+complements the GNU General Public License, which is a copyleft license
+designed for free software.</p><p>We have designed this License in order to use it for manuals for
+free software, because free software needs free documentation: a free
+program should come with manuals providing the same freedoms that the
+software does.  But this License is not limited to software manuals; it
+can be used for any textual work, regardless of subject matter or
+whether it is published as a printed book.  We recommend this License
+principally for works whose purpose is instruction or reference.</p></div><div class="section" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="gfdl-1"></a>APPLICABILITY AND DEFINITIONS</h2></div></div><div></div></div><p><a name="gfdl-doc"></a>This License applies to any manual or other work, in
+any medium, that contains a notice placed by the copyright holder saying
+it can be distributed under the terms of this License.  Such a notice
+grants a world-wide, royalty-free license, unlimited in duration, to use
+that work under the conditions stated herein.  The "Document", below,
+refers to any such manual or work.  Any member of the public is a
+licensee, and is addressed as "you".  You accept the license if you
+copy, modify or distribute the work in a way requiring permission under
+copyright law.</p><p><a name="gfdl-mod-ver"></a>A "Modified Version" of the Document means any
+work containing the Document or a portion of it, either copied verbatim,
+or with modifications and/or translated into another language.</p><p><a name="gfdl-secnd-sect"></a>A "Secondary Section" is a named appendix or
+a front-matter section of the Document that deals exclusively with the
+relationship of the publishers or authors of the Document to the
+Document's overall subject (or to related matters) and contains nothing
+that could fall directly within that overall subject.  (Thus, if the
+Document is in part a textbook of mathematics, a Secondary Section may
+not explain any mathematics.)  The relationship could be a matter of
+historical connection with the subject or with related matters, or of
+legal, commercial, philosophical, ethical or political position
+regarding them.</p><p><a name="gfdl-inv-sect"></a>The "Invariant Sections" are certain Secondary
+Sections whose titles are designated, as being those of Invariant
+Sections, in the notice that says that the Document is released under
+this License.  If a section does not fit the above definition of
+Secondary then it is not allowed to be designated as Invariant.  The
+Document may contain zero Invariant Sections.  If the Document does not
+identify any Invariant Sections then there are none.</p><p><a name="gfdl-cov-text"></a>The "Cover Texts" are certain short passages of
+text that are listed, as Front-Cover Texts or Back-Cover Texts, in the
+notice that says that the Document is released under this License.  A
+Front-Cover Text may be at most 5 words, and a Back-Cover Text may be at
+most 25 words.</p><p><a name="gfdl-transparent"></a>A "Transparent" copy of the Document means a
+machine-readable copy, represented in a format whose specification is
+available to the general public, that is suitable for revising the
+document straightforwardly with generic text editors or (for images
+composed of pixels) generic paint programs or (for drawings) some widely
+available drawing editor, and that is suitable for input to text
+formatters or for automatic translation to a variety of formats suitable
+for input to text formatters.  A copy made in an otherwise Transparent
+file format whose markup, or absence of markup, has been arranged to
+thwart or discourage subsequent modification by readers is not
+Transparent.  An image format is not Transparent if used for any
+substantial amount of text.  A copy that is not "Transparent" is called
+"Opaque".</p><p>Examples of suitable formats for Transparent copies include plain
+ASCII without markup, Texinfo input format, LaTeX input format, SGML or
+XML using a publicly available DTD, and standard-conforming simple HTML,
+PostScript or PDF designed for human modification.  Examples of
+transparent image formats include PNG, XCF and JPG.  Opaque formats
+include proprietary formats that can be read and edited only by
+proprietary word processors, SGML or XML for which the DTD and/or
+processing tools are not generally available, and the machine-generated
+HTML, PostScript or PDF produced by some word processors for output
+purposes only.</p><p><a name="gfdl-title-page"></a>The "Title Page" means, for a printed book,
+the title page itself, plus such following pages as are needed to hold,
+legibly, the material this License requires to appear in the title page.
+For works in formats which do not have any title page as such, "Title
+Page" means the text near the most prominent appearance of the work's
+title, preceding the beginning of the body of the text.</p><p><a name="gfdl-entitled"></a>A section "Entitled XYZ" means a named subunit
+of the Document whose title either is precisely XYZ or contains XYZ in
+parentheses following text that translates XYZ in another language.
+(Here XYZ stands for a specific section name mentioned below, such as
+"Acknowledgements", "Dedications", "Endorsements", or "History".)  To
+"Preserve the Title" of such a section when you modify the Document
+means that it remains a section "Entitled XYZ" according to this
+definition.</p><p>The Document may include Warranty Disclaimers next to the notice
+which states that this License applies to the Document.  These Warranty
+Disclaimers are considered to be included by reference in this License,
+but only as regards disclaiming warranties: any other implication that
+these Warranty Disclaimers may have is void and has no effect on the
+meaning of this License.</p></div><div class="section" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="gfdl-2"></a>VERBATIM COPYING</h2></div></div><div></div></div><p>You may copy and distribute the Document in any medium, either
+commercially or noncommercially, provided that this License, the
+copyright notices, and the license notice saying this License applies to
+the Document are reproduced in all copies, and that you add no other
+conditions whatsoever to those of this License.  You may not use
+technical measures to obstruct or control the reading or further copying
+of the copies you make or distribute.  However, you may accept
+compensation in exchange for copies.  If you distribute a large enough
+number of copies you must also follow the conditions in section 3.
+</p><p>You may also lend copies, under the same conditions stated above,
+and you may publicly display copies.</p></div><div class="section" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="gfdl-3"></a>COPYING IN QUANTITY</h2></div></div><div></div></div><p>If you publish printed copies (or copies in media that commonly
+have printed covers) of the Document, numbering more than 100, and the
+Document's license notice requires Cover Texts, you must enclose the
+copies in covers that carry, clearly and legibly, all these Cover Texts:
+Front-Cover Texts on the front cover, and Back-Cover Texts on the back
+cover.  Both covers must also clearly and legibly identify you as the
+publisher of these copies.  The front cover must present the full title
+with all words of the title equally prominent and visible.  You may add
+other material on the covers in addition.  Copying with changes limited
+to the covers, as long as they preserve the title of the Document and
+satisfy these conditions, can be treated as verbatim copying in other
+respects.</p><p>If the required texts for either cover are too voluminous to fit
+legibly, you should put the first ones listed (as many as fit
+reasonably) on the actual cover, and continue the rest onto adjacent
+pages.</p><p>If you publish or distribute Opaque copies of the Document
+numbering more than 100, you must either include a machine-readable
+Transparent copy along with each Opaque copy, or state in or with each
+Opaque copy a computer-network location from which the general
+network-using public has access to download using public-standard
+network protocols a complete Transparent copy of the Document, free of
+added material.  If you use the latter option, you must take reasonably
+prudent steps, when you begin distribution of Opaque copies in quantity,
+to ensure that this Transparent copy will remain thus accessible at the
+stated location until at least one year after the last time you
+distribute an Opaque copy (directly or through your agents or retailers)
+of that edition to the public.</p><p>It is requested, but not required, that you contact the authors of
+the Document well before redistributing any large number of copies, to
+give them a chance to provide you with an updated version of the
+Document.</p></div><div class="section" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="gfdl-4"></a>MODIFICATIONS</h2></div></div><div></div></div><p>You may copy and distribute a Modified Version of the Document
+under the conditions of sections 2 and 3 above, provided that you
+release the Modified Version under precisely this License, with the
+Modified Version filling the role of the Document, thus licensing
+distribution and modification of the Modified Version to whoever
+possesses a copy of it.  In addition, you must do these things in the
+Modified Version:</p><div class="orderedlist"><a name="gfdl-modif-cond"></a><p class="title"><b>GNU FDL Modification Conditions</b></p><ol type="A"><li>Use in the Title Page (and on the covers, if any) a
+  title distinct from that of the Document, and from those of previous
+  versions (which should, if there were any, be listed in the History
+  section of the Document).  You may use the same title as a previous
+  version if the original publisher of that version gives permission.
+</li><li>List on the Title Page, as authors, one or more
+  persons or entities responsible for authorship of the modifications in
+  the Modified Version, together with at least five of the principal
+  authors of the Document (all of its principal authors, if it has fewer
+  than five), unless they release you from this requirement.
+</li><li>State on the Title page the name of the publisher of
+  the Modified Version, as the publisher.</li><li>Preserve all the copyright notices of the Document.
+</li><li>Add an appropriate copyright notice for your
+  modifications adjacent to the other copyright notices.
+</li><li>Include, immediately after the copyright notices, a
+  license notice giving the public permission to use the Modified
+  Version under the terms of this License, in the form shown in the
+  <a href="#gfdl-addendum" title="ADDENDUM: How to use this License for&#xA;  your documents">Addendum</a> below.
+</li><li>Preserve in that license notice the full lists of
+  Invariant Sections and required Cover Texts given in the Document's
+  license notice.</li><li>Include an unaltered copy of this License.
+</li><li>Preserve the section Entitled "History", Preserve its
+  Title, and add to it an item stating at least the title, year, new
+  authors, and publisher of the Modified Version as given on the Title
+  Page.  If there is no section Entitled "History" in the Document,
+  create one stating the title, year, authors, and publisher of the
+  Document as given on its Title Page, then add an item describing the
+  Modified Version as stated in the previous sentence.
+</li><li>Preserve the network location, if any, given in the
+  Document for public access to a Transparent copy of the Document, and
+  likewise the network locations given in the Document for previous
+  versions it was based on.  These may be placed in the "History"
+  section.  You may omit a network location for a work that was
+  published at least four years before the Document itself, or if the
+  original publisher of the version it refers to gives permission.
+</li><li>For any section Entitled "Acknowledgements" or
+  "Dedications", Preserve the Title of the section, and preserve in the
+  section all the substance and tone of each of the contributor
+  acknowledgements and/or dedications given therein.
+</li><li>Preserve all the Invariant Sections of the Document,
+  unaltered in their text and in their titles.  Section numbers or the
+  equivalent are not considered part of the section titles.
+</li><li>Delete any section Entitled "Endorsements".
+  Such a section may not be included in the Modified Version.
+</li><li>Do not retitle any existing section to be Entitled
+  "Endorsements" or to conflict in title with any Invariant Section.
+</li><li>Preserve any Warranty Disclaimers.
+</li></ol></div><p>If the Modified Version includes new front-matter sections or
+appendices that qualify as Secondary Sections and contain no material
+copied from the Document, you may at your option designate some or all
+of these sections as invariant.  To do this, add their titles to the
+list of Invariant Sections in the Modified Version's license notice.
+These titles must be distinct from any other section titles.</p><p>You may add a section Entitled "Endorsements", provided it
+contains nothing but endorsements of your Modified Version by various
+parties--for example, statements of peer review or that the text has
+been approved by an organization as the authoritative definition of a
+standard.</p><p>You may add a passage of up to five words as a Front-Cover Text,
+and a passage of up to 25 words as a Back-Cover Text, to the end of the
+list of Cover Texts in the Modified Version.  Only one passage of
+Front-Cover Text and one of Back-Cover Text may be added by (or through
+arrangements made by) any one entity.  If the Document already includes
+a cover text for the same cover, previously added by you or by
+arrangement made by the same entity you are acting on behalf of, you may
+not add another; but you may replace the old one, on explicit permission
+from the previous publisher that added the old one.</p><p>The author(s) and publisher(s) of the Document do not by this
+License give permission to use their names for publicity for or to
+assert or imply endorsement of any Modified Version.</p></div><div class="section" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="gfdl-5"></a>COMBINING DOCUMENTS</h2></div></div><div></div></div><p>You may combine the Document with other documents released under
+this License, under the terms defined in <a href="#gfdl-4" title="MODIFICATIONS">section
+4</a> above for modified versions, provided that you include in the
+combination all of the Invariant Sections of all of the original
+documents, unmodified, and list them all as Invariant Sections of your
+combined work in its license notice, and that you preserve all their
+Warranty Disclaimers.</p><p>The combined work need only contain one copy of this License, and
+multiple identical Invariant Sections may be replaced with a single
+copy.  If there are multiple Invariant Sections with the same name but
+different contents, make the title of each such section unique by adding
+at the end of it, in parentheses, the name of the original author or
+publisher of that section if known, or else a unique number.  Make the
+same adjustment to the section titles in the list of Invariant Sections
+in the license notice of the combined work.</p><p>In the combination, you must combine any sections Entitled
+"History" in the various original documents, forming one section
+Entitled "History"; likewise combine any sections Entitled
+"Acknowledgements", and any sections Entitled "Dedications".  You must
+delete all sections Entitled "Endorsements".</p></div><div class="section" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="gfdl-6"></a>COLLECTIONS OF DOCUMENTS</h2></div></div><div></div></div><p>You may make a collection consisting of the Document and other
+documents released under this License, and replace the individual copies
+of this License in the various documents with a single copy that is
+included in the collection, provided that you follow the rules of this
+License for verbatim copying of each of the documents in all other
+respects.</p><p>You may extract a single document from such a collection, and
+distribute it individually under this License, provided you insert a
+copy of this License into the extracted document, and follow this
+License in all other respects regarding verbatim copying of that
+document.</p></div><div class="section" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="gfdl-7"></a>AGGREGATION WITH INDEPENDENT WORKS</h2></div></div><div></div></div><p>A compilation of the Document or its derivatives with other
+separate and independent documents or works, in or on a volume of a
+storage or distribution medium, is called an "aggregate" if the
+copyright resulting from the compilation is not used to limit the legal
+rights of the compilation's users beyond what the individual works
+permit.  When the Document is included in an aggregate, this License does
+not apply to the other works in the aggregate which are not themselves
+derivative works of the Document.</p><p>If the Cover Text requirement of section 3 is applicable to these
+copies of the Document, then if the Document is less than one half of
+the entire aggregate, the Document's Cover Texts may be placed on covers
+that bracket the Document within the aggregate, or the electronic
+equivalent of covers if the Document is in electronic form.  Otherwise
+they must appear on printed covers that bracket the whole
+aggregate.</p></div><div class="section" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="gfdl-8"></a>TRANSLATION</h2></div></div><div></div></div><p>Translation is considered a kind of modification, so you may
+distribute translations of the Document under the terms of section 4.
+Replacing Invariant Sections with translations requires special
+permission from their copyright holders, but you may include
+translations of some or all Invariant Sections in addition to the
+original versions of these Invariant Sections.  You may include a
+translation of this License, and all the license notices in the
+Document, and any Warranty Disclaimers, provided that you also include
+the original English version of this License and the original versions
+of those notices and disclaimers.  In case of a disagreement between the
+translation and the original version of this License or a notice or
+disclaimer, the original version will prevail.</p><p>If a section in the Document is Entitled "Acknowledgements",
+"Dedications", or "History", the requirement (section 4) to Preserve its
+Title (section 1) will typically require changing the actual
+title.</p></div><div class="section" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="gfdl-9"></a>TERMINATION</h2></div></div><div></div></div><p>You may not copy, modify, sublicense, or distribute the Document
+except as expressly provided for under this License.  Any other attempt
+to copy, modify, sublicense or distribute the Document is void, and will
+automatically terminate your rights under this License.  However,
+parties who have received copies, or rights, from you under this License
+will not have their licenses terminated so long as such parties remain
+in full compliance.</p></div><div class="section" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="gfdl-10"></a>FUTURE REVISIONS OF THIS LICENSE</h2></div></div><div></div></div><p>The Free Software Foundation may publish new, revised versions of
+the GNU Free Documentation License from time to time.  Such new versions
+will be similar in spirit to the present version, but may differ in
+detail to address new problems or concerns.  See
+http://www.gnu.org/copyleft/.</p><p>Each version of the License is given a distinguishing version
+number.  If the Document specifies that a particular numbered version of
+this License "or any later version" applies to it, you have the option
+of following the terms and conditions either of that specified version
+or of any later version that has been published (not as a draft) by the
+Free Software Foundation.  If the Document does not specify a version
+number of this License, you may choose any version ever published (not
+as a draft) by the Free Software Foundation.</p></div><div class="section" lang="es"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="gfdl-addendum"></a>ADDENDUM: How to use this License for
+  your documents</h2></div></div><div></div></div><p>To use this License in a document you have written, include a copy
+of the License in the document and put the following copyright and
+license notices just after the title page:</p><div class="blockquote"><a name="copyright-sample"></a><blockquote class="blockquote"><div class="blockquote-title"><p><b>Samle Invariant Sections list</b></p></div><p>
+    Copyright (c)  YEAR  YOUR NAME.
+    Permission is granted to copy, distribute and/or modify this document
+    under the terms of the GNU Free Documentation License, Version 1.2
+    or any later version published by the Free Software Foundation;
+    with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+    A copy of the license is included in the section entitled "GNU
+    Free Documentation License".
+</p></blockquote></div><p>If you have Invariant Sections, Front-Cover Texts and Back-Cover
+Texts, replace the "with...Texts." line with this:</p><div class="blockquote"><a name="inv-cover-sample"></a><blockquote class="blockquote"><div class="blockquote-title"><p><b>Sample Invariant Sections list</b></p></div><p>
+    with the Invariant Sections being LIST THEIR TITLES, with the
+    Front-Cover Texts being LIST, and with the Back-Cover Texts being LIST.
+</p></blockquote></div><p>If you have Invariant Sections without Cover Texts, or some other
+combination of the three, merge those two alternatives to suit the
+situation.</p><p>If your document contains nontrivial examples of program code, we
+recommend releasing these examples in parallel under your choice of free
+software license, such as the GNU General Public License, to permit
+their use in free software.</p></div></div><div class="glossary"><div class="titlepage"><div><div><h2 class="title"><a name="d0e2516"></a>Glosario</h2></div></div><div></div></div><dl><dt><a name="glosario_dtd"></a>Document Type Definition</dt><dd><p>Es el documento cuyo prop&oacute;sito es establecer los objetos pertinentes para la construcci&oacute;n de un documento <a href="#glosario_xml">XML</a> Define la estructura del documento con una lista de objetos considerados legales. El DTD puede ser declarado dentro del mismo documento XML o en un archivo externo.</p></dd><dt><a name="glosario_etiqueta"></a>Etiqueta</dt><dd><p>Etiqueta es un t&eacute;rmino gen&eacute;rico para un descriptor de un elemento del lenguaje. Al conjunto de etiquetas para un documento u otra unidad de informaci&oacute;n es denominado por lo general marcado.</p><p>Ver tambi&eacute;n <a href="#glosario_marcado">Marcado</a>.</p></dd><dt><a name="glosario_html"></a>Hipertext Markup Language</dt><dd><p>Lenguaje de publicaci&oacute;n de documentos en la WWW. Es un formato no propietario, cuya especificaci&oacute;n es realizada por el W3C (World Wide Web Consortium). En el aspecto t&eacute;cnico, es un lenguaje de marcado descriptivo-procedimental basado en  <a href="#glosario_sgml">SGML</a>, que especifica en forma gen&eacute;rica como debe presentarse un documento en los navegadores.</p><p>La versi&oacute;n m&aacute;s reciente es la 4.01,de Abril de 1998. Tambi&eacute;n ser&aacute; la &uacute;ltima, ya que W3C ha enfocado sus esfuerzos en <a href="#glosario_xhtml">XHTML</a>, revisi&oacute;n de HTML compatible con <a href="#glosario_xml">XML</a>.</p></dd><dt><a name="glosario_marcado"></a>Marcado</dt><dd><p>Marcado hace referencia a la secuencia de caracteres y otros s&iacute;mbolos insertados en ciertos lugares de un texto o de un archivo de procesamiento de texto, que indican como de lucir el archivo al ser impreso o presentado en pantalla, o tambi&eacute;n para indicar su estructura l&oacute;gica. Los indicadores de marcado suelen ser llamados etiquetas (tags)</p><p>Ver tambi&eacute;n <a href="#glosario_etiqueta">Etiqueta</a>.</p></dd><dt><a name="glosario_sgml"></a>Standard Generalized
+  Markup Language</dt><dd><p>Metalenguaje usado para definir lenguajes de marcado. Su primer boceto fue desarrollado en 1974 y se estableci&oacute;n como norma ISO 8879 el a&ntilde;o 1986. Un lenguaje de marcado definido por SGML tiene un vocabulario espec&iacute;fico (nombres para elementos y atributos) y una sintaxis declarada (gram&aacute;tica definida para la jerarqu&iacute;a y otras caracter&iacute;sticas)
+      </p></dd><dt><a name="glosario_w3c"></a>World Wide Web Consortium</dt><dd><p>Organizaci&oacute;n constituida en 1994 con el objetivo de desarrollar protocolos comunes para la evoluci&oacute;n de la Internet. Esta compuesta por variadas industrias internacionales, universidades como el MIT (EEUU), INRIA (Francia) y Keio (Jap&oacute;n) y cuenta con el soporte oficial de DARPA y la Comisi&oacute;n Europea.</p></dd><dt><a name="glosario_xhtml"></a>Extensible Hipertext Markup Language</dt><dd><p>Es el lenguaje de marcado que reproduce y extiende las caracter&iacute;sticas de <a href="#glosario_html">HTML</a>, reformuladas en <a href="#glosario_xml">XML</a>, siendo as&iacute; el sucesor natural de aquel lenguaje.</p></dd><dt><a name="glosario_xml"></a>Extended Markup Language</dt><dd><p>
+    El Lenguaje de Marcado Extensible describe una clase de objetos denominados documentos XML y especifica de modo parcial el comportamiento de los programas computacionales que los procesan. Es una aplicaci&oacute;n restringida de <a href="#glosario_sgml">SGML</a>, por lo que los documentos XML v&aacute;lidos son documentos <a href="#glosario_sgml">SGML</a> v&aacute;lidos.
+    </p><p>Ver tambi&eacute;n <a href="#glosario_sgml">Standard Generalized
+  Markup Language</a>.</p></dd></dl></div></div></body></html>

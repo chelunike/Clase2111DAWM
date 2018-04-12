@@ -1,0 +1,30 @@
+<!ELEMENT cd (fecha, canciones)>
+<!ATTLIST cd
+          titulo CDATA #REQUIRED>
+          
+<!ELEMENT fecha EMPTY>
+<!ATTLIST fecha
+          anio NMTOKEN #REQUIRED
+          dia NMTOKEN #REQUIRED
+          mes NMTOKEN #REQUIRED>
+          
+<!ELEMENT canciones (cancion+)>
+
+<!ELEMENT cancion (titulo, compositores?, productores, sello, artista+)>
+<!ATTLIST cancion
+          anio CDATA #REQUIRED
+          duracion CDATA #REQUIRED>
+
+<!ATTLIST cancion
+          precio (0.99|1.49|1.99) #REQUIRED 
+          moneda (dolar|euro) "euro">
+          
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT compositores (compositor+)>
+<!ELEMENT compositor (nombres, apellidos)>
+<!ELEMENT nombres (#PCDATA)>
+<!ELEMENT apellidos (#PCDATA)>
+<!ELEMENT productores (productor+)>
+<!ELEMENT productor (nombres, apellidos)>
+<!ELEMENT sello (#PCDATA)>
+<!ELEMENT artista (#PCDATA)>

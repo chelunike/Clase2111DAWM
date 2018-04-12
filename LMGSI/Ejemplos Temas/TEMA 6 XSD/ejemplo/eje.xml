@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<alumnos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="eje.xsd">
+  <alumno codigo="C1">Pepe</alumno>
+  <alumno codigo="C2">Rosa </alumno>
+  <alumno codigo="C3">Ana</alumno>
+</alumnos>

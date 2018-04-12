@@ -1,0 +1,40 @@
+<!ELEMENT biblioteca (prestamo)>
+
+<!ELEMENT prestamo (bibliotecario, fechas, lector,ejemplares*)>
+<!ATTLIST prestamo
+          id ID #REQUIRED>
+          
+<!ELEMENT bibliotecario (#PCDATA)>
+<!ATTLIST bibliotecario
+          apellidos CDATA #REQUIRED
+          nombre CDATA #REQUIRED>
+          
+<!ELEMENT fechas (#PCDATA)>
+<!ATTLIST fechas
+          devolucion CDATA #REQUIRED
+          prestamo CDATA #REQUIRED>
+          
+<!ELEMENT lector (id, nombre, telefono+, direccion)>
+<!ELEMENT id (#PCDATA)>
+
+<!ELEMENT nombre (#PCDATA)>
+
+<!ELEMENT telefono (#PCDATA)>
+
+<!ELEMENT direccion (#PCDATA)>
+<!ATTLIST direccion
+          cp CDATA #REQUIRED
+          letra CDATA #IMPLIED
+          localidad CDATA #REQUIRED
+          nombrevia CDATA #REQUIRED
+          numero CDATA #REQUIRED
+          piso CDATA #REQUIRED
+          provincia CDATA #REQUIRED
+          tipo (calle | avenida) #REQUIRED>
+          
+<!ELEMENT ejemplares (ejemplar)>
+<!ELEMENT ejemplar (autor+)>
+<!ATTLIST ejemplar
+          registro CDATA #REQUIRED
+          titulo CDATA #REQUIRED>
+<!ELEMENT autor (#PCDATA)>

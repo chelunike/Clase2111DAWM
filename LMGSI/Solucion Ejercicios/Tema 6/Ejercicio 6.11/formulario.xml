@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<prestamo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="formulario.xsd">
+  <bibliotecario>
+        <dni>52627856D</dni>
+        <nombre>Fer</nombre>
+        <apellido1>Moral</apellido1>
+        <apellido2>Perez</apellido2>  
+  </bibliotecario>
+  <fecha fechaPrestamo="2017-12-12" fechaDevolucion="2018-02-02"/>
+  <lector>
+      <dni>52627877D</dni>
+        <nombre>Jorge</nombre>
+        <apellido1>Fernandez</apellido1>
+        <apellido2>Perez</apellido2>
+        <telefono>678053352</telefono>
+        <direccion>
+            <tipo>calle</tipo>
+            <nombre>Balsas</nombre>
+            <numero>4</numero>
+            <piso>tercero</piso>
+            <letra>B</letra>
+            <CP>18650</CP>
+            <localidad>Durcal</localidad>
+            <provincia>Granada</provincia>
+        </direccion>   
+  </lector>
+  <prestamo id="p12">
+      <numregistro>234</numregistro>
+      <titulo>JUEGO DE TRONOS: Cancion de hielo y fuego 1</titulo>
+      <autor>George R. R. Martin</autor>
+      <autor>George R. R. Martin</autor>
+      <autor>George R. R. Martin</autor>
+  </prestamo>
+</prestamo>

@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>Ejemplo Object (X)HTML</title>
+</head> 
+<body>
+	<h2>LA ETIQUETA &lt;object&gt; en (X)HTML en principio se usa para todo tipo de objetos, pero en realidad va a depender del navegador y de los plugins que tenga instalados</h2>
+	
+	<p>Por ejemplo un archivo en PDF</p>
+	<object data="Derechohuelga.pdf" type="application/pdf" width="75%" height="500px"></object> 	
+	
+	<p>Por ejemplo una imagen</p>
+	<object data="izv.jpg"></object> 
+	
+	<p>Por ejemplo video en formato Flash</p>
+	<object width="600" height="400" data="http://www.youtube.com/v/6oZ8SfsNRhI" type="application/x-shockwave-flash"/>
+	
+	<p>Por ejemplo video que usa códecs clásicos</p>
+	
+	<!--Esta parte es para Internet Explorer -->
+
+	<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" type="video/avi" width="320" height="240">
+		<param name="src" value="GLOBO.avi" >
+		<param name="controller" value="false" >
+		<param name="autoplay" value="true">
+
+		<!--Esta parte es para otros (Firefox, Safari. etc) -->
+
+		<object type="video/quicktime" data="GLOBO.avi" width="320" height="240">
+			<param name="controller" value="false" >
+			<param name="autoplay" value="true">
+		</object>
+	</object>
+	
+	<hr/>
+	
+	<!--Esta parte es para Internet Explorer -->
+	<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" width="320" height="240" type="video/mpeg">
+		<param name="src" value="saturno.mpeg" >
+		<param name="controller" value="false" >
+		<param name="autoplay" value="true">
+
+		<!--Esta parte es para otros (Firefox, Safari. etc) -->
+
+		<object type="video/quicktime" data="saturno.mpeg" width="320" height="240">
+			<param name="controller" value="false" >
+			<param name="autoplay" value="true">
+		</object>
+	</object>
+</body>
+</html>

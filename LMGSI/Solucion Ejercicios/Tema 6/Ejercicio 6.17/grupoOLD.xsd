@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="grupos">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="grupo" type ="T_grupo" maxOcurrs="3"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:simpleType name="T_grupo">
+        <xs:restriction base="T_amigos">
+            <xs:minLength value="2"/>
+            <xs:maxLength value="4"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+	
+
+	
+	
+    <xs:simpleType name="T_amigos">
+        <xs:list itemType="xs:string"/>
+    </xs:simpleType>
+	
+
+	
+  <!--    <xs:restriction base="T_amigos">
+        <xs:minLength value="2"/>
+        <xs:maxLength value="4"/>
+      </xs:restriction>-->
+      
+  <!--	<xs:attribute name="de" type="T_Cabezas"/>-->
+  
+  <!--      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="Antonio|Bartolo|Carmen|Daniel|Emilia|Felipe|Gerardo|Horacio|Fuencisla"/>
+        </xs:restriction>
+      </xs:simpleType>-->
+	
+</xs:schema>

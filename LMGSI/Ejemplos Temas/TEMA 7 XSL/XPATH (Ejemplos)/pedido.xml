@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pedido id="5432">
+  <fecha>12/08/2010</fecha>
+  <cliente id="24123456H">Dolores Fuertes</cliente>
+  <lineaPedido>
+    <numeroPieza almacen="Central">HH-123</numeroPieza>
+    <descripcion>muelle del saltabalates</descripcion>
+    <cantidad>5</cantidad>
+  </lineaPedido>
+  <lineaPedido>
+    <numeroPieza almacen="Sur">MK-442</numeroPieza>
+    <descripcion>freno del saltabalates</descripcion>
+    <cantidad>10</cantidad>
+  </lineaPedido>
+</pedido>

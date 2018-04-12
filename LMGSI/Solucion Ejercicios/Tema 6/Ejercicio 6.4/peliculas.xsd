@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="catalogoPeliculas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="pelicula" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="pelicula">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="titulo" type="xs:string"/>
+        <xs:element name="duracion" type="xs:positiveInteger"/>
+        <xs:element ref="genero"/>
+        <xs:element ref="actores"/>
+        <xs:element ref="fecha"/>
+        <xs:element name="director" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="formato"/>
+        <xs:element name="trailer" type="xs:string" minOccurs="0"/>
+        <xs:element name="cartel" type="xs:string" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="formato" default="DVD">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:pattern value="DVD|VHS"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  
+  <xs:element name="genero">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:pattern value="drama|comedia|thriller|sci-fi"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  
+  <xs:element name="fecha" default="1900">
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:minInclusive value="1900"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  
+  <xs:element name="actores">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="actor" type="xs:string" maxOccurs="3"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+
+</xs:schema>

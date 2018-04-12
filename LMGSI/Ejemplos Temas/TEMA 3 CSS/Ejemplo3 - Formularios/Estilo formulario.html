@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+    <title>Ejercicio 15. TELEBIRRIA</title>    
+    <style type="text/css">
+        form input {padding: 0.5em; }
+        form input:focus {border:2px solid red; background: #F3F3F3;}
+    </style>
+</head>
+<body>
+<div>
+    <h1>TELEBIRRIA</h1>
+    <h3>PARA REALIZAR SU PEDIDO, RELLENE EL FORMULARIO</h3>
+    
+    <form action="#" method="post">
+        <fieldset>
+            <legend><strong>Datos personales y de envío</strong></legend>
+            <label for="nombre">
+                Nombre</label>
+            <input type="text" id="nombre" name="nombre" value="" size="20" maxlength="25"/>
+            <br />
+            <label for="apellidos">
+                Apellidos</label>
+            <input type="text" id="apellidos" name="apellidos" value="" size="40" maxlength="50"/>
+            <br />
+            <label for="domicilio">
+                Domicilio</label>
+            <input type="text" id="domicilio" name="domicilio" value="" />
+            <br />
+            <label for="localidad">
+                Localidad</label>
+            <input type="text" id="localidad" name="localidad" value="" />
+            <br />                
+            <label for="CPostal">
+                Código postal</label>
+            <input type="text" id="CPostal" name="CPostal" value="" size="6" maxlength="5"/>
+            <br />
+            <label for="telefono">
+                Teléfono</label>
+            <input type="text" id="telefono" name="telefono" value="" size="10" maxlength="9"/>
+            <br />
+        </fieldset>
+        <fieldset>
+            <legend><strong>Elija la opción de entrega</strong></legend>
+            <input type="radio" name="tipo_envio" value="recoger" checked="checked" />
+            Recoger en el local
+            <br />
+            <input type="radio" name="tipo_envio" value="enviar" />
+            Enviar a domicilio
+            <br />
+        </fieldset>
+        <fieldset>
+            <legend><strong>¿Quiere que le enviemos nuestras ofertas?</strong></legend>
+            <input type="checkbox" name="ofertas" value="correo" checked="checked" />Enviar
+            al domicilio
+            <br />
+            <input type="checkbox" name="ofertas" value="email" checked="checked" />Enviar por
+            email
+            <br />
+        </fieldset>
+        <fieldset>
+            <legend><strong>Elija su menu</strong></legend>
+            <label for="tamano">Tamaño del bocadillo</label> <br />
+            <select id="tamano" name="tamano" size="4">
+                <option value="pequeno">pequeño</option>
+                <option value="mediano" selected="selected">mediano</option>
+                <option value="grande">grande</option>
+                <option value="enorme">enorme</option>
+            </select>
+            <br />
+            <label for="contenido">Contenido del bocadillo</label> <br />
+            <select id="contenido" name="contenido" size="4">
+                <option value="anchoas">anchoas</option>
+                <option value="calamares">calamares</option>
+                <option value="mejillones">mejillones</option>
+                <option value="jamon">jamon</option>
+                <option value="queso">queso</option>
+                <option value="lomo">lomo</option>
+                <option value="chorizo">chorizo</option>
+                <option value="atún">atún</option>
+                <option value="boniatos">boniatos</option> 
+                <option value="mortadela">mortdela</option>                    
+            </select>
+            <br />
+            <label for="comentarios">Puede añadir alguna sugerencia</label><br />
+            <textarea name="comentarios" id="comentarios" cols="50" rows="6">Por ejemplo que calienten el pan, etc.
+            </textarea>                
+        </fieldset>
+        <div>
+            <br />
+            <input id = "enviar" type="submit" value="Enviar datos"/>
+        </div>
+    </form>
+</div>
+</body>
+</html>

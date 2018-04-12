@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="listas">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="enteros" type ="T_listaEntero"/>
+                <xs:element name="edades" type ="T_listaEdades"/>
+                <xs:element name="tres_gatos" type ="T_listaTresGatos"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:simpleType name="T_listaEntero">
+        <xs:list itemType="xs:integer"/>
+    </xs:simpleType>
+    
+     <xs:simpleType name="T_listaEdades">
+        <xs:list itemType="T_edad"/>
+    </xs:simpleType>
+    
+    <xs:simpleType name="T_edad">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="125"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="T_listaTresGatos">
+        <xs:restriction base="T_listaGatos">
+            <xs:minLength value="3"/>
+            <xs:maxLength value="3"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="T_listaGatos">
+        <xs:list itemType="xs:string"/>
+    </xs:simpleType>
+
+</xs:schema>

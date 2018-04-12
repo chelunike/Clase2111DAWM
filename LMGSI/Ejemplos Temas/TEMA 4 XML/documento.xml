@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fichero: Coleccion.xml -->
+<coleccion xmlns:book="misLibros" xmlns:cd="miMusica">
+  <book:item>
+    <book:titulo>Cocinar sin cocina</book:titulo>
+    <book:autor>Rosa Moreno</book:autor>
+    <book:precio>9.49</book:precio>
+  </book:item>
+  <cd:item>
+    <cd:titulo>Violin Concerto in D</cd:titulo>
+    <cd:compositor>Beethoven</cd:compositor>
+    <cd:precio>14.95</cd:precio>
+  </cd:item>
+  <book:item>
+    <book:titulo>Construya su casa en 10 minutos</book:titulo>
+    <book:autor>Luis Chapucero</book:autor>
+    <book:precio>27.75</book:precio>
+  </book:item>
+  <cd:item>
+    <cd:titulo>Violin Concertos Numbers 1, 2, and 3</cd:titulo>
+    <cd:compositor>Mozart</cd:compositor>
+    <cd:precio>16.49</cd:precio>
+  </cd:item>
+</coleccio>

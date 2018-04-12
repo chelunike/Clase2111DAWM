@@ -1,0 +1,121 @@
+#contenedor {margin: 5px auto; width:1000px; font-family:'Trebuchet MS';}     
+
+#cabecera {background:#E40404; margin:0.5em 0; padding:0.1em 0}
+#cabecera h1 {float:left;  color:white; margin:0.5em;}
+#cabecera img {float:right; margin:0.75em;} 
+
+.limpia {clear:both;}
+
+  
+#lateralIzq
+{
+	width:20%;
+	float:left;
+	background-color:#CCC;	
+	margin-bottom: 10px;
+}
+
+	#contenidoIzq
+	{
+		text-align:justify;
+		font-size:0.9em;	
+		padding:1em;
+	}
+
+	#menuIzq ul.menuI 
+	{	
+		font-family:Verdana;
+		font-size:1.1em;	
+		list-style: none;    
+		padding:0;
+		margin: 0.2em;	
+	}
+		#menuIzq ul.menuI li 
+		{		
+			margin:0.5em;
+		}
+
+		#menuIzq ul.menuI li a
+		{	
+			display: block;
+			width: 80%;
+			border:2px outset #7C7C7C;	
+			background: #F4F4F4;	
+			padding:0.5em;
+			text-decoration: none;	
+		}
+		#menuIzq ul.menuI li a:link
+		{
+			color: blue;
+		}
+		#menuIzq ul.menuI li a:hover
+		{		
+			border:2px inset #7C7C7C;	
+		}
+		#menuIzq ul.menuI li a:visited
+		{
+			color:red;
+		}
+
+#lateralDer
+{	
+	width:74%;
+	float:left;
+	background-color:#AAA;	
+	margin-left: 0.5em;	
+	padding:1.5em;
+	margin-bottom: 10px;
+}
+
+#pie 
+{
+	border: 1px solid; 
+	padding-left: 1em;
+	clear:both;
+	background-color: #777;
+}
+
+
+/* menu superior --------------------------------------------*/
+
+#cabeceraMenu
+{	
+	background-color:#DDD;
+}
+#cabeceraMenu ul.menuS 
+{	
+	font-family: Palatino Linotype;
+	font-size:1.2em;	
+	list-style: none;
+	margin: 0.4em;	
+	padding:0.7em;	
+}
+#cabeceraMenu ul.menuS li 
+{	
+	display:inline;
+	border-left: 1px solid #7C7C7C;	
+					
+}
+#cabeceraMenu ul.menuS li.ultimo
+{		
+	border-right: 1px solid #7C7C7C;	
+					
+}
+#cabeceraMenu ul.menuS li a 
+{
+	padding: 0.2em 0.5em;
+	text-decoration: none;	
+}
+#cabeceraMenu ul.menuS li a:link
+{
+	color: green;
+}
+#cabeceraMenu ul.menuS li a:hover
+{	
+	color:blue;
+	text-decoration:underline;
+}
+#cabeceraMenu ul.menuS li a:visited
+{
+	color:red;
+}

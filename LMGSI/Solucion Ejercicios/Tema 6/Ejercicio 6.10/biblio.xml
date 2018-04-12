@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<biblioteca xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:noNamespaceSchemaLocation="schema.xsd">
+  <libro>
+    <titulo>La granja de paco</titulo>
+    <disponible tiempo="10" unidad="dias"/>
+    <autor>Pedro</autor>
+    <formato>Fisico</formato>
+    <publicacion>2001-10-20</publicacion>
+    <precio cantidad="20" moneda="euro"/>
+    <descuento cantidad="5"/>
+    <enlacelibro href="http://www.google.es"/>
+    <portada archivo="..\portadas\imagen.jpg" />
+  </libro>
+  <libro>
+    <titulo>La mazmorra de la botella</titulo>
+    <disponible tiempo="48" unidad="horas"/>
+    <autor>Luis</autor>
+    <formato>Digital</formato>
+    <publicacion>1995-05-07</publicacion>
+    <precio cantidad="8" moneda="dolar"/>
+    <descuento/>
+    <enlacelibro href="http://www.google.es"/>
+    <portada archivo="..\portadas\imagen.jpg" /> 
+  </libro>
+</biblioteca>

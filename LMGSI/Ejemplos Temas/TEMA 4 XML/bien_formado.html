@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="es"> 
+	<head> 
+		<meta charset="UTF-8" > 
+		<title>XML bien formado. Zaidín Vergeles</title>	
+		
+		<link rel ="stylesheet" type="text/css" href="estilo.css"/>
+		<link rel="shortcut icon" type="image/x-icon" href="imagenes/icon-edu-60x60.png"/>
+					
+		<script type="text/javascript">				
+		function Valida()					
+		{
+			var file = document.form1.file.value;
+
+			// create an array in order to check the correct .xml extension in file
+			var arr_file = file.split(".");
+			var ext = arr_file[arr_file.length - 1]
+
+			// check if file is not empty - if not alert the user
+			if (file == "" || file == "undefined" || file.charAt(0) == " ")
+			{
+				alert("Please insert a file to check");
+			}
+			// check the file extension (.xml) - if not alert the user
+			else if (ext != "xml")
+			{
+				alert("The submitted file is not an XML file");
+			}
+			// if everything is ok, then
+			else
+			{
+				// create an XMLDOM
+				var x = new ActiveXObject("Microsoft.XMLDOM");
+
+				// load the submitted file
+				x.async = false;
+				x.load(file);
+
+				// set the XML parser to true
+				x.validateOnParse = true;
+
+				// check if there are errors
+				var errore = x.parseError.errorCode;
+
+				// if everything's ok, alert the user
+				if (errore == 0)
+				{
+					res.innerHTML = "No error found";
+				}
+				// if errors were found
+				else
+				{
+					// collect error information
+					var err_n = x.parseError.errorCode;
+					var err_d = x.parseError.reason;
+					var err_r = x.parseError.line;
+
+					// show the errors to the user
+					with (res)
+					{
+						innerHTML  = "Error number " + err_n + "<br>";
+						innerHTML += " - " + err_d + "<br>";
+						innerHTML += "line " + err_r + "<br>";
+					}
+				}
+				// close the parser
+				x.Close();
+			}
+		}	
+		</script>				
+	</head>
+	<body>				
+		<h1>Comprueba si un documento XML está bien formado</h1>
+		<form name="form1">
+			<label>Pulse el botón Examinar para seleccionar el archivo a comprobar</label>
+			<br>
+			<input id="archivo" type="file" name="file" size="50">
+			<br><br>
+			<input type="button" value="¿Bien formado?" onclick="Valida()">
+		</form>
+		<p id="res"></p>		
+	</body>
+</html>

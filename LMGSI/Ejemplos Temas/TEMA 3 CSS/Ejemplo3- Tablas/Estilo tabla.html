@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>	
+	<title>Ejemplo estilo tabla</title>
+    <style type="text/css">
+        table {text-align:center; border-collapse:separate; border-spacing:1em 0.5em; empty-cells:hide;caption-side:bottom; }    
+		caption {padding-top:0.75em; font-size:1.2em;}
+		
+		th {background-color: #DDD;}
+        tr:hover{ background: #FFFF66; }
+        td:hover{ background: red; }
+    </style>
+</head>
+<body>
+	<h2>HORARIO CURSO</h2>	
+	<table summary="Horario curso" border="2" cellpadding="10px;">
+	    <caption>Horario lectivo semanal</caption>
+	    <tr>
+	        <th></th>
+	        <th>LUNES</th>
+	        <th>MARTES</th>
+	        <th>MIERCOLES</th>
+	        <th>JUEVES</th>
+	        <th>VIERNES</th>
+	    </tr>
+	    <tr>
+	        <th>8.15</th>
+	        <td rowspan = "2">MOD 1</td>
+	        <td rowspan = "2">MOD 3</td>
+	        <td rowspan = "3">MOD 2</td>
+	        <td rowspan = "3">MOD 2</td>
+	        <td rowspan = "2">MOD 1</td>	        
+	    </tr>	 
+	    <tr>
+	        <th>9.15</th>	     	      	  	       	      
+	    </tr>   
+	    <tr>
+	        <th>10.15</th>
+	        <td>MOD 2</td>
+	        <td>MOD 1</td>	  	       
+	        <td>MOD 2</td>	        
+	    </tr>
+	    <tr>
+	        <th>11.15</th>
+	        <td colspan = "5" style="letter-spacing:30px">RECREO</td>
+	    </tr>	   
+	    <tr>
+	        <th>11.45</th>
+	        <td rowspan = "3">MOD 3</td>	       
+	        <td>MOD 1</td>
+	        <td rowspan = "2">MOD 1</td>	  
+	        <td rowspan = "3">MOD 1</td>	   
+	        <td>MOD 2</td>	         
+	    </tr>
+	    <tr>
+	        <th>12.45</th>	       
+	        <td rowspan = "2">MOD 2</td>	     	       
+	        <td rowspan = "2">MOD 3</td>	        
+	    </tr>
+	    <tr>
+	        <th>13.45</th>	      	       
+	        <td>MOD 4</td>	       	             
+	    </tr>
+	</table>			
+</body>
+</html>

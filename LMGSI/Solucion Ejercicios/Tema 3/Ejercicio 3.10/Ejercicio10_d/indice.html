@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	<meta charset="UTF-8">
+    <title>Ejercicio 3.10</title>
+    <style type="text/css">     
+		#contenedor {font-family:Helvetica, sans-serif;; background:#EEE;text-align:justify;}  
+		#lateralI {background:#d0a9f5; float:left; width:20%;
+				   font-size:1.3em; font-family:Arial;}             
+		#lateralD {background:#aabbcc; float:right; width:73%; padding:1em 2em;}   
+		
+		#lateralI ul {list-style-type:none; padding:2%;}   
+		#lateralI ul li { border:1px solid #DDD; padding:0.5em; margin:0.5em;}   
+		#lateralI ul li:hover { border:1px solid black; font-weight:500;}  
+	 
+		.fotoD {float:right;padding-left:2em;}
+		.fotoI {float:left;padding-right:2em;}  
+		
+		img+h5{font-family:Arial; font-size:0.75em; margin-top:0.2em;}    
+				
+		#cabecera {border:1px solid black; margin-top:1em; margin-bottom:1em; padding-left:2em;}
+    </style>
+	
+</head>
+<body>
+    <div id="contenedor">   
+        <div id="cabecera">
+            <h1>EL GRAN DERBI DEL SIGLO</h1>
+        </div>
+        <div id="lateralI">
+            <ul>
+                <li><a href="indice.html">Inicio</a></li>
+                <li><a href="barcelona.html">Barcelona FC</a></li>
+                <li><a href="madrid.html">Real Madrid</a></li>
+            </ul>                
+        </div>
+        <div id="lateralD">                    
+            <p>
+            El derbi español, más conocido como El Clásico, es el partido de fútbol que disputan el FC Barcelona
+            y el Real Madrid y es la rivalidad más importante del fútbol español. Actualmente es uno
+            de los encuentros de fútbol entre clubes más seguido del mundo, siendo televisado 
+            en países de todos los continentes. La prensa deportiva denomina a este encuentro
+            futbolístico "el clásico", partido que guarda una importante repercusión en todos los
+            medios de comunicación a nivel mundial.
+            </p>
+            <p>
+            Ambos clubes ocupan los primeros puestos de la mayoría de clasificaciones o rankings 
+            históricos: 
+             </p>
+            <ul>            
+                <li>En diciembre de 2000 el Real Madrid fue designado por la FIFA como el Mejor
+                 club del siglo XX FIFA, luego de los resultados de una encuesta realizada a los 
+                 lectores de la revista bimestral de dicha organización, FIFA World Magazine.
+                </li>                
+                <li>En la clasificación histórica del ranking mundial de clubes realizada con 
+                datos desde el año 1991 por IFFHS, el Fútbol Club Barcelona ocupa el primer 
+                puesto con 807 puntos y el Real Madrid el tercer puesto con 633 puntos.
+                </li>
+                <li>En cuanto al número de títulos internacionales conseguidos, entre los clubes
+                 europeos, el AC Milan ocupa el primer lugar con 18 títulos, el Real Madrid ocupa
+                 el segundo puesto con 15 títulos, y el FC Barcelona ocupa el quinto puesto con
+                 11 títulos. No obstante, teniendo en cuenta la oficialidad de la Copa de Ferias
+                 el FC Barcelona contaria con 14 títulos y ocuparia el tercer lugar en la
+                 clasificación.
+                 </li>
+            </ul>
+           
+            <div class="fotoD">
+                <img  id="derby" src="fotos\derby.jpg" alt="Foto de un derby";">
+                <h5 id="pie-img">Imagen de un derbi entre el Real Madrid y el Barcelona.</h5>
+            </div>
+            <p>A nivel de participación en competiciones europeas ambos clubes ocupan puestos
+            privilegiados. A nivel nacional el liderazgo de ambos es indiscutible. En cuestión
+            de distinciones individuales de los jugadores, de los cuatro mejores jugadores de 
+            fútbol del siglo XX considerados por FIFA (Diego Armando Maradona, Pelé, Johan Cruyff
+            y Alfredo Di Stéfano) sólo el segundo no ha vestido la camiseta de ninguno de los dos
+            clubes. 
+            </p>
+            <p>Tanto en el FIFA World Player como en el Balón de Oro los dos equipos ocupan
+            los primeros lugares en los rankings, el FC Barcelona ostenta el mayor número de 
+            podios en ambos premios, y es seguido por el Real Madrid que ostenta el segundo lugar
+            en ambos. 
+            </p>
+            <p>
+            Entre los dos equipos, a lo largo de la historia, han pasado un total de 16
+            jugadores laureados con el Balón de Oro, y 10 premiados con el FIFA World Player.
+            </p>     
+            <p>
+            La primera vez que el Real Madrid y el FC Barcelona se enfrentaron en un partido de fútbol fue el 13 de mayo de 1902. El partido era una semifinal de la Copa de la Coronación, y el resultado fue favorable para los culés que ganaron el encuentro por 3 goles a 1. No volverian a enfrentarse hasta 1906, en un amistoso, en el que el Barcelona ganó 5-2 al Real Madrid.
+            </p>
+            <p>            
+            Durante la década de 1910, se enfrentaron un total de 15 veces, de los cuales 4 encuentros fueron en competición de Copa, el resto amistosos, pues hasta el año 1928 no nacería la competición de Liga en España. De los cuatro enfrentamientos en Copa, dos correspondian al partido de ida y vuelta de la competición de la temporada 1915/16, como el Barça ganó el primer partido por 2-1 y el Madrid el segundo encuentro por 4-1, de modo que tuvo que jugarse otro encuentro, ya que por aquel entonces se realizaban partidos de desempate. El partido de desempate resultó en un 6-6 asi que tuvieron que jugar otro partido, en el que finalmente el Madrid ganaría 4-2 al Barcelona.
+            </p>
+            <p>            
+            Durante la década de 1920, se volverian a enfrentar otra vez en competición de Copa, en la temporada 1925/1926 begin_of_the_skype_highlighting              1925/1926      end_of_the_skype_highlighting. Tanto el partido de ida como de vuelta lo ganó el Barcelona por 1-5 y 3-0. Se disputaron también algunos amistosos durante estos años, y finalmente los equipos se verian por primera vez las caras en competición de Liga el 17 de febrero de 1929.                                                                     
+            </p>
+        </div>
+    </div>
+	<script type="text/javascript">
+    {
+		var imagenes = document.getElementsByTagName("img");
+		var piesfotos = document.getElementsByTagName("h5");
+		for (i=0; i<imagenes.length; i++)
+			piesfotos[i].style.width=imagenes[i].width+"px";			
+    }
+    </script>
+</body>
+</html>

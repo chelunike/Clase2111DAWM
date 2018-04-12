@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<almacen  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		  xsi:noNamespaceSchemaLocation="almacen.xsd">
+	<articulo>
+		<descripcion>ali-kates</descripcion>
+		<proveedor>
+			<codigo-proveedor>PR-342</codigo-proveedor>
+			<nombre-proveedor>Alfonso</nombre-proveedor>
+		</proveedor>
+		<stock>345</stock>
+	</articulo>
+	<articulo>
+		<descripcion>martillo pilon</descripcion>
+		<proveedor>
+			<codigo-proveedor>PR-999</codigo-proveedor>
+			<nombre-proveedor>Mauricio</nombre-proveedor>
+		</proveedor>
+		<stock>12</stock>
+	</articulo>
+</almacen>

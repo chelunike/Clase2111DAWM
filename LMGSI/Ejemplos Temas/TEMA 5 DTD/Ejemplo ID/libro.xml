@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE libro SYSTEM "libro.dtd">
+<libro>
+  <capitulo referencia="c1">
+    <parrafo>Hola</parrafo>
+    <parrafo>Pepe</parrafo>
+    <enlace destino="c3"/>
+  </capitulo>
+  <capitulo palabras="2345">
+    <parrafo>Que</parrafo>
+    <parrafo>si</parrafo>
+    <parrafo>tal</parrafo>
+  </capitulo>
+  <capitulo referencia="c3" palabras="1111">
+    <parrafo>Que</parrafo>
+    <enlace destino="c1 c3"/>
+  </capitulo>
+  <capitulo>
+    <parrafo>Si cual</parrafo>
+  </capitulo>
+</libro>

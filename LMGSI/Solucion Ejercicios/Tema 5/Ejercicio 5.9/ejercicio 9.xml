@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE listin SYSTEM "dtd.dtd">
+<listin>
+    <persona id="p1" sexo="hombre">
+      <nombre>Daniel</nombre>
+      <email>danibarranco96@jajaja.es</email>
+    </persona>
+    <persona id="p2" sexo="mujer">
+      <nombre>Carolina</nombre>
+      <email>caroli@fjffjfj.com</email>
+      <email>llalal@gg.gg</email>
+      <relacion amigo-de="p1" enemigo-de="p3"></relacion>
+    </persona>
+    <persona id="p3" sexo="mujer">
+      <nombre>Pepa</nombre>
+      <relacion amigo-de="p1" enemigo-de="p2"></relacion>
+    </persona>
+</listin>

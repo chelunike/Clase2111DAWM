@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fer:articulo xmlns:fer="http://ferreteria.ieszv.com" 
+			  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+			  xsi:schemaLocation="http://ferreteria.ieszv.com articulo.xsd">
+	<fer:descripcion>Tornillo</fer:descripcion>
+    <fer:unidades>50</fer:unidades>
+    <fer:fecha>2012-02-14</fer:fecha>
+</fer:articulo>

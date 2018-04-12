@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<!-- ======================================== -->
+	<!-- Definiciones de tipos simples -->
+	<!-- ======================================== -->
+
+	<!-- ========== Tipo "tipoID" ============ -->
+	<xsd:simpleType name="tipoID">
+		<xsd:restriction base="xsd:positiveInteger">
+			<xsd:totalDigits value="4"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- ========== Tipo "tipoIVA" ============ -->
+	<xsd:simpleType name="tipoIVA">
+		<xsd:restriction base="xsd:positiveInteger">
+			<xsd:totalDigits value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- ========== Tipo "tipoReferencia" ============ -->
+	<xsd:simpleType name="tipoReferencia">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="5"/>
+			<xsd:maxLength value="15"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- ========== Tipo "tipoDescripcion" ============ -->
+	<xsd:simpleType name="tipoDescripcion">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="1"/>
+			<xsd:maxLength value="100"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- ========== Tipo "tipoPrecio" ============ -->
+	<xsd:simpleType name="tipoPrecio">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:totalDigits value="7"/>
+			<xsd:fractionDigits value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- ========== Tipo "tipoReal2Decimales" ============ -->
+	<xsd:simpleType name="tipoReal2Decimales">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:fractionDigits value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- ========== Tipo "tipoCodPostal" ============ -->
+	<xsd:simpleType name="tipoCodPostal">
+		<xsd:restriction base="xsd:positiveInteger">
+			<xsd:totalDigits value="5"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- ========== Tipo "tipoFormaPago" ============ -->
+	<xsd:simpleType name="tipoFormaPago">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="efectivo"/>
+			<xsd:enumeration value="tarjeta"/>
+			<xsd:enumeration value="plazox"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- =================================================== -->
+	<!-- Definiciones de elementos de tipos simples -->
+	<!-- =================================================== -->
+
+	<!-- ========== Elementos de tipo string ========== -->
+	<xsd:element name="nombre" type="xsd:string"/>
+	<xsd:element name="dir" type="xsd:string"/>
+	<xsd:element name="provincia" type="xsd:string"/>
+	<xsd:element name="cif" type="xsd:string"/>
+	<xsd:element name="dir_env" type="xsd:string"/>
+
+	<!-- ========== Elementos de tipo numérico ========== -->
+	<xsd:element name="base" type="tipoReal2Decimales"/>
+	<xsd:element name="cuota_iva" type="tipoReal2Decimales"/>
+	<xsd:element name="total" type="tipoReal2Decimales"/>
+	<xsd:element name="ref" type="tipoReferencia"/>
+	<xsd:element name="desc" type="tipoDescripcion"/>
+	<xsd:element name="cant" type="xsd:positiveInteger"/>
+	<xsd:element name="precio" type="tipoPrecio"/>
+	<xsd:element name="importe" type="tipoReal2Decimales"/>
+
+	<!-- ========== Otros elementos de tipo simple ========== -->
+	<xsd:element name="fecha" type="xsd:date"/>
+
+	<!-- ========================================== -->
+	<!-- Definiciones de elementos de tipo complejo -->
+	<!-- ========================================== -->
+
+	<!-- ========== Elemento "telefono" ========== -->
+	<xsd:element name="telefono">
+		<xsd:complexType>
+			<xsd:attribute fixed="917776688" name="num_tel" type="xsd:string"/>
+		</xsd:complexType>
+	</xsd:element>
+
+	<!-- ========== Elemento "fax" ========== -->
+	<xsd:element name="fax">
+		<xsd:complexType>
+			<xsd:attribute fixed="917776699" name="num_fax" type="xsd:string" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+
+	<!-- ========== Elemento "poblacion" ========== -->
+	<xsd:element name="poblacion">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="xsd:string">
+					<xsd:attribute name="cod_postal" type="tipoCodPostal"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+
+	<!-- ========== Elemento "linea" ========== -->
+	<xsd:element name="linea">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="ref"/>
+				<xsd:element ref="desc"/>
+				<xsd:element ref="cant"/>
+				<xsd:element ref="precio"/>
+				<xsd:element ref="importe"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<!-- ========== Elemento "datos_empresa" ========== -->
+	<xsd:element name="datos_empresa">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="nombre"/>
+				<xsd:element ref="dir"/>
+				<xsd:element ref="poblacion"/>
+				<xsd:element ref="provincia"/>
+				<xsd:element ref="cif"/>
+				<xsd:element maxOccurs="1" minOccurs="0" ref="telefono"/>
+				<xsd:element maxOccurs="1" minOccurs="0" ref="fax"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<!-- ========== Elemento "datos_cliente" ========== -->
+	<xsd:element name="datos_cliente">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="nombre"/>
+				<xsd:element ref="dir_env"/>
+				<xsd:element ref="poblacion"/>
+				<xsd:element ref="provincia"/>
+			</xsd:sequence>
+			<xsd:attribute name="n_cli" type="tipoID"/>
+		</xsd:complexType>
+	</xsd:element>
+
+	<!-- ========== Elemento "datos_factura" ========== -->
+	<xsd:element name="datos_factura">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="fecha"/>
+				<xsd:element maxOccurs="unbounded" minOccurs="1" ref="linea"/>
+				<xsd:element ref="base"/>
+				<xsd:element ref="cuota_iva"/>
+				<xsd:element ref="total"/>
+			</xsd:sequence>
+			<xsd:attribute name="n_ped" type="tipoID"/>
+			<xsd:attribute name="iva" type="tipoIVA"/>
+			<xsd:attribute name="f_pago" type="tipoFormaPago" use="required"/>
+			<xsd:attribute fixed="euro" name="moneda" type="xsd:string"/>
+		</xsd:complexType>
+	</xsd:element>
+
+	<!-- ========== Elemento "factura" ========== -->
+	<xsd:element name="factura">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="datos_empresa"/>
+				<xsd:element ref="datos_cliente"/>
+				<xsd:element ref="datos_factura"/>
+			</xsd:sequence>
+			<xsd:attribute name="n_fac" type="tipoID" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

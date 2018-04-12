@@ -1,0 +1,12 @@
+<!ELEMENT catalogoPeliculas (pelicula+)>
+<!ELEMENT pelicula (titulo, duracion, genero, actores?, fecha, director*, formato, trailer?, cartel?)>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT duracion (#PCDATA)>
+<!ELEMENT genero (#PCDATA)>
+<!ELEMENT actores (actor+)>
+<!ELEMENT actor (#PCDATA)>
+<!ELEMENT fecha (#PCDATA)>
+<!ELEMENT director (#PCDATA)>
+<!ELEMENT formato (#PCDATA)>
+<!ELEMENT trailer (#PCDATA)>
+<!ELEMENT cartel (#PCDATA)>

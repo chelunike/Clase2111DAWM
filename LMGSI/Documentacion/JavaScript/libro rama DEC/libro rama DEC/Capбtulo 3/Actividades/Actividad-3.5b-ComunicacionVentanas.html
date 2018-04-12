@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Nueva ventana</title>
+</head>
+<body>
+<form name="formulario2">
+<input type="text" size="100" name="datos" id="datos" value="Escribe lo que quieras pasar a la ventana principal"/>
+</form>
+<a href="JavaScript:close();" title="Pasar el valor" onClick="window.opener.document.formulario1.resultado.value = window.document.formulario2.datos.value;">Pasar el valor a la ventana principal</a>
+</body>
+</html>
+

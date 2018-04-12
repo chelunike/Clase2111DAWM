@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="canciones" type="xs:string">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="cancion" type="T_cancion" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+    <xs:complexType name="T_cancion">
+      <xs:sequence>
+        <xs:element name="titulo" type="xs:string"/>
+        <xs:element name="" ref="compositores"/>
+        <xs:element ref="productores"/>
+        <xs:element name="sello" type="xs:string"/>
+        <xs:element name="artista" type="xs:string"/>
+      </xs:sequence>
+      <xs:attribute name="anio" type="xs:string" use="required"/>
+      <xs:attribute name="duracion" type="xs:string" use="required"/>
+    </xs:complexType>
+  
+  <xs:element name="compositores">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="compositor" type="T_persona"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="productores">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="productor" type="T_persona"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:complexType name="T_persona">
+    <xs:sequence>
+      <xs:element name="nombre" type="xs:string"/>
+      <xs:element name="apellidos" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+</xs:schema>

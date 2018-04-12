@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type= "text/xsl href="datos.xsl"?>
+<datos>
+  <ficha>Datos empleados</ficha>
+  <empleado>
+    <nombre>Joe
+			<alias>Pepin</alias>
+		</nombre>
+    <apellido>Smith</apellido>
+  </empleado>
+  <empleado>
+    <nombre>Fran
+			<alias>Paco</alias>
+		</nombre>
+    <apellido>Lopez</apellido>
+  </empleado>
+</datos>

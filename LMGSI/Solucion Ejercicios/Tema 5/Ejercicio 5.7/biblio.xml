@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE biblioteca SYSTEM "biblio.dtd">
+<biblioteca>
+  <libro isbn="1234567890">
+    <titulo>La granja de paco</titulo>
+    <disponible tiempo="10" unidad="dias"/>
+    <autor>Pedro</autor>
+    <formato>Fisico</formato>
+    <publicacion>20-10-2001</publicacion>
+    <precio cantidad="20" moneda="euro"/>
+    <descuento cantidad="5"/>
+    <enlacelibro href="http://www.google.es"/>
+    <portada archivo="C:\\123.png"/>
+  </libro>
+  <libro isbn="222333444555">
+    <titulo>La mazmorra de la botella</titulo>
+    <disponible tiempo="48" unidad="horas"/>
+    <autor>Luis</autor>
+    <formato>Digital</formato>
+    <publicacion>07-05-1995</publicacion>
+    <precio cantidad="8" moneda="dolar"/>
+    <descuento/>
+    <enlacelibro href="http://www.google.es"/>
+    <portada/>
+  </libro>
+</biblioteca>

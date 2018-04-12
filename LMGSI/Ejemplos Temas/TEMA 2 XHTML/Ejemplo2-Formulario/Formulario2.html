@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Ejemplo formulario</title>		
+	</head>
+	<body>    
+	<form action="#" method="get">			
+		<p>Nombre 
+		<input type="text" name = "nombre" value="" size="20" maxlength="25"/>
+		</p>
+		
+		<p>
+		<label for="apellidos">Apellidos</label>
+		<input type="text" id ="apellidos" name="apellidos" placeholder="Teclee aquí sus dos apellidos" size="40" maxlength="50"/>
+		</p>
+		
+		<p>
+		<label for="clave">Su password</label>
+		<input type="password" id ="clave" name="clave" value="" />
+		</p>		
+		
+		<p>
+		<label for="email">Por favor, su email</label>
+		<input type="email" id ="email" name="email"/>
+		</p>
+		
+		<p>
+		<label for="fechaN">Su fecha de nacimiento</label>
+		<input type="date" id ="fechaN" name="fechaN"/>
+		</p>
+		
+		<p>	
+		<label for="estado">¿Trabaja actualmente?</label>
+		<input type="checkbox" name="estado" id="estado" value="trabaja" />
+		</p>		
+		
+		<fieldset>
+			<legend>Indique su sexo</legend>
+			<input type="radio" name="sexo" value="f" checked="checked" />femenino<br />
+			<input type="radio" name="sexo" value="m" />masculino<br />
+		</fieldset>
+		
+		<fieldset>
+			<legend>Indique su sexo</legend>
+			<input type="radio" name="sexo2" id="fem" value="f" checked="checked" /><label for="fem">femenino</label>
+			<input type="radio" name="sexo2" id="mas" value="m" />					<label for="mas">masculino</label>
+		</fieldset>
+		
+		<p>Puede proporcionar una foto. </p>
+		<p>Pulse el botón Examinar... para seleccionarla
+			<input type="file" name="foto"/>
+		</p>
+		
+        <p>
+		<!-- Esto se enviará pero no se mostrará... -->
+		<input type="hidden" name="pais" value="España" /> 
+        </p>
+            
+		<textarea name="comentarios" cols="50" rows="6">Sus comentarios aquí...
+		</textarea>
+        
+        <p>			
+		<label for="color1">Elija su color favorito</label> <br/>		
+		<select name="color" id="color1">
+			<option value="" selected="selected">- Seleccione -</option>
+			<option value="c1">blanco</option>
+			<option value="c2">rojo</option>
+			<option value="c3">azul</option>
+			<option value="c4">negro</option>
+			<option value="c5">amarillo</option>
+		</select>
+        </p>
+				
+		<p>Otra forma de elegir colores...<br/>
+		<input type="color" id="color2" name="color" value="#ff0000"/>
+		</p>	
+		
+		<p>
+			Elija un compositor:
+			<button name="compositor" type="submit" value="IS">Igor Stravinsky</button>
+			<button name="compositor" type="submit" value="MM">Modest Músorgski</button>
+			<button name="compositor" type="submit" value="AB">Aleksandr Borodín</button>
+		<p>
+		
+        <div>
+            <input type="image" src="enviar.gif" alt="Enviar..." /> 		
+            <input type="submit" value="Enviar datos" />
+            <input type="reset" value="Limpiar formulario" />			
+        </div>
+	</form>    
+</body>
+</html>

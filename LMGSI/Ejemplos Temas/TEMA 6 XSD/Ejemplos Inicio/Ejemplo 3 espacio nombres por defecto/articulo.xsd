@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://fer.ieszv.com"
+            elementFormDefault="qualified">
+	<xs:element name="articulo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="descripcion" type="xs:string" />
+				<xs:element name="unidades" type="xs:nonNegativeInteger" />
+				<xs:element name="fecha" type="xs:date" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+</xs:schema>

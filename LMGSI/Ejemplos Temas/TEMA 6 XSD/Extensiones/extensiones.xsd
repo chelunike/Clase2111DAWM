@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="alumno" type="T_Alumno"/>
+
+	<xs:complexType name="T_Nombre">
+		<xs:sequence>
+			<xs:element name="npila" type="xs:string"/>
+			<xs:element name="ape1" type="xs:string"/>
+			<xs:element name="ape2" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="T_Alumno">
+		<xs:complexContent>
+			<xs:extension base="T_Nombre">
+			<xs:sequence>
+				<xs:element name="domicilio" type="xs:string"/>
+				<xs:element name="localidad" type="xs:string"/>
+				<xs:element name="provincia" type="xs:string"/>
+			</xs:sequence>
+			<xs:attribute name="matricula" type="xs:integer" use="required" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+</xs:schema>

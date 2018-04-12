@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type"
+		 content="text/html;charset=utf-8">
+	<title>Retorno de valor en una funci&oacute;n</title>
+	<script type="text/javascript">
+		function ComprobarHumano(){
+  			var resultado = prompt("Introduzca el resultado de 144/12: ");
+  			var humano = Verificacion(resultado);
+  			if(humano == true){
+				document.write("Has ingresado el resultado correcto y podrás ver el contenido.");
+			}
+			else{
+				alert("No has introducido el valor correcto");
+			}
+		}
+		function Verificacion(res){
+    		var compruebaResultado;
+    		if (res == 12){
+				compruebaResultado = true;
+			}
+			else{
+				compruebaResultado = false;
+			}
+		return compruebaResultado;
+		}
+	</script>
+</head>
+<body>
+	<script type="text/javascript">
+		ComprobarHumano();
+	</script>
+</body>
+</html>

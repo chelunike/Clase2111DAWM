@@ -1,0 +1,18 @@
+<!ENTITY OM "obra maestra">
+<!ENTITY RE "recomendable">
+<!ENTITY PR "prescindible">
+<!ENTITY BO "bodrio">
+
+<!ENTITY av SYSTEM "importante.txt">
+
+<!ELEMENT lista_peliculas (aviso, pelicula*)>
+<!ELEMENT aviso (#PCDATA)>
+<!ELEMENT pelicula (titulo, director+,recomendacion)>
+  <!ATTLIST pelicula identificador ID #REQUIRED 
+          clasificacion (A | B | C | D | E) "C">
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT director (nombre, inicial?, apellido)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT inicial (#PCDATA)>
+<!ELEMENT apellido (#PCDATA)>
+<!ELEMENT recomendacion (#PCDATA)>

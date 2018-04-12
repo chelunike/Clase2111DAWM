@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name="almacen" >
+	  <xs:complexType>
+		<xs:sequence>
+			<xs:element ref="articulo" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	</xs:element>
+
+	<xs:element name="articulo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="descripcion" type="xs:string" />	
+				<xs:element ref="proveedor"/>
+				<xs:element ref="stock"/>
+			</xs:sequence>
+			<xs:attribute name="cod" type="xs:integer" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="proveedor">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="codigo-proveedor"/>
+				<xs:element name="nombre-proveedor" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="codigo-proveedor">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:pattern value="PR-\d{3}"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="stock">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:integer">
+					<xs:attribute name="fecha" type="xs:date" use="required"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>

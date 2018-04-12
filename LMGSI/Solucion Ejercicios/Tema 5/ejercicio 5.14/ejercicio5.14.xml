@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE documento SYSTEM "ejercicio5.14.dtd">
+<documento>
+  <cabecera>
+  <titulo>El titulo del documento</titulo>
+  <metainfo nombre="Perico" contenido="Trabajo LMS"/>
+  <metainfo nombre="Daniel" contenido="Trabajo LMS"/>
+  <!--Se pueden poner etiquetas metainfo sin nada-->
+  <metainfo/>
+  <estilo tamanyo="2" color="rojo"/>
+  </cabecera>
+  <cuerpo>
+    <parrafo>Esto es un parrafo dentro del cuerpo</parrafo>
+    <lista>
+      <item tipo="numerado">item1</item>    
+      <item tipo="noNumerado">item2</item> 
+      <item tipo="numerado">item3</item> 
+    </lista>
+  </cuerpo>
+  </documento>

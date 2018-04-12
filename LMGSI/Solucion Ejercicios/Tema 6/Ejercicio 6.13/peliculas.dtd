@@ -1,0 +1,11 @@
+<!ELEMENT lista_peliculas (pelicula*)> 
+
+<!ELEMENT pelicula (titulo, director+)> 
+<!ATTLIST pelicula identificador ID #REQUIRE clasificacion (A | B | C | D | E) "C"> 
+
+<!ELEMENT titulo (#PCDATA)> 
+
+<!ELEMENT director (nombre, inicial?, apellido)> 
+	<!ELEMENT nombre (#PCDATA)> 
+	<!ELEMENT inicial (#PCDATA)> 
+	<!ELEMENT apellido (#PCDATA)>

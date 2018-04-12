@@ -1,0 +1,87 @@
+<<!DOCTYPE html>
+<html lang="es"> 
+<head>
+	<meta charset="UTF-8">	
+    <style type="text/css">
+		#contenedor{margin:0 auto; width:800px; background-color:#EEE;}
+		#menu1 {margin:2%; padding:1%;}
+		#menu2 {margin:2%; padding:1%;}
+		
+        ul.menuV 
+        {        
+			margin:0; padding:0;
+			border: 1px solid black;
+			list-style-type: none;   			
+        }
+       
+        ul.menuV li a
+        {             
+			display: block;
+			width: 100px; height: 40px;
+			line-height: 40px;
+			text-decoration: none;
+			font-weight: bold;
+			background-color: orange;
+			border: #FFFFFF solid thin;
+			text-align:center;
+			
+        }
+        ul.menuV li a:link {color:blue;}       
+        ul.menuV li a:hover {color:red;}
+        ul.menuV li a:visited {color:green;}
+		
+		 ul.menuH 
+        {     			
+            list-style: none;
+			border: 1px solid;
+            padding:1em;       			
+        }
+        ul.menuH li
+        {     
+			display:inline;                                   
+            border: 1px solid #3A3A3A;
+            background: #F4F4F4;  
+            padding: 0.4em;                             
+        }
+        ul.menuH li a
+        {         								
+            text-decoration: none;   
+            font-size:1.25em;
+            font-family:Verdana;
+			cursor:crosshair;
+        }
+        ul.menuH li a:link {color:blue;}       
+        ul.menuH li a:hover {color:red;}
+        ul.menuH li a:visited {color:green;}
+    </style>
+	<title>Modelo Lista</title>
+</head>
+
+<body>
+	<div id="contenedor">
+		
+		<div id="menu1">
+			<h1>Menu horizontal</h1>
+			<ul class="menuH">
+				<li><a href="#">Opcion 1ª</a></li>
+				<li><a href="#">Opcion 2ª</a></li>
+				<li><a href="#">Opcion 3ª</a></li>
+				<li><a href="#">Opcion 4ª</a></li>
+				<li><a href="#">Opcion 5ª</a></li>
+			</ul>
+		</div>
+		
+		<div id="menu2">
+			<h1>Menu vertical</h1>
+			<ul class="menuV">
+				<li><a href="#">Opcion 1ª</a></li>
+				<li><a href="#">Opcion 2ª</a></li>
+				<li><a href="#">Opcion 3ª</a></li>
+				<li><a href="#">Opcion 4ª</a></li>
+				<li><a href="#">Opcion 5ª</a></li>
+			</ul>
+		</div>
+		
+	</div>		
+</body>
+</html>

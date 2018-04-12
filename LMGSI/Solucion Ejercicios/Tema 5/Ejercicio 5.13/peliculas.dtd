@@ -1,0 +1,27 @@
+<!ENTITY OM "obra maestra">
+<!ENTITY RE "recomendable">
+<!ENTITY PR "prescindible">
+<!ENTITY BO "bodrio">
+<!ENTITY av SYSTEM "importante.txt">
+
+<!NOTATION avi SYSTEM "C:\Program Files (x86)\Windows Media Player\wmplayer.exe">
+
+<!ENTITY pelicula1 SYSTEM "LAPRIMER_PELI.AVI" NDATA avi>
+<!ENTITY pelicula2 SYSTEM "LASEGUNDA_PELI.AVI" NDATA avi>
+
+<!ENTITY % PC "#PCDATA" >
+
+<!ELEMENT lista_peliculas (aviso?,pelicula*)+>
+
+<!ELEMENT aviso (%PC;)>
+
+<!ELEMENT pelicula (titulo, director+,recomendacion)>
+  <!ATTLIST pelicula identificador ID #REQUIRED 
+          clasificacion (A | B | C | D | E) "C"
+          archivo ENTITIES #REQUIRED>
+<!ELEMENT titulo (%PC;)>
+<!ELEMENT director (nombre, inicial?, apellido)>
+<!ELEMENT nombre (%PC;)>
+<!ELEMENT inicial (%PC;)>
+<!ELEMENT apellido (%PC;)>
+<!ELEMENT recomendacion (%PC;)>

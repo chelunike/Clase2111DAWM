@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<cd titulo="Greats hits">
+  <fecha dia="1" mes="12" anio="2008"/>
+  <canciones>
+    <cancion duracion="4:47" anio="2008">
+      <titulo>Give it 2 me</titulo>
+      <compositores>
+        <compositor>
+          <nombres>Pharrell</nombres>
+          <apellidos>Williams</apellidos>
+        </compositor>
+      </compositores>
+      <productores>
+        <productor>
+          <nombres>Pharrell</nombres>
+          <apellidos>Williams</apellidos>
+        </productor>
+      </productores>
+      <sello>Warner Bros. Records</sello>
+      <artista>Madonna</artista>
+    </cancion>
+    <cancion duracion="2:01" anio="2007">
+      <titulo>Take away</titulo>
+      <compositores>
+        <compositor>
+          <nombres>Pharrell</nombres>
+          <apellidos>Williams</apellidos>
+        </compositor>
+      </compositores>
+      <productores>
+        <productor>
+          <nombres>Pharrell</nombres>
+          <apellidos>Williams</apellidos>
+        </productor>
+      </productores>
+      <sello>Warner Bros. Records</sello>
+      <artista>Madonna</artista>
+    </cancion>
+  </canciones>
+</cd>
