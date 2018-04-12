@@ -1,0 +1,29 @@
+create database BDB1Libros
+use BDB1Libros
+
+create table Libros(
+	titulo varchar(15)primary key,
+	precio decimal(4,2) not null,
+	publicacion date not null,
+)
+select* from Libros
+insert into Libros values('quijote',3.70,'16/6/1980')
+insert into Libros values('biblia',2.65,'31/3/1990')
+insert into Libros values('coran',2.85,'2/12/1985')
+insert into Libros values('buscon',1.60,'29/2/1996')
+
+select * from Libros
+order by publicacion desc
+
+
+select titulo,precio from Libros
+order by precio
+
+select MIN(publicacion), AVG(precio) from Libros
+
+update Libros
+set precio=3.75
+where titulo like 'quijote'
+
+delete libros
+where titulo like 'buscon'

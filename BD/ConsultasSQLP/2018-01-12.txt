@@ -1,0 +1,199 @@
+create database biblioteca2018
+use biblioteca2018
+create table autor (
+   nombre varchar(30) primary key,
+   fecnac date
+) 
+create table libro (
+   isbn varchar(22) primary key,
+   titulo varchar(50)
+)
+create table escribe (
+   nombreA varchar(30) references autor,
+   idL varchar(22) references libro,
+   constraint PK_nombreA_idL 
+       primary key (nombreA, idL)
+)
+create table ejemplar (
+   idL varchar(22) references libro
+      on delete cascade
+      on update cascade,
+   nEjemplar int,
+   editorial varchar(40),
+   edicion int,
+   estado varchar(20) 
+      check (estado in ('regular',
+                         'malo', 'bueno')),
+   primary key(idL, nEjemplar)                         
+)
+create table socio (
+   idSocio varchar(40) primary key,
+   direccion varchar(50)
+)
+create table presta (
+   idS varchar(40) references socio,
+   idL varchar(22),
+   nEjem int,
+   constraint FK_idL_nEjem 
+      foreign key(idL, nEjem)
+      references ejemplar
+)
+insert into autor values 
+   ('Cervantes', '29-10-1547')
+insert into autor values 
+   ('Gongora', '11-07-1561')   
+insert into autor values
+   ('Rosalía de Castro', '24-02-1837')   
+insert into libro values
+   ('111', 'El Quijote')   
+insert into libro values
+   ('222', 'Novelas ejemplares')   
+insert into libro values
+   ('333', 'Soledades')   
+insert into libro values
+   ('444', 'Polifemo y Galatea')   
+insert into libro values
+    ('555', 'Cantares gallegos')   
+insert into libro values
+    ('666', 'Lazarillo')   
+insert into escribe values
+   --('Cervantes', '111'),
+   --('Cervantes', '222'),       
+   --('Gongora', '333'),       
+   --('Gongora', '444'),    
+   ('Rosalía de castro', '555')
+insert into escribe values
+   ('Cervantes', '444')   
+select * from autor   
+select * from libro
+select * from escribe   
+insert into ejemplar values
+  ('111', 1, 'SM', 4, 'malo')
+insert into ejemplar values
+  ('111', 2, 'SM', 4, 'regular')
+insert into ejemplar values
+  ('111', 3, 'Anaya', 1, 'bueno')
+insert into ejemplar values
+  ('111', 4, 'Anaya', 3, 'malo')
+insert into ejemplar values
+  ('333', 1, 'SM', 1, 'malo')
+insert into ejemplar values
+  ('333', 2, 'SM', 1, 'malo')
+insert into ejemplar values
+  ('444', 1, 'Anaya', 2, 'bueno')
+insert into ejemplar values
+  ('666', 1, 'SM', 2, 'malo')
+insert into ejemplar values
+  ('666', 2, 'SM', 2, 'malo')
+select * from ejemplar  
+insert into socio values
+   ('Juan', 'Málaga'),
+   ('Emilio', 'Granada'),
+   ('Ana', 'Málaga')
+insert into presta values
+    ('Ana', '666', 2)   
+insert into presta values
+    ('Ana', '666', 2)   
+insert into presta values
+    ('Juan', '111', 1)   
+insert into presta values
+    ('Juan', '333', 1)   
+insert into presta values
+    ('Juan', '333', 2)   
+select * from presta    
+
+update socio set direccion='Cordoba'
+    where idSocio='Juan'
+select * from socio
+select * from libro
+select * from ejemplar
+select * from presta
+select * from escribe
+-- consulta que verifique la dependencia 
+-- de existencia
+update libro set isbn='112'
+    where isbn='111'
+insert into libro values ('777', 'nuevo')
+insert into ejemplar 
+   values ('777', 1, 'mia', 2, 'malo'),
+   ('777', 2, 'mia', 2, 'regular')
+update libro set isbn='772'
+    where isbn='777'
+select * from libro   
+select * from ejemplar  
+delete libro where isbn='772' 
+-- número de libros que ha escrito cada autor
+-- (con su nombre y fecnac)
+select * from escribe
+select nombreA, COUNT(*) as 'Número de libros',
+     (select fecnac
+        from autor
+        where nombre=nombreA) as 'Fecha de nacimiento'
+    from escribe
+    group by nombreA
+
+select nombre, COUNT(idL) as 'Número de libros',
+  min(fecnac)
+    from escribe right join autor
+     on nombreA = nombre
+    group by nombre
+
+insert into autor values ('nuevo', GETDATE())
+
+select * from autor
+
+select nombreA, COUNT(*) 
+    from escribe
+    where idL in  (select idL
+		   from escribe
+		   group by idL
+		   having COUNT(*)=1
+		)
+    group by nombreA
+
+select idL
+   from escribe
+   group by idL
+   having COUNT(*)=1
+-- ejemplar que más se ha prestado
+
+select top 1 with ties
+  idL, nEjem, COUNT(*) cuantos
+   from presta
+   group by idL, nEjem   
+   order by cuantos desc
+    
+select 
+  idL, nEjem, COUNT(*) cuantos
+   from presta
+   group by idL, nEjem   
+   having count(*) =
+      (select MAX(NUME) from 
+       (select COUNT(*) NUME
+         from presta
+         group by idL, nEjem) as tabla)
+-- libro que mas veces se ha prestado
+select top 1 with ties
+   idL, COUNT(*) as veces
+  from presta
+  group by idL
+  order by veces desc 
+select * from presta  
+
+-- muestre los libros que 
+-- no ha escrito ningun autor            
+
+select * from libro
+   where isbn not in (select idL
+                        from escribe)
+select isbn, titulo
+   from libro left join escribe
+     on isbn = idL
+   where nombreA is null     
+-- socios a los que se les ha prestado 
+-- más de una vez
+
+-- socios a los que se les nos se les 
+-- ha prestado nada
+
+-- libros de los que no haya ningún ejemplar    

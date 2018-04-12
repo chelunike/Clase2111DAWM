@@ -1,0 +1,30 @@
+create table BDA1Amigos (
+nombre varchar (30) primary key,
+nacimiento date not null,
+altura decimal(8,2) not null
+)
+
+insert into BDA1Amigos("nombre"	, "nacimiento" , "altura" )
+	values('Juan','16/6/1980','1.70')
+	
+insert into BDA1Amigos("nombre"	, "nacimiento" , "altura" )
+	values('Ana','31/3/1990','1.65')
+	
+insert into BDA1Amigos("nombre"	, "nacimiento" , "altura" )
+	values('Pedro','2/12/1985','1.85')
+	
+	insert into BDA1Amigos("nombre"	, "nacimiento" , "altura" )
+	values('Elena','29/2/1996','1.60')
+	
+select nombre,altura
+	from BDA1Amigos
+	order by altura desc
+	
+select nacimiento
+	from BDA1Amigos
+	order by nacimiento	
+	
+select altura
+	from BDA1Amigos
+select AVG(altura) from BDA1Amigos
+	

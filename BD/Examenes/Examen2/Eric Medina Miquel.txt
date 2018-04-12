@@ -1,0 +1,27 @@
+create database BDA1Amigos
+use BDA1Amigos
+
+create table BDA1Amigos (
+nombre varchar(30) PRIMARY KEY,
+fechanac date NOT NULL,
+altura float NOT NULL
+)
+
+insert into BDA1Amigos values ('Juan', '16/6/1980', 1.70)
+insert into BDA1Amigos values ('Ana', '31/3/1990', 1.65)
+insert into BDA1Amigos values ('Pedro', '2/12/1985', 1.85)
+insert into BDA1Amigos values ('Elena', '29/3/1996', 1.60)
+
+select * from BDA1Amigos
+order by fechanac
+
+select nombre, altura from BDA1Amigos
+order by altura desc
+
+select AVG(altura) from BDA1Amigos
+
+update BDA1Amigos set altura =+3
+where nombre = 'Ana'
+
+delete from BDA1Amigos 
+where nombre = 'Pedro'

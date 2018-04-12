@@ -1,0 +1,13 @@
+create database BDB1Libros
+use BDB1Libros
+
+create table libros (
+titulo varchar(30) primary key,
+precio decimal (4,2),
+publicacion varchar(10),
+
+
+insert into libros(
+values('Quijote', '7.70', '16/6/1980')
+
+

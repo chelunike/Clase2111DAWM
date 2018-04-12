@@ -1,0 +1,34 @@
+create database BDA1Amigos
+
+
+create table Amigos(
+Nombre varchar(20)primary key,
+FechaNacimiento DATE,
+altura decimal(3,2)
+)
+
+
+insert into Amigos values ('Juan','16/6/1980',1.70)
+
+insert into Amigos values ('Ana','31/3/1990',1.65)
+
+insert into Amigos values ('Pedro','2/12/1985',1.85)
+
+insert into Amigos values ('Elena','29/2/1996',1.60)
+
+select Nombre , FechaNacimiento , Altura from amigos 
+order by FechaNacimiento
+
+select Nombre , Altura from amigos 
+order by altura desc
+
+select MAX(FechaNacimiento) from Amigos
+
+select AVG(Altura) from amigos
+
+delete Amigos where Nombre like 'Pedro'
+
+
+
+select * from Amigos
+drop table amigos

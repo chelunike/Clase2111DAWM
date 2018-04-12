@@ -1,0 +1,63 @@
+-- nombre socios de Granada
+select * from socio
+insert into socio values ('Elena', 'Granada')
+
+select * from socio
+  where direccion='Granada'
+  
+create function fsocios(@pro varchar(50))
+returns table as return
+   select * from socio
+      where direccion = @pro  
+
+select * from fsocios('Granada')      
+select * from fsocios('Málaga')      
+
+select * from socio
+   order by direccion, idSocio
+
+-- salida con formato " Socios de ...: idSocios... "
+-- Socios de Cordoba: Juan
+-- Socios de Granada: Elena, Emilio
+-- Socios de Málaga: Ana
+
+alter function fSociosFormato()
+returns varchar(200) 
+as begin
+   declare @s varchar(200), 
+           @idS varchar(40), 
+           @dir varchar(50),
+           @dirActual varchar(50)
+   set @s = ''
+   declare cu CURSOR for
+	   select * 
+	     from socio
+	     order by direccion, idSocio
+   open cu
+   fetch cu into @idS, @dir
+   set @dirActual= @dir
+   set @s= 'Socios de ' + @dir + ': '
+   while (@@fetch_status=0) begin
+      if @dir = @dirActual
+         set @s += ' ' + @idS
+      else begin
+         set @s += char(10)+ 
+                   'Socios de ' + @dir 
+                    + ': ' + @idS
+         set @dirActual = @dir
+      end
+      fetch cu into @idS, @dir
+   end
+   close cu
+   deallocate cu
+   return @s
+end
+print dbo.fSociosFormato()
+
+-- libros que no se han prestado
+
+-- función que devuelva los títulos 
+--anteriores:
+   -- con una función en línea
+   -- con una función escalar
+  

@@ -1,0 +1,7 @@
+create database BDB1Libros
+
+create table Libros(
+	Título varchar(15) primary key,
+	Precio decimal(2,2) not null,
+	Publicación datetime
+)

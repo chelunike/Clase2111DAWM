@@ -1,0 +1,26 @@
+create database examenb
+use examenb
+
+create table libro(
+titulo varchar (40)primary key,
+precio  decimal (10,2) not null,
+publicacion varchar (10))
+
+insert into libro (titulo,precio,publicacion)
+values ( 'quijote', 3.70, '16-6-1980' )
+insert into libro (titulo,precio,publicacion)
+values ( 'biblia', 2.65, '31-3-1990' )
+insert into libro (titulo,precio,publicacion)
+values ('coran', 2.85, '2-12-1985'  )
+insert into libro (titulo,precio,publicacion)
+values ( 'buscon', 1.60, '29-2-1996' )
+
+select * from libro order by publicacion desc 
+select titulo, precio from libro order by precio 
+select  publicacion from libro order by publicacion
+update libro
+set precio = precio +0.05
+where titulo like 'quijote'
+delete libro 
+where titulo like 'buscon'
+select * from libro
