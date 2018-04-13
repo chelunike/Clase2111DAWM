@@ -1,0 +1,9 @@
+Nºde apuestas para para cada nº de aciertos
+ sobre 1000 apuestas 
+0 aciertos= 420
+1 aciertos= 437
+2 aciertos= 120
+3 aciertos= 23
+4 aciertos= 0
+5 aciertos= 0
+6 aciertos= 0
