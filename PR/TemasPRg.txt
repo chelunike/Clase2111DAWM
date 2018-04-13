@@ -1,0 +1,14 @@
+Temas:
+
+1. Introducción a la fundamentos de la programación -- 8h
+2. Elementos básicos de un programa -- 14h
+3. El lenguaje Java y POO básica. -- 38h
+4. Entradas y salidas por consola/consola -- 4h
+5. Clases fundamentales en Java 
+Las clases Math, Integer, String y System. Métodos. Tratamieno de fechas -- 10h
+6. Matrices y Arrays. -- 16h
+7. Programación orientada a objetos con Java avanzado. Interfaces. Colecciones Iteradores  -- 14h
+8. Interfaz gráfica -- 46h
+9. Ficheros -- 26h
+10. Bases de datos orientadas a objetos. -- 32h
+11. Bases de datos relacionales -- 48h
