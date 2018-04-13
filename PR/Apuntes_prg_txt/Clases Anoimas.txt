@@ -1,0 +1,72 @@
+pag 74 
+
+Clases Anomnimas Java
+
+Eje 
+...
+ActionListener gestorEventos = new ActionListener() {
+	public void actionPerformed(ActionEvent e) {
+		System.out.println(“Método de la clase anónima”);
+	}
+};
+...
+
+
+La sentencia que permite declarar la clase anónima e instanciar un
+objeto suyo tiene la siguiente sintaxis:
+“new” <RefClaseInterfaz> <ParametrosActuales> <CuerpoClase>
+Cada uno de los elementos de esta definición sintáctica se describe a
+continuación:
+	• Mediante <RefClaseInterfaz> se indica la clase padre o la interfaz
+que implementa la clase anónima.
+	• Con <ParametrosActuales> se indican los parámetros que se van a
+pasar al constructor de la clase anónima. El constructor de la clase
+no se puede declarar de forma explícita por el programador en el
+cuerpo de la clase anónima, sino que se construye automáticamente
+por el compilador siguiendo los siguientes criterios:
+• Si en <RefClaseInterfaz> se utiliza una referencia a una interfaz,
+el constructor que se crea automáticamente será un constructor
+sin parámetros y cuyo cuerpo estará vacío. Por tanto, en
+este caso, <ParametrosActuales> será una lista vacía de parámetros
+y la sentencia de creación de la clase anónima será “new”
+<RefInterfaz> “(“ “)”<CuerpoClase>.
+• Si en <RefClaseInterfaz> se utiliza una referencia a una clase,
+el constructor que se crea automáticamente será un constructor
+en cuyo cuerpo sólo habrá una sentencia de llamada a un constructor
+de la clase padre. El constructor de la clase padre al que
+se llama, dependerá de los parámetros que se indiquen en
+<ParametrosActuales>; puesto que dichos parámetros son los
+que se van a pasar al constructor de la clase anónima y, por consiguiente,
+al constructor de la clase padre. Si la clase padre indicada
+tiene un constructor sin parámetros, se puede indicar la lista
+vacía de parámetros. Por lo tanto, la sentencia será: “new”
+<RefClase> <ParámetrosActuales> <CuerpoClase>.
+Interfaces gráficas en Java 81
+• <CuerpoClase> representa el cuerpo de la clase anónima, es como el
+cuerpo de una clase normal, excepto que no se pueden declarar
+constructores (puesto que éstos son creados de forma automática
+por el compilador). Al ser una clase interna, dentro del cuerpo de la
+clase anónima se puede:
+• Invocar métodos de la clase donde aparece esta sentencia; es
+decir, invocar métodos de la clase contenedora. Para ello, basta
+con poner el nombre del método y los parámetros, sin hacer referencia
+a ningún objeto.
+• Hacer referencia a atributos de la clase donde aparece esta sentencia;
+es decir, a los atributos de la clase contenedora. Al igual
+que ocurre con los métodos, para acceder a un atributo basta
+con poner el nombre del atributo, sin hacer referencia a ningún
+objeto.
+• Hacer referencia a las variables locales y parámetros del método
+donde aparece esta sentencia, que estén dentro de su ámbito y
+declaradas como final. Las variables o parámetros final se declaran
+poniendo final antes del tipo. La única característica de
+este tipo de variables o parámetros es que no pueden cambiar de
+valor.
+• Hacer referencia explícita al objeto de la clase contenedora, por
+ejemplo si se necesita pasarle como parámetro. Para ello se deberá
+poner:
+<RefClaseContenedora> “.” “this”
+A continuación, se muestra el código del ejemplo del conversor de
+euros a pesetas (presentado en el capítulo 1) implementado mediante una
+clase anónima, la cual se encarga de invocar el método encargado de
+realizar la conversión. La clase anónima está resaltada en negrita.

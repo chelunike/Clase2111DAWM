@@ -1,0 +1,91 @@
+-- Visto en Programacion
+Proyectos: 
+	· Aplicacion Traductor *
+	· Opcion/es
+	· Alumnos 5, 5P, 6S, 7P
+	· Patata Text 1, 2
+
+- Ambito de las Varibles  
+	· En Java no existe el paso por referencia.
+	· Pero cuando almacenamos una variable no primitiva no es el objeto en sí lo que, sino una dirección o identificador del objeto que apunta al espacio de memoria donde se haya. Cuando pasas por parámetros la variable, estamos pasando una copia de dicha dirección. Luego al modifiacarla parece que la estamos modificando, cuando nunca hemos salido de la misma variable.
+	· Paso por Parámetros (corresponde a la copia de la variable al pasarla)
+		· Parámetros actuales: argumentos en la llamada a un método. Ej: .pirnt(parametroActual); 
+		· Parámetros formales: argumentos en la cabecera del método. Ej: public void pirnt(String parametroFormal);
+
+- Clases Anomnimas: (visto)
+	- Internas
+	- Anonimas Asequas
+	- Anonimas Internas
+
+- Clases De String para pasar cadenas con efecto de paso por referencia
+	· StringBuilder
+	· HashMap
+	· String .split()
+		Ej: String[] palabras = texto.getText().split("\n");
+		Trocea una cadena en un array.
+
+
+- Interfaces Graficas
+	- JFrame
+	- JPanel, JScrollPanel
+	- JButton, JLabel, JRadioButton, JCheckBox, JComboBox, JTextField, JTextArea
+	- Layout
+	- Components
+	- Interfaces: (visto)
+		KeyListener/ Key Adpater(Clase Abstracta), 
+		WindowListener/WindowAdapter(Clase Abstracta), 
+		ActionListener 
+
+- Ficheros --> Clase EstudIO xD
+	-- java.io.File (Clase)
+	- File nombre = new File(ruta);
+		· nombre.exists() // SI existe boolean
+		· nombre.getName() nombre archivo
+	    · nombre.isFile() si es un archivo
+	    · nombre.isDirectory() si es un directorio
+	    · nombre.isAbsolute() si es una ruta absoluta
+	    · nombre.lastModified() ultima modificacion
+	    · nombre.length() tamaño
+	    · nombre.getPath() saca la ruta
+	    · nombre.getAbsolutePath() saca la ruta absoluta
+	    · nombre.getParent() saca al padre
+
+	-Sin Buferizar:
+	-- Leer Archivos:
+		· java.io.FileReader (Clase) FileReader input = new FileReader("FILE_NAME"); Se le pasa pasa un nombre de archivo o clase File.
+		·- .read("texto") devuelve entero que es un caracter; es decir, lee de caracter en caracter.
+			(-1 al finalizar el archivo y para leerlo hay que pasarlo a char)
+
+	-- Escribir Archivos:
+		· java.io.FileWriter (Clase) FileWriter output = new FileWriter("FILE_NAME", boolean); -- inidica true para insertar acoontinuacion o false para machacar como Rambo. Tambien se le puede pasar o bien un File o una cadena con la ruta.
+		·- .write("texto") Escribe caracter a caracter, aunque se le pueden pasar cadenas enteras(tiene un 
+			pequeño buffer).
+	-- Cerrar Archivo --> .close() Para volver a dejar disponible el archivo :).
+	
+	-Con BufetLibre: 
+	-- Leer Archivos:  BufferedReader input = new BufferedReader(new FileReader("texto.txt"));
+		· Se le pasan un FileReader 
+		· .readLine(); Se lee de linea en linea, no se incluye el salto
+
+	-- Escribir Archivos: BufferedWriter output = new BufferedWriter(new FileWriter("grito.txt",true));
+		· Se le pasan un FileWriter
+		· .wirte(); Se escribe linea a linea.
+		· .newLine(); Y se añaden un salto de linea.
+
+	-- Cerrar Archivo --> .close() Para volver a dejar disponible el archivo :).
+		
+	-Excepciones --> IOException 
+		· FileNotFoundException FileReader
+
+
+- Serializacion
+	-- Leer Objetos: ObjectInputStream ois = new ObjectInputStream(new FileInputStream("fichero", true))
+		· true para escribir a continuacion o false para machacar.
+		· .readObject() Lee objetos de uno en uno.
+		· Hasta lanzar la excepcion EOFException End Of File.
+
+	-- Escribir Objetos: ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("fichero"))
+		· .writeObject() Escribe un objeto.
+
+- JDialog y OptionPanel ¿?
+

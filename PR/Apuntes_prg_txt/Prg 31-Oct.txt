@@ -1,0 +1,41 @@
+Prg 31-Oct 
+
+  ^_^
+  /|\
+   |
+  / \
+
+
+Projecto nuevo 
+
+Clase Alumno 
+	Propiedades 
+		Nombre 
+		Edad
+		Nº Asignaturas
+		Array: Asignaturas con los numbres de las asignaturas y otro con las notas
+		minAsignaturas
+
+	Metodos get y set para las propiedades anteriores
+		- Nota Media
+		- El numero de asignaturas aprobadas 
+		- otro metodo que devuelva el numero de asiganturas suspensas
+		- Otro metodo que ordene las asginaturas por orden algfabetico abcdefghijklmñopqrstuvw
+		- Otro metodo toString de alumno Nombre: ... Edad: ... Asigna1 , ....
+		Nota1 , ....
+
+Clase Clase con clase xD 
+
+	Propiedades
+		Nº MAx alumnos
+		Nº Min alumnos
+		Array:  alumnos
+
+	Metodos
+		Set y Get de todos :)
+
+Clase principal Escuela (con el main)
+	
+	Leer un alumno nombre eddad asignaturas etc
+
+	Meter al alumno en  la escuela
