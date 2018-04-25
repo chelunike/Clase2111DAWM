@@ -1,0 +1,9 @@
+
+-- Crear un usuario en mysql
+
+CREATE USER 'nombre_usuario'@'localhost' IDENTIFIED BY 'tu_contrasena';
+
+Lamentablemente, a este punto el nuevo usuario no tiene permisos para hacer algo con las bases de datos. Por consecuencia si el usuario intenta identificarse (con la contraseña establecida), no será capaz de acceder a la consola de MySQL.
+
+GRANT ALL PRIVILEGES ON * . * TO 'nombre_usuario'@'localhost';
+
