@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="equipos.xsl" type="text/xsl"?>
+<liga temporada="2017-2018">
+  <!--añadir atributo temporada=2017-17-->
+  <equipo nombre="Maracena FC">
+    <ganados>5</ganados>
+    <empatados>3</empatados>
+    <perdidos>2</perdidos>
+    <puntos>30</puntos>
+  </equipo>
+  <equipo nombre="Alomartes CF">
+    <ganados>3</ganados>
+    <empatados>1</empatados>
+    <perdidos>6</perdidos>
+    <puntos>25</puntos>
+  </equipo>
+  <equipo nombre="Deportivo La Zubia">
+    <ganados>8</ganados>
+    <empatados>1</empatados>
+    <perdidos>1</perdidos>
+    <puntos>40</puntos>
+  </equipo>
+  <equipo nombre="Vandalia">
+    <ganados>6</ganados>
+    <empatados>2</empatados>
+    <perdidos>2</perdidos>
+    <puntos>34</puntos>
+  </equipo>
+  <equipo nombre="Arenas">
+    <ganados>3</ganados>
+    <empatados>4</empatados>
+    <perdidos>3</perdidos>
+    <puntos>20</puntos>
+  </equipo>
+</liga>

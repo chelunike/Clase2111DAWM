@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="ejercicio1E.xsl" type="text/xsl"?>
+<empresa>
+  <empleado>
+    <nombre><h>Pepe</h></nombre>
+    <apellidos><h>Pérez</h></apellidos>
+  </empleado>
+  <empleado>
+    <nombre><h>Ana</h></nombre>
+    <apellidos><h>Sánchez</h></apellidos>
+  </empleado>
+</empresa>
+
+<!--
+SALIDA:
+<p>empleadoPepePérez</p>
+<p>empleadoAnaSánchez</p>
+
+Explicacion:
+Llega a empleado, y aplica la regla:
+El nombre del nodo donde esta seguido de el valor textual
+de él mismo y de sus descendientes y acaba la regla.
+No se aplica la otra porque no ha sido llamada.
+
+-->

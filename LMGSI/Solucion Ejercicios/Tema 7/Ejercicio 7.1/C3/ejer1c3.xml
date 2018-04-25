@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="ejer1c3.xsl" type="text/xsl"?>
+<datos>
+  <negrita>Hola Pepe</negrita>
+  <rojo>¿Cómo estás</rojo>
+  <azul>Yo bien</azul>
+</datos>
+
+<!-- 
+  Salida:
+<html>
+  <head>
+    <title>Ejercicio1C</title>
+  </head>
+  <body>
+  <p><b>Hola Pepe</b></p>
+  <p style="color:red">¿Cómo estás</p>
+  <p style="color:blue">Yo bien</p>
+</body>
+</html>
+  
+ -->

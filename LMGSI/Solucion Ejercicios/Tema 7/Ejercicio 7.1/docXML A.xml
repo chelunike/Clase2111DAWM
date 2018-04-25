@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?> <?xml-stylesheet href="ejercicio1A.xsl" type="text/xsl"?>
+<?xml-stylesheet href="ejercicio1A.xsl" type="text/xsl"?>
+<datos>
+	<em>Hola Pepe</em>
+</datos>
+
+
+
+<!--  Devuelve:
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+	Hola Pepe
+
+
+Explicacion:  Si la hoja de transformaciones no contiene reglas (elementos xsl:template), 
+como en este caso,  sólo el contenido textual de los nodos elementos del documento XML 
+se envía directamente a la salida. Los valores de los atributos, los comentarios o las 
+instrucciones de procesamiento no se envían a la salida 
+-->

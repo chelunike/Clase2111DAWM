@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="ejercicio1G.xsl" type="text/xsl"?>
+<datos>
+  <AAA id="a1" pos="primero">
+    primer AAA
+    <BBB id="b1"/>
+    <BBB id="b2"/>
+  </AAA>
+  <AAA id="a2">
+    segundo AAA
+    <BBB id="b3"/>
+    <BBB id="b4"/>
+    <CCC id="c1">
+Primer CCC
+      <DDD id="d1"/>
+    </CCC>
+    <BBB id="b5">
+      Ultimo BBB
+      <CCC id="c2"/>
+    </BBB>
+  </AAA>
+</datos>
+
+<!--
+Salida:
+
+    primer AAA
+    
+<div style="color:red">BBB id=b1</div>
+
+    
+<div style="color:red">BBB id=b2</div>
+
+  
+    segundo AAA
+    
+<div style="color:red">BBB id=b3</div>
+
+    
+<div style="color:red">BBB id=b4</div>
+
+    
+Primer CCC
+      
+<p style="color:blue">DDD
+                    id=d1</p>
+
+    
+    
+<div style="color:red">BBB id=b5
+      Ultimo BBB
+      
+    </div>
+
+-->

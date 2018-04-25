@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="ejer1d.xsl" type="text/xsl"?>
+<datos>
+	<negrita>Hola Pepe</negrita>
+	<rojo>¿Cómo estás</rojo>
+	<azul>Yo bien</azul>
+</datos>
+<!-- 
+	Salida:
+<html>
+  <head>
+    <title>Ejercicio1D</title>
+  </head>
+  <body/>
+</html>
+	
+ -->

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?> <?xml-stylesheet href="ejercicio1B.xsl" type="text/xsl"?>
+<?xml-stylesheet href="ejercicio1B.xsl" type="text/xsl"?>
+<datos>
+	<negrita>Hola Pepe</negrita>
+	<rojo>¿Cómo estás</rojo>
+	<azul>Yo bien</azul>
+</datos>
+
+
+<!-- 
+
+  --  Salida: 
+
+<?xml version="1.0" encoding="UTF-8"?>
+	
+<p>
+  <b>Hola Pepe</b>
+</p>
+	
+<p style="color:red">¿Cómo estás</p>
+	
+<p style="color:blue">Yo bien</p>
+
+-- Explicacion: Al tener reglas para distintas etiquetas estas se aplican conforme se va recorriendo 
+el arbol de nodos y aplica sus reglas:
+ - Para el nodo "negrita ": saca el contenido dentro de " <b> <s></s></b>"
+ - Para el nodo "azul" y "rojo" las inserta en una etiqueta "p" con un atributo style correspondiente 
+ a su color
+--->

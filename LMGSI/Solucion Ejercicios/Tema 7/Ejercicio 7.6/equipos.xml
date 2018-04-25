@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="equipos.xsl" type="text/xsl"?>
+<liga temporada="2018-2019">
+  <equipo nombre="Zaidin FC">
+    <ganados>5</ganados>
+    <empatados>3</empatados>
+    <perdidos>2</perdidos>
+    <puntos>30</puntos>
+  </equipo>
+  <equipo nombre="Real Madrid">
+    <ganados>3</ganados>
+    <empatados>1</empatados>
+    <perdidos>6</perdidos>
+    <puntos>25</puntos>
+  </equipo>
+  <equipo nombre="Barcelona">
+    <ganados>8</ganados>
+    <empatados>1</empatados>
+    <perdidos>1</perdidos>
+    <puntos>40</puntos>
+  </equipo>
+  <equipo nombre="Granada FC">
+    <ganados>6</ganados>
+    <empatados>2</empatados>
+    <perdidos>2</perdidos>
+    <puntos>34</puntos>
+  </equipo>
+  <equipo nombre="Sevilla">
+    <ganados>3</ganados>
+    <empatados>4</empatados>
+    <perdidos>3</perdidos>
+    <puntos>20</puntos>
+  </equipo>
+</liga>

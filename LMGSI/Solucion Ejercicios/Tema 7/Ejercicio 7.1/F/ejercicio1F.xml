@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="ejercicio1F.xsl" type="text/xsl"?>
+<empresa>
+  <empleado>
+    <nombre>Pepe</nombre>
+    <apellidos>Pérez</apellidos>
+  </empleado>
+  <empleado>
+    <nombre>Ana</nombre>
+    <apellidos>Sánchez</apellidos>
+  </empleado>
+</empresa>
+<!--
+Salida:
+<p>Pepe</p>
+<p>
+  <i>Pérez</i>
+</p>
+<p>Ana</p>
+<p>
+  <i>Sánchez</i>
+</p>
+
+Explicacion:
+Llega a empleado, pone los P y saca contenido textual de nombre
+           porque no hay regla
+Cierra P
+Abre P
+aplica regla apellid
+
+-->
