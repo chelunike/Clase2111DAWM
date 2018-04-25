@@ -1,0 +1,6 @@
+Apuestas con 0 aciertos: 883
+Apuestas con 1 aciertos: 114
+Apuestas con 2 aciertos: 3
+Apuestas con 3 aciertos: 0
+Apuestas con 4 aciertos: 0
+Apuestas con 5 aciertos: 0
